@@ -1,1 +1,5 @@
-{"sections":{"pawd_resources":{"type":"pawd-resources-hub","settings":{}}},"order":["pawd_resources"]}
+{
+  "resource": {
+    "type": "blog"
+  }
+}
