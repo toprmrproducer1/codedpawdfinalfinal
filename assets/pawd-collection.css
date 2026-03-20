@@ -6,14 +6,16 @@
 
 /* ── HERO — full-bleed, header overlaps ── */
 .pawd-coll-hero{position:relative;width:100%;height:520px;overflow:hidden}
-.pawd-coll-hero-ph{position:absolute;inset:0}
-.pawd-coll-hero-ph img{width:100%;height:100%;object-fit:cover}
+.pawd-coll-hero-img{position:absolute;inset:0}
+.pawd-coll-hero-img img,.pawd-coll-hero-img .image-wrapper,.pawd-coll-hero-img .image-wrapper img{width:100%;height:100%;object-fit:cover}
 .pawd-coll-hero .placeholder-svg{width:100%;height:100%;object-fit:cover}
-.pawd-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.30) 0%,rgba(0,0,0,.06) 45%,rgba(0,0,0,.52) 100%)}
-.pawd-hero-content{position:absolute;bottom:0;left:0;right:0;padding:48px 64px;color:var(--wh,#fff)}
-.pawd-hero-eyebrow{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:10px}
-.pawd-hero-title{font-family:var(--fd);font-size:clamp(42px,5vw,72px);font-weight:300;line-height:1.0;letter-spacing:.01em}
-.pawd-hero-desc{font-family:var(--fb);font-size:13px;color:rgba(255,255,255,.72);margin-top:10px;letter-spacing:.04em}
+/* Placeholder gradient when no hero image is uploaded */
+.pawd-coll-hero-ph{position:absolute;inset:0;background:linear-gradient(160deg,#1e1a14,#0e0c0a);display:flex;align-items:center;justify-content:center;font-family:var(--fd,'Cormorant Garamond',serif);font-size:0;color:transparent}
+.pawd-coll-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.30) 0%,rgba(0,0,0,.06) 45%,rgba(0,0,0,.52) 100%);z-index:1}
+.pawd-coll-hero-content{position:absolute;bottom:0;left:0;right:0;padding:48px 64px;color:var(--wh,#fff);z-index:2}
+.pawd-coll-hero-eyebrow{font-family:var(--fb,'DM Sans',sans-serif);font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:10px}
+.pawd-coll-hero-title{font-family:var(--fd,'Cormorant Garamond',serif);font-size:clamp(42px,5vw,72px);font-weight:300;line-height:1.0;letter-spacing:.01em;color:#fff;margin:0}
+.pawd-coll-hero-desc{font-family:var(--fb,'DM Sans',sans-serif);font-size:13px;color:rgba(255,255,255,.72);margin-top:10px;letter-spacing:.04em}
 
 /* ── BREADCRUMB ── */
 .pawd-coll-bc{padding:14px 64px;font-family:var(--fb);font-size:11px;color:var(--si);letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--sm);display:flex;gap:8px;align-items:center}
@@ -178,7 +180,7 @@
 ════════════════════════ */
 @media(max-width:999px){
   .pawd-coll-hero{height:380px}
-  .pawd-hero-content{padding:32px 28px}
+  .pawd-coll-hero-content{padding:32px 28px}
   .pawd-coll-bc{padding:12px 28px}
   .pawd-sub-strip{padding:0 28px}
   .pawd-filters-row{padding:0 28px}
@@ -192,8 +194,8 @@
 }
 @media(max-width:599px){
   .pawd-coll-hero{height:300px}
-  .pawd-hero-content{padding:24px 20px}
-  .pawd-hero-title{font-size:32px}
+  .pawd-coll-hero-content{padding:24px 20px}
+  .pawd-coll-hero-title{font-size:32px}
   .pawd-coll-bc{padding:10px 20px}
   .pawd-sub-strip{padding:0 16px}
   .pawd-filters-row{padding:0 16px;height:44px;flex-wrap:wrap}
@@ -208,3 +210,33 @@
   .pawd-ed-title{font-size:28px}
   .pawd-faq-section{padding:40px 20px}
 }
+
+/* ════════════════════════════════════════════
+   BROADCAST THEME OVERRIDES FOR COLLECTION
+   Match the Broadcast collection section output
+   to PAWD mockup styling.
+════════════════════════════════════════════ */
+
+/* Force white background on collection wrapper */
+.collection-products{background:var(--wh,#FFFFFF)}
+
+/* ── Collection nav bar (SHOW FILTERS / SORT BY) ── */
+.collection__nav{border-bottom:1px solid var(--sm,#E5E5EA);background:var(--wh,#FFFFFF);padding:0 64px}
+.collection__nav .popout__toggle,
+.collection__nav .popout__toggle--filters{font-family:var(--fb,'DM Sans',sans-serif);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ob,#0A0A0A)}
+.collection__nav .collection__sort__button{font-family:var(--fb,'DM Sans',sans-serif);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob,#0A0A0A)}
+
+/* ── Product card typography overrides ── */
+.collection-products .product-grid-item .product-grid-item__title{font-family:var(--fd,'Cormorant Garamond',serif);font-size:17px;font-weight:300;line-height:1.2;color:var(--ob,#0A0A0A)}
+.collection-products .product-grid-item .product-grid-item__price .price{font-family:var(--fd,'Cormorant Garamond',serif);font-size:16px;font-weight:300;color:var(--ob,#0A0A0A)}
+.collection-products .product-grid-item .product-grid-item__info{padding:12px 0 20px}
+
+/* ── Highlight pills (section-highlights in collection context) ── */
+.pawd-coll-hero-section + .highlights .highlights__items{gap:8px;justify-content:center}
+.highlights .highlights__item--button{flex-basis:auto !important;padding:0 !important;margin-bottom:0 !important}
+.highlights .highlights__item--button .btn{min-width:auto !important;padding:8px 18px !important;font-family:var(--fb,'DM Sans',sans-serif) !important;font-size:11px !important;font-weight:500 !important;letter-spacing:.12em !important;text-transform:uppercase !important;line-height:1.4 !important;border-radius:0 !important;border:none !important;border-bottom:2px solid transparent !important;background:transparent !important;color:var(--si,#AEAEB2) !important;transition:all .2s !important}
+.highlights .highlights__item--button .btn:hover,
+.highlights .highlights__item--button .btn[style*="--btn-bg: #0a0a0a"],
+.highlights .highlights__item--button:first-child .btn{color:var(--ob,#0A0A0A) !important;border-bottom-color:var(--ob,#0A0A0A) !important;background:transparent !important}
+.highlights .highlights__item--button .btn .highlights__item__background{display:none !important}
+.highlights .highlights__item--button .btn::after{display:none !important}

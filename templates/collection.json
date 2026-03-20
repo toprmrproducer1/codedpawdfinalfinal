@@ -13,7 +13,7 @@
     "hero": {
       "type": "pawd-collection-hero",
       "settings": {
-        "eyebrow": "PAWD Collection",
+        "eyebrow": "All Collections",
         "show_title": true,
         "show_description": true
       }
@@ -25,80 +25,56 @@
           "type": "highlight",
           "settings": {
             "heading": "All (48)",
-            "url": "",
-            "color": "#0a0a0a",
-            "bg_color": "#ffffff",
-            "border_color": "#d1d1d6"
+            "url": ""
           }
         },
         "hl_collars": {
           "type": "highlight",
           "settings": {
             "heading": "Collars (10)",
-            "url": "",
-            "color": "#0a0a0a",
-            "bg_color": "#ffffff",
-            "border_color": "#d1d1d6"
+            "url": ""
           }
         },
         "hl_harnesses": {
           "type": "highlight",
           "settings": {
             "heading": "Harnesses (6)",
-            "url": "",
-            "color": "#0a0a0a",
-            "bg_color": "#ffffff",
-            "border_color": "#d1d1d6"
+            "url": ""
           }
         },
         "hl_leads": {
           "type": "highlight",
           "settings": {
             "heading": "Leads (8)",
-            "url": "",
-            "color": "#0a0a0a",
-            "bg_color": "#ffffff",
-            "border_color": "#d1d1d6"
+            "url": ""
           }
         },
         "hl_play": {
           "type": "highlight",
           "settings": {
             "heading": "Play (8)",
-            "url": "",
-            "color": "#0a0a0a",
-            "bg_color": "#ffffff",
-            "border_color": "#d1d1d6"
+            "url": ""
           }
         },
         "hl_sleep": {
           "type": "highlight",
           "settings": {
             "heading": "Sleep (6)",
-            "url": "",
-            "color": "#0a0a0a",
-            "bg_color": "#ffffff",
-            "border_color": "#d1d1d6"
+            "url": ""
           }
         },
         "hl_wear": {
           "type": "highlight",
           "settings": {
             "heading": "Wear (5)",
-            "url": "",
-            "color": "#0a0a0a",
-            "bg_color": "#ffffff",
-            "border_color": "#d1d1d6"
+            "url": ""
           }
         },
         "hl_eat": {
           "type": "highlight",
           "settings": {
             "heading": "Eat (5)",
-            "url": "",
-            "color": "#0a0a0a",
-            "bg_color": "#ffffff",
-            "border_color": "#d1d1d6"
+            "url": ""
           }
         }
       },
@@ -119,7 +95,7 @@
         "heading_position": "text-center",
         "heading_font_size": "heading-large",
         "text_font_size": "body-small",
-        "width": "wrapper--full-padded",
+        "width": "wrapper--full",
         "layout_mobile": "2",
         "color_scheme": "scheme-1",
         "padding_top": 0,
