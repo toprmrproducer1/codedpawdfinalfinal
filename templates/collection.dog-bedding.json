@@ -24,7 +24,7 @@
         "hl_all": {
           "type": "highlight",
           "settings": {
-            "heading": "All",
+            "heading": "All (48)",
             "url": "",
             "color": "#0a0a0a",
             "bg_color": "#ffffff",
@@ -34,7 +34,7 @@
         "hl_collars": {
           "type": "highlight",
           "settings": {
-            "heading": "Collars",
+            "heading": "Collars (10)",
             "url": "",
             "color": "#0a0a0a",
             "bg_color": "#ffffff",
@@ -44,7 +44,7 @@
         "hl_harnesses": {
           "type": "highlight",
           "settings": {
-            "heading": "Harnesses",
+            "heading": "Harnesses (6)",
             "url": "",
             "color": "#0a0a0a",
             "bg_color": "#ffffff",
@@ -54,7 +54,7 @@
         "hl_leads": {
           "type": "highlight",
           "settings": {
-            "heading": "Leads",
+            "heading": "Leads (8)",
             "url": "",
             "color": "#0a0a0a",
             "bg_color": "#ffffff",
@@ -64,7 +64,7 @@
         "hl_play": {
           "type": "highlight",
           "settings": {
-            "heading": "Play",
+            "heading": "Play (8)",
             "url": "",
             "color": "#0a0a0a",
             "bg_color": "#ffffff",
@@ -74,7 +74,7 @@
         "hl_sleep": {
           "type": "highlight",
           "settings": {
-            "heading": "Sleep",
+            "heading": "Sleep (6)",
             "url": "",
             "color": "#0a0a0a",
             "bg_color": "#ffffff",
@@ -84,7 +84,7 @@
         "hl_wear": {
           "type": "highlight",
           "settings": {
-            "heading": "Wear",
+            "heading": "Wear (5)",
             "url": "",
             "color": "#0a0a0a",
             "bg_color": "#ffffff",
@@ -94,7 +94,7 @@
         "hl_eat": {
           "type": "highlight",
           "settings": {
-            "heading": "Eat",
+            "heading": "Eat (5)",
             "url": "",
             "color": "#0a0a0a",
             "bg_color": "#ffffff",
@@ -123,7 +123,7 @@
         "layout_mobile": "2",
         "color_scheme": "scheme-1",
         "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_bottom": 16,
         "heading_tag": "automatic"
       }
     },
@@ -133,11 +133,11 @@
         "subcollection_layout": "grid",
         "subcollection_description": false,
         "select_image": "collection",
-        "color_scheme": "",
-        "color": "#ffffff",
-        "bg_color": "",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "color_scheme": "scheme-1",
+        "color": "#0a0a0a",
+        "bg_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "main": {
@@ -145,7 +145,7 @@
       "settings": {
         "enable_sort": true,
         "enable_filters": true,
-        "filter_layout": "slide-out",
+        "filter_layout": "sidebar",
         "default_open": true,
         "collection_linklist": "",
         "grid": 4,
@@ -153,7 +153,7 @@
         "products_per_page": 24,
         "color_scheme": "scheme-1",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 40
       }
     },
     "editorial": {
