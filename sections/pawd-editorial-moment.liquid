@@ -1,0 +1,80 @@
+{% comment %}
+  PAWD Editorial Moment — 72vh dark section with quote
+  Pixel-accurate conversion from PAWD_Homepage_Mockup_2 v4
+{% endcomment %}
+
+<section class="editorial">
+  <div class="ed-bg">
+    {% if section.settings.image %}
+      {{ section.settings.image | image_url: width: 2400 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0;' }}
+    {% else %}
+      <div class="ed-ph"><span class="big">"</span><small>Full-bleed editorial lifestyle image<br>Most powerful coordinated-colour image · No overlay · Pure brand aspiration</small></div>
+    {% endif %}
+  </div>
+  <div class="ed-grad"></div>
+  <div class="ed-text">
+    <div class="ed-eyebrow">{{ section.settings.eyebrow }}</div>
+    <p class="ed-quote">{{ section.settings.quote }}</p>
+    {% if section.settings.link_text != blank %}
+      <a href="{{ section.settings.link_url }}" class="ed-link">{{ section.settings.link_text }}</a>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .editorial{height:72vh;background:var(--ch);position:relative;overflow:hidden;display:flex;align-items:center}
+  .ed-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#141414,#2e2e2e 50%,#141414)}
+  .ed-ph{text-align:center;opacity:.13}.ed-ph .big{font-family:var(--fd);font-size:80px;font-weight:300;font-style:italic;color:var(--wh);line-height:.8;display:block}.ed-ph small{font-family:var(--fb);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--wh)}
+  .ed-grad{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.58) 0%,transparent 55%)}
+  .ed-text{position:relative;z-index:5;padding:0 72px;max-width:560px}
+  .ed-eyebrow{font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.36);margin-bottom:18px}
+  .ed-quote{font-family:var(--fd);font-size:clamp(22px,2.8vw,38px);font-weight:300;font-style:italic;color:var(--wh);line-height:1.34;margin-bottom:26px}
+  .ed-link{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:2px;transition:all .25s var(--ease)}.ed-link:hover{color:var(--wh);border-color:rgba(255,255,255,.48)}
+  @media only screen and (max-width:768px){
+    .editorial{height:56vh;min-height:380px}
+    .ed-text{padding:0 24px}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PAWD Editorial Moment",
+  "tag": "section",
+  "class": "pawd-editorial-moment-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "The PAWD standard"
+    },
+    {
+      "type": "html",
+      "id": "quote",
+      "label": "Quote text (HTML allowed)",
+      "default": "\"Built with the precision of fine accessories. Made for the lives your pets actually live.\""
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text",
+      "default": "Our Story →"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Editorial Moment"
+    }
+  ]
+}
+{% endschema %}

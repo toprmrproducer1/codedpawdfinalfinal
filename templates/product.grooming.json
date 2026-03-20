@@ -1,0 +1,103 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "Brush, spray, massage. One tool. Done.",
+        "review_count": "28",
+        "review_rating": "4.8",
+        "show_material_story": false,
+        "related_title": "You Might Also Like",
+        "related_subtitle": "More from the Grooming collection"
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "Product Details",
+            "label_1": "Includes",
+            "value_1": "1\u00d7 grooming brush with integrated water reservoir",
+            "label_2": "Best for",
+            "value_2": "All coat types \u2014 short, medium, and long",
+            "label_3": "Suitable for",
+            "value_3": "Dogs and cats of all breeds",
+            "label_4": "Bristle type",
+            "value_4": "Varies by tool \u2014 see product detail"
+          }
+        },
+        "block_accordion_1": {
+          "type": "accordion",
+          "settings": {
+            "title": "How to Use",
+            "content": "<p>Use gentle, slow strokes in the direction of hair growth. For deshedding tools, work section by section from neck to tail. Reward your pet after each session \u2014 consistency makes it easier every time.</p>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Care & Cleaning",
+            "content": "<p>Rinse bristles or tines under warm running water after each use. Remove accumulated hair from the tool before washing. Allow to fully air dry before storage.</p>"
+          }
+        },
+        "block_feature_4": {
+          "type": "feature",
+          "settings": {
+            "name": "All Coat Types",
+            "description": "Suitable for short, medium, and long coats \u2014 dogs and cats. Designed to work on any texture."
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Gentle by Design",
+            "description": "Soft-tipped bristles and rounded edges protect sensitive skin. Grooming should feel like bonding."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "Easy to Clean",
+            "description": "Removable bristle heads and smooth housings that rinse clean in seconds."
+          }
+        },
+        "block_review_7": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_accordion_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_feature_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_review_7",
+        "block_review_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

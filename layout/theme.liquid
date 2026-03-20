@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="no-touch supports-no-cookies" lang="{{ request.locale.iso_code }}">
+  <head>
+    {%- render 'head' -%}
+
+    {{ content_for_header }}
+
+    <!-- PAWD: Google Fonts preconnect (AC-04) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- PAWD: Typography + Design Tokens -->
+    {{ 'pawd-fonts.css' | asset_url | stylesheet_tag }}
+    {{ 'pawd-design-tokens.css' | asset_url | stylesheet_tag }}
+    {{ 'pawd-ui-components.css' | asset_url | stylesheet_tag }}
+    {{ 'pawd-hero.css' | asset_url | stylesheet_tag }}
+    {{ 'pawd-global.css' | asset_url | stylesheet_tag }}
+
+    <!-- PAWD: Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+
+  <body
+    id="{{ page_title | handle }}"
+    class="template-{{ template.name | handle }} grid-{{ settings.grid_style }}{% if customer %} customer-logged-in{% endif %}{% if settings.animations_enable %} aos-initialized{% endif %}{% if settings.product_grid_outline %} has-line-design{% endif %}"
+    data-animations="{{ settings.animations_enable }}"
+  >
+    {%- render 'loading' -%}
+
+    <a class="in-page-link visually-hidden skip-link" data-skip-content href="#MainContent">
+      {{- 'general.accessibility.skip_to_content' | t -}}
+    </a>
+
+    <div class="container" data-site-container>
+      <div class="header-sections">
+        {% sections 'group-header' %}
+      </div>
+
+      {% sections 'group-overlay' %}
+
+      <!-- CONTENT -->
+      <main role="main" id="MainContent" class="main-content">
+        {{ content_for_layout }}
+      </main>
+    </div>
+
+    {% sections 'group-pre-footer' %}
+
+    <footer class="footer-sections">
+      {% sections 'group-footer' %}
+    </footer>
+
+    {% render 'zoom-pswp' %}
+
+    {%- if template.name != 'product' and settings.show_scroll_top_button -%}
+      <button
+        type="button"
+        class="btn btn--scroll-top btn--black btn--solid"
+        aria-label="{{ 'general.accessibility.scroll_to_top' | t }}"
+        data-scroll-top-button
+      >
+        {%- render 'icon-nav-arrow-up' -%}
+      </button>
+    {%- endif -%}
+
+    {%- comment -%}
+      In order to use your custom javascript file at assets/custom.js
+      just cut this next line and paste it outside this comment:
+      <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+    {%- endcomment -%}
+    <!-- Paste marketing code or third party scripts below this comment line ============== -->
+
+    <!-- And above this comment line ================================================== -->
+  </body>
+</html>

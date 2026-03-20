@@ -1,0 +1,75 @@
+{% comment %}
+  PAWD Announcement Bar — Marquee ticker
+  Pixel-accurate conversion from PAWD_Homepage_Mockup_2 v4
+{% endcomment %}
+
+<div class="ann">
+  <div class="ann-track">
+    {% for block in section.blocks %}
+      {% if block.settings.highlighted %}
+        <span class="lit">{{ block.settings.text }}</span>
+      {% else %}
+        <span>{{ block.settings.text }}</span>
+      {% endif %}
+      <span class="sep">·</span>
+    {% endfor %}
+    {%- comment -%}Duplicate for seamless loop{%- endcomment -%}
+    {% for block in section.blocks %}
+      {% if block.settings.highlighted %}
+        <span class="lit">{{ block.settings.text }}</span>
+      {% else %}
+        <span>{{ block.settings.text }}</span>
+      {% endif %}
+      <span class="sep">·</span>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .ann{background:var(--ob);overflow:hidden;padding:10px 0}
+  .ann-track{display:inline-flex;white-space:nowrap;animation:mqs 32s linear infinite}
+  .ann-track span{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#4a4a4a;padding:0 30px}
+  .ann-track .lit{color:var(--si)}
+  .ann-track .sep{color:#222;padding:0 2px}
+  @keyframes mqs{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+</style>
+
+{% schema %}
+{
+  "name": "PAWD Announcement",
+  "tag": "section",
+  "class": "pawd-announcement-section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Message text",
+          "default": "Free Shipping on Every Order"
+        },
+        {
+          "type": "checkbox",
+          "id": "highlighted",
+          "label": "Highlight (lighter color)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Announcement",
+      "blocks": [
+        { "type": "message", "settings": { "text": "Free Shipping on Every Order", "highlighted": true } },
+        { "type": "message", "settings": { "text": "Buy Now, Pay Later with Afterpay", "highlighted": false } },
+        { "type": "message", "settings": { "text": "Premium Pet Accessories", "highlighted": true } },
+        { "type": "message", "settings": { "text": "30-Day Returns", "highlighted": false } }
+      ]
+    }
+  ]
+}
+{% endschema %}

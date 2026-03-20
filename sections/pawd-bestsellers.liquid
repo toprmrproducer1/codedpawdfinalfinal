@@ -1,0 +1,238 @@
+{% comment %}
+  PAWD Bestsellers — Tabbed product grid with badges and ATC reveal
+  Pixel-accurate conversion from PAWD_Homepage_Mockup_2 v4
+{% endcomment %}
+
+{%- assign dog_collection = section.settings.dogs_collection -%}
+{%- assign cat_collection = section.settings.cats_collection -%}
+{%- assign limit = section.settings.products_limit | default: 4 -%}
+
+<section class="bs-section">
+  <div class="bs-wrap">
+    <div class="sec-top">
+      <div class="st-l">
+        <div class="eyebrow">{{ section.settings.eyebrow }}</div>
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn on" data-tab="dogs" data-section="{{ section.id }}">{{ section.settings.tab_1_label }}</button>
+          <button class="tab-btn" data-tab="cats" data-section="{{ section.id }}">{{ section.settings.tab_2_label }}</button>
+          {% if section.settings.view_all_link != blank %}
+            <a href="{{ section.settings.view_all_link }}" class="view-all">View All <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {%- comment -%}Dogs grid{%- endcomment -%}
+    <div class="prod-grid pawd-tab-content" data-tab-content="dogs" data-section="{{ section.id }}">
+      {% if dog_collection != blank %}
+        {%- assign dogs = collections[dog_collection].products -%}
+        {% for product in dogs limit: limit %}
+          <div class="pc">
+            <a href="{{ product.url }}" class="pc-img">
+              {% if product.featured_image %}
+                {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0;' }}
+              {% else %}
+                <div class="pc-img-1"><div class="ph">{{ product.title }}</div></div>
+              {% endif %}
+              {% if product.images[1] %}
+                <div class="pc-img-2">{{ product.images[1] | image_url: width: 600 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;' }}</div>
+              {% endif %}
+              {% if product.metafields.custom.badge != blank %}
+                <div class="badge bs">{{ product.metafields.custom.badge }}</div>
+              {% elsif product.available == false %}
+                <div class="badge sl">Sold Out</div>
+              {% endif %}
+              <div class="atc-rvl">Add to Cart</div>
+            </a>
+            <div class="pc-info">
+              <div class="pc-cat">{{ product.type }}</div>
+              <div class="pc-name">{{ product.title }}</div>
+              <div class="pc-price">{{ product.price | money }} AUD</div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        {%- comment -%}Placeholder cards when no collection selected{%- endcomment -%}
+        {% for i in (1..4) %}
+          <div class="pc">
+            <div class="pc-img">
+              <div class="pc-img-1"><div class="ph">Product {{ i }}<br><span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--si)">Dogs</span></div></div>
+              {% if i == 1 %}<div class="badge bs">Best Seller</div>{% endif %}
+              {% if i == 2 %}<div class="badge nw">New</div>{% endif %}
+              {% if i == 4 %}<div class="badge pr">Personalise</div>{% endif %}
+              <div class="atc-rvl">Add to Cart</div>
+            </div>
+            <div class="pc-info">
+              <div class="pc-cat">Collars</div>
+              <div class="pc-name">Premium Dog Collar</div>
+              <div class="pc-price">$35.00 AUD</div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    {%- comment -%}Cats grid — hidden by default{%- endcomment -%}
+    <div class="prod-grid pawd-tab-content" data-tab-content="cats" data-section="{{ section.id }}" style="display:none">
+      {% if cat_collection != blank %}
+        {%- assign cats = collections[cat_collection].products -%}
+        {% for product in cats limit: limit %}
+          <div class="pc">
+            <a href="{{ product.url }}" class="pc-img">
+              {% if product.featured_image %}
+                {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0;' }}
+              {% else %}
+                <div class="pc-img-1"><div class="ph">{{ product.title }}</div></div>
+              {% endif %}
+              {% if product.images[1] %}
+                <div class="pc-img-2">{{ product.images[1] | image_url: width: 600 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;' }}</div>
+              {% endif %}
+              {% if product.metafields.custom.badge != blank %}
+                <div class="badge bs">{{ product.metafields.custom.badge }}</div>
+              {% elsif product.available == false %}
+                <div class="badge sl">Sold Out</div>
+              {% endif %}
+              <div class="atc-rvl">Add to Cart</div>
+            </a>
+            <div class="pc-info">
+              <div class="pc-cat">{{ product.type }}</div>
+              <div class="pc-name">{{ product.title }}</div>
+              <div class="pc-price">{{ product.price | money }} AUD</div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        {% for i in (1..4) %}
+          <div class="pc">
+            <div class="pc-img">
+              <div class="pc-img-1"><div class="ph">Cat Product {{ i }}<br><span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--si)">Cats</span></div></div>
+              {% if i == 1 %}<div class="badge bs">Best Seller</div>{% endif %}
+              {% if i == 2 %}<div class="badge nw">New</div>{% endif %}
+              <div class="atc-rvl">Add to Cart</div>
+            </div>
+            <div class="pc-info">
+              <div class="pc-cat">Cat Collars</div>
+              <div class="pc-name">Premium Cat Collar</div>
+              <div class="pc-price">$30.00 AUD</div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .bs-section{padding:80px 0;background:var(--wh)}
+  .bs-wrap{max-width:1400px;margin:0 auto;padding:0 48px}
+  .sec-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px}
+  .st-l .eyebrow{font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--st);margin-bottom:6px}
+  .st-l h2{font-family:var(--fd);font-size:clamp(26px,3vw,40px);font-weight:300}
+  .tabs{display:flex;gap:0;border-bottom:1px solid var(--fo);align-items:flex-end}
+  .tab-btn{font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:none;border:none;cursor:pointer;color:var(--si);padding:0 0 12px;margin-right:24px;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+  .tab-btn.on{color:var(--ob);border-bottom-color:var(--ob)}
+  .view-all{font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--st);text-decoration:none;display:flex;align-items:center;gap:5px;padding-bottom:12px;transition:color .2s}
+  .view-all svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2}.view-all:hover{color:var(--ob)}
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--fo)}
+  .pc{background:var(--wh);position:relative;cursor:pointer;overflow:hidden}
+  .pc-img{aspect-ratio:1/1;background:var(--ow);position:relative;overflow:hidden;display:block;text-decoration:none}
+  .pc-img-1{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .pc-img-2{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--sm);opacity:0;transition:opacity .4s var(--ease)}.pc:hover .pc-img-2{opacity:1}
+  .ph{font-family:var(--fd);font-size:12px;font-style:italic;color:var(--si);text-align:center;padding:16px;line-height:1.55}
+  .badge{position:absolute;top:12px;left:12px;font-family:var(--fb);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;z-index:2}
+  .badge.bs{background:var(--ob);color:var(--wh)}.badge.nw{background:var(--ob);color:var(--wh)}.badge.sl{background:var(--sale);color:var(--wh)}.badge.pr{background:transparent;border:1px solid var(--ob);color:var(--ob)}
+  .atc-rvl{position:absolute;bottom:0;left:0;right:0;background:var(--ob);color:var(--wh);font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:11px;text-align:center;transform:translateY(100%);transition:transform .28s var(--ease);z-index:2}.pc:hover .atc-rvl{transform:translateY(0)}
+  .pc-info{padding:13px 15px 17px}
+  .pc-cat{font-family:var(--fb);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--si);margin-bottom:3px}
+  .pc-name{font-family:var(--fd);font-size:16px;line-height:1.25;margin-bottom:4px}
+  .pc-price{font-family:var(--fb);font-size:13px;color:var(--st)}
+  @media only screen and (max-width:768px){
+    .prod-grid{grid-template-columns:repeat(2,1fr)}
+    .bs-wrap{padding:0 24px}
+  }
+</style>
+
+<script>
+(function(){
+  const sid = '{{ section.id }}';
+  const btns = document.querySelectorAll('.tab-btn[data-section="'+sid+'"]');
+  const grids = document.querySelectorAll('.pawd-tab-content[data-section="'+sid+'"]');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){b.classList.remove('on')});
+      btn.classList.add('on');
+      var tab = btn.getAttribute('data-tab');
+      grids.forEach(function(g){
+        g.style.display = g.getAttribute('data-tab-content')===tab ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "PAWD Bestsellers",
+  "tag": "section",
+  "class": "pawd-bestsellers-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Our edit"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Essentials"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_label",
+      "label": "Tab 1 label",
+      "default": "Dogs"
+    },
+    {
+      "type": "collection",
+      "id": "dogs_collection",
+      "label": "Dogs collection"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_label",
+      "label": "Tab 2 label",
+      "default": "Cats"
+    },
+    {
+      "type": "collection",
+      "id": "cats_collection",
+      "label": "Cats collection"
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Products per tab",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Bestsellers"
+    }
+  ]
+}
+{% endschema %}

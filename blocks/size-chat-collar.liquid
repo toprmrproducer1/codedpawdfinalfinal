@@ -1,0 +1,153 @@
+{%- comment -%}
+  PAWD — Size Chart: Collar
+  Story:     TS-003 — Collar: Size Guide Accordion
+  Brief Ref: Section 5.4 (Size guide)
+
+  HOW TO USE:
+    Add a Custom Liquid section to the collar template and place:
+        {% render 'size-chart-collar' %}
+
+  ACCEPTANCE CRITERIA:
+    AC-4  Size chart XS–XL with neck circumference  ✓
+    AC-5  "Add 2cm for comfort" note               ✓
+    AC-6  Brand typography                          ✓
+{%- endcomment -%}
+
+<div class="pawd-size-chart">
+
+  <table class="pawd-size-chart__table" aria-label="Collar size chart">
+    <thead>
+      <tr>
+        <th scope="col">Size</th>
+        <th scope="col">Neck Circumference</th>
+        <th scope="col">Recommended for</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="pawd-size-chart__badge">XS</span></td>
+        <td>20 – 28 cm</td>
+        <td>Chihuahua, Yorkshire Terrier</td>
+      </tr>
+      <tr>
+        <td><span class="pawd-size-chart__badge">S</span></td>
+        <td>28 – 36 cm</td>
+        <td>Beagle, French Bulldog</td>
+      </tr>
+      <tr>
+        <td><span class="pawd-size-chart__badge">M</span></td>
+        <td>36 – 44 cm</td>
+        <td>Cocker Spaniel, Border Collie</td>
+      </tr>
+      <tr>
+        <td><span class="pawd-size-chart__badge">L</span></td>
+        <td>44 – 52 cm</td>
+        <td>Labrador, Golden Retriever</td>
+      </tr>
+      <tr>
+        <td><span class="pawd-size-chart__badge">XL</span></td>
+        <td>52 – 60 cm</td>
+        <td>German Shepherd, Rottweiler</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="pawd-size-chart__note">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="7" cy="7" r="6" stroke="#636366" stroke-width="1.2"/>
+      <line x1="7" y1="6" x2="7" y2="10" stroke="#636366" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="7" cy="4.2" r="0.7" fill="#636366"/>
+    </svg>
+    Add 2 cm for comfort — you should be able to slide two fingers under the collar.
+  </p>
+
+</div>
+
+<style>
+  .pawd-size-chart {
+    font-family: var(--font-body);
+    padding: 12px 0 4px;
+  }
+
+  .pawd-size-chart__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+  }
+
+  .pawd-size-chart__table thead tr {
+    background-color: var(--c-obsidian);
+    color: var(--c-white);
+  }
+
+  .pawd-size-chart__table th {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    text-align: left;
+  }
+
+  .pawd-size-chart__table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--c-fog);
+    color: var(--c-graphite);
+    vertical-align: middle;
+  }
+
+  .pawd-size-chart__table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .pawd-size-chart__table tbody tr:nth-child(even) {
+    background-color: var(--c-offwhite);
+  }
+
+  .pawd-size-chart__badge {
+    display: inline-block;
+    min-width: 32px;
+    text-align: center;
+    padding: 2px 8px;
+    border: 1px solid var(--c-obsidian);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--c-obsidian);
+  }
+
+  .pawd-size-chart__note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--c-stone);
+    margin: 0;
+    padding: 8px 14px;
+    background: var(--c-offwhite);
+    border-left: 2px solid var(--c-obsidian);
+    line-height: 1.5;
+  }
+
+  .pawd-size-chart__note svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  @media screen and (max-width: 480px) {
+    .pawd-size-chart__table th:last-child,
+    .pawd-size-chart__table td:last-child {
+      display: none;
+    }
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Size Chart – Collar",
+  "settings": []
+}
+{% endschema %}

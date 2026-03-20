@@ -1,0 +1,97 @@
+/* =============================================================================
+   PAWD UI Components
+   EPIC-02: UI Component System
+   Applies Chromatic Monochrome design spec to Broadcast v8 components.
+   Depends on: pawd-design-tokens.css, pawd-fonts.css
+   ============================================================================= */
+
+
+/* =============================================================================
+   UI-001: PRIMARY BUTTON
+   Broadcast v8 class: .btn--primary  (solid variant: .btn--solid.btn--primary)
+
+   How Broadcast wires hover:
+   - .btn--solid uses a ::after pseudo-element filled with var(--btn-bg-hover)
+     that slides up on hover (translate3d). We set that variable to Graphite.
+   - Border and text hover are read from --btn-border-hover / --btn-text-hover
+     by the base .btn hover rule at line 4436.
+
+   AC-1: Background #0A0A0A (Obsidian), text #FFFFFF
+   AC-2: Border-radius 0px
+   AC-3: Hover: background transitions to #3A3A3C (Graphite)
+   AC-5: DM Sans 600, uppercase, 0.10em letter-spacing
+   AC-6: Transition uses var(--transition)
+   ============================================================================= */
+
+.btn--primary,
+.btn--solid.btn--primary {
+  --btn-bg:           var(--c-obsidian);
+  --btn-border:       var(--c-obsidian);
+  --btn-text:         var(--c-white);
+  --btn-bg-hover:     var(--c-graphite);
+  --btn-border-hover: var(--c-graphite);
+  --btn-text-hover:   var(--c-white);
+  --btn-radius:       0px;
+
+  font-family:    var(--font-body);
+  font-weight:    600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  transition:     var(--transition);
+}
+
+
+/* =============================================================================
+   UI-002: SECONDARY BUTTON
+   Broadcast v8 class: .btn--secondary  (outline variant: .btn--outline.btn--secondary)
+
+   How Broadcast wires hover:
+   - .btn--outline uses the same ::after slide-up mechanism, but at 5% opacity
+     of currentColor (a subtle tint). For PAWD we want a full Obsidian fill.
+   - We override --btn-bg-hover to Obsidian and set --btn-text-hover to White
+     so the text remains legible once the fill lands.
+
+   AC-1: 1px solid #0A0A0A border, transparent background
+   AC-2: Hover: fill #0A0A0A, text #FFFFFF
+   AC-3: DM Sans 600, uppercase, 0.10em tracking
+   AC-4: Border-radius 0px
+   AC-5: Transition uses var(--transition)
+   ============================================================================= */
+
+.btn--secondary,
+.btn--outline.btn--secondary {
+  --btn-bg:           transparent;
+  --btn-border:       var(--c-obsidian);
+  --btn-text:         var(--c-obsidian);
+  --btn-bg-hover:     var(--c-obsidian);
+  --btn-border-hover: var(--c-obsidian);
+  --btn-text-hover:   var(--c-white);
+  --btn-radius:       0px;
+
+  font-family:    var(--font-body);
+  font-weight:    600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  transition:     var(--transition);
+}
+
+/* Override the default .btn--outline ::after opacity (0.05) to full fill */
+.btn--outline.btn--secondary::after {
+  background-color: var(--c-obsidian);
+  opacity:          1;
+}
+
+
+/* =============================================================================
+   UI-007: BACKGROUND COLOUR ALTERNATION PATTERN
+   AC-1: #FFFFFF is primary background
+   AC-2: Sections alternate with #F5F5F7
+   AC-3: No warm-toned backgrounds (cream, beige, tan) anywhere
+
+   Usage: add class .pawd-section--alt to any Shopify section's custom CSS
+   field in the Theme Editor to apply the off-white alternating background.
+   ============================================================================= */
+
+.pawd-section--alt {
+  background-color: var(--c-offwhite);
+}

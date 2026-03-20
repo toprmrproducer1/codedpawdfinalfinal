@@ -1,0 +1,114 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "Weatherproof. Reflective. A coat they'll actually wear.",
+        "review_count": "31",
+        "review_rating": "4.8",
+        "show_material_story": false,
+        "related_title": "You Might Also Like",
+        "related_subtitle": "Gear up for any weather"
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "About This Coat",
+            "label_1": "Outer shell",
+            "value_1": "Water-resistant ripstop nylon",
+            "label_2": "Fill",
+            "value_2": "Padded polyester insulation",
+            "label_3": "Reflective",
+            "value_3": "Reflective trim on back and chest",
+            "label_4": "Harness access",
+            "value_4": "D-ring opening on back for leash attachment over coat",
+            "label_5": "Closure",
+            "value_5": "Velcro belly strap + secure neck snap"
+          }
+        },
+        "block_size_chart_1": {
+          "type": "size_chart",
+          "settings": {
+            "title": "Coat Size Guide",
+            "hint": "Measure back length (collar to base of tail) and chest girth (widest point).",
+            "table_html": "<table class=\"pawd-size-tbl\"><thead><tr><th>Size</th><th>Back length</th><th>Chest girth</th><th>Weight</th></tr></thead><tbody><tr><td>XS</td><td>20\u201326cm</td><td>30\u201338cm</td><td>1\u20133kg</td></tr><tr><td>S</td><td>26\u201334cm</td><td>38\u201348cm</td><td>3\u20137kg</td></tr><tr><td>M</td><td>34\u201344cm</td><td>48\u201360cm</td><td>7\u201314kg</td></tr><tr><td>L</td><td>44\u201356cm</td><td>60\u201374cm</td><td>14\u201325kg</td></tr><tr><td>XL</td><td>56\u201370cm</td><td>74\u201390cm</td><td>25kg+</td></tr></tbody></table>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wash & Care",
+            "content": "<p>Machine wash cold, gentle cycle. Do not tumble dry \u2014 hang or lay flat to dry. Reapply DWR spray after 10+ washes to maintain water resistance.</p>"
+          }
+        },
+        "block_accordion_4": {
+          "type": "accordion",
+          "settings": {
+            "title": "Harness & Lead Use",
+            "content": "<p>This coat has a reinforced D-ring opening in the back. You can attach a standard leash clip directly through the opening without removing the coat. Compatible with all standard back-clip harnesses.</p>"
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Comfortable Fit",
+            "description": "Adjustable velcro belly strap and neck snap ensure a secure, comfortable fit without restricting movement."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "Leash Access",
+            "description": "D-ring opening in the back panel \u2014 clip your lead directly through the coat."
+          }
+        },
+        "block_feature_7": {
+          "type": "feature",
+          "settings": {
+            "name": "Easy to Put On",
+            "description": "Step-in or over-the-head designs with simple velcro closure. On in seconds, off just as fast."
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_9": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_size_chart_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_accordion_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_feature_7",
+        "block_review_8",
+        "block_review_9"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

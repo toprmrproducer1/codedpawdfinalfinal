@@ -1,0 +1,107 @@
+{%- comment -%} PAWD Collection FAQ Section {%- endcomment -%}
+{{ 'pawd-collection.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign eyebrow = section.settings.eyebrow
+  assign title = section.settings.title
+  assign body = section.settings.body
+-%}
+
+<section class="pawd-faq-section">
+  <div class="pawd-faq-inner">
+    <div class="pawd-faq-aside">
+      {%- if eyebrow != blank -%}
+        <div class="pawd-faq-aside-eyebrow">{{ eyebrow }}</div>
+      {%- endif -%}
+      {%- if title != blank -%}
+        <h2 class="pawd-faq-aside-title">{{ title }}</h2>
+      {%- endif -%}
+      {%- if body != blank -%}
+        <p class="pawd-faq-aside-body">{{ body }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="pawd-faq-list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'faq_item' -%}
+          <div class="pawd-faq-item" {{ block.shopify_attributes }}>
+            <div class="pawd-faq-q" data-pawd-faq-toggle>
+              <span class="pawd-faq-q-text">{{ block.settings.question }}</span>
+              <span class="pawd-faq-icon">+</span>
+            </div>
+            <div class="pawd-faq-a">
+              <div class="pawd-faq-a-inner">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  document.querySelectorAll('[data-pawd-faq-toggle]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = this.closest('.pawd-faq-item');
+      var wasOpen = item.classList.contains('open');
+      item.closest('.pawd-faq-list').querySelectorAll('.pawd-faq-item').forEach(function(el){ el.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+})();
+</script>
+
+{%- schema -%}
+{
+  "name": "PAWD FAQ Section",
+  "class": "pawd-faq-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Need Help?"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Description",
+      "default": "<p>Everything you need to know about our collection, from sizing and materials to care and delivery.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Question goes here"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Answer goes here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD FAQ Section"
+    }
+  ]
+}
+{%- endschema -%}

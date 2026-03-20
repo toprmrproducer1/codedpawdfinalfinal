@@ -1,0 +1,89 @@
+{% comment %}
+  PAWD Personalisation CTA — 50/50 split
+  Pixel-accurate conversion from PAWD_Homepage_Mockup_2 v4
+{% endcomment %}
+
+<section class="pers">
+  <div class="pers-l">
+    {% if section.settings.image %}
+      {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;' }}
+    {% else %}
+      <div class="pers-l-ph">Engraved collar macro<br>Brass nameplate · PAWD craftsmanship<br>AI-generated or real product photography</div>
+    {% endif %}
+  </div>
+  <div class="pers-r">
+    <div class="pers-ey">{{ section.settings.eyebrow }}</div>
+    <h2 class="pers-hl">{{ section.settings.heading }}</h2>
+    <p class="pers-body">{{ section.settings.body }}</p>
+    {% if section.settings.button_text != blank %}
+      <a href="{{ section.settings.button_link }}" class="pers-btn">{{ section.settings.button_text }} <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .pers{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+  .pers-l{background:var(--sm);display:flex;align-items:center;justify-content:center;min-height:480px;overflow:hidden;position:relative}
+  .pers-l img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .pers-l-ph{font-family:var(--fd);font-style:italic;color:var(--si);font-size:14px;text-align:center;padding:40px;line-height:1.8}
+  .pers-r{background:var(--ow);display:flex;flex-direction:column;justify-content:center;padding:72px 64px}
+  .pers-ey{font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--st);margin-bottom:18px}
+  .pers-hl{font-family:var(--fd);font-size:clamp(28px,3vw,44px);font-weight:300;line-height:1.18;margin-bottom:14px}.pers-hl em{font-style:italic}
+  .pers-body{font-family:var(--fb);font-size:13px;color:var(--st);line-height:1.88;margin-bottom:28px;max-width:360px}
+  .pers-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ob);color:var(--wh);font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;text-decoration:none;transition:background .3s var(--ease);width:fit-content}
+  .pers-btn:hover{background:var(--gr)}.pers-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+  @media only screen and (max-width:768px){
+    .pers{grid-template-columns:1fr}
+    .pers-l{min-height:320px}
+    .pers-r{padding:48px 24px}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PAWD Personalisation CTA",
+  "tag": "section",
+  "class": "pawd-split-cta-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Left image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Made to order"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading (HTML allowed)",
+      "default": "Made for them,<br><em>by you.</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "Engrave their name. Choose their colourway. Every personalised PAWD collar is made to order — because no two pets are the same, and neither should their collar be."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Design Their Collar"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Personalisation CTA"
+    }
+  ]
+}
+{% endschema %}

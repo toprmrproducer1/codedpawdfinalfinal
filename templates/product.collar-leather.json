@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "Full-grain hide. Hardware that outlasts the leather.",
+        "review_count": "48",
+        "review_rating": "4.9",
+        "features_eyebrow": "Why PAWD",
+        "features_title": "Built to last. Made to be noticed.",
+        "show_material_story": true,
+        "material_headline": "Leather that earns its patina.",
+        "material_body": "We source only full-grain Italian leather \u2014 the highest grade available. Unlike corrected-grain leather that is sanded and painted over imperfections, ours shows the natural texture of the hide. It starts supple, and only gets better with every walk.",
+        "material_link_text": "Read our craft story",
+        "related_title": "You Might Also Like",
+        "related_subtitle": "More from the Walk collection"
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "About This Collar",
+            "label_1": "Material",
+            "value_1": "Full-grain vegetable-tanned leather",
+            "label_2": "Hardware",
+            "value_2": "Stainless steel D-ring & buckle \u2014 no plating, no rust",
+            "label_3": "Closure",
+            "value_3": "Traditional buckle with 5 adjustment holes",
+            "label_4": "Width",
+            "value_4": "20mm (S/M) \u00b7 25mm (L/XL)",
+            "label_5": "Origin",
+            "value_5": "Sourced & crafted to PAWD specification"
+          }
+        },
+        "block_size_chart_1": {
+          "type": "size_chart",
+          "settings": {
+            "title": "Neck Size Guide",
+            "hint": "Measure neck with soft tape. Add 2cm for comfort.",
+            "table_html": "<table class=\"pawd-size-tbl\"><thead><tr><th>Size</th><th>Neck</th><th>Fits breed</th></tr></thead><tbody><tr><td>XS</td><td>20\u201328cm</td><td>Chihuahua, Pomeranian</td></tr><tr><td>S</td><td>28\u201336cm</td><td>French Bulldog, Shih Tzu</td></tr><tr><td>M</td><td>36\u201344cm</td><td>Cavoodle, Cocker Spaniel</td></tr><tr><td>L</td><td>44\u201352cm</td><td>Labrador, Border Collie</td></tr><tr><td>XL</td><td>52\u201360cm</td><td>German Shepherd, Rottweiler</td></tr></tbody></table>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Care Instructions",
+            "content": "<p><strong>Wipe clean</strong> with a damp cloth after muddy walks. <strong>Condition</strong> with leather balm every 3 months to maintain suppleness. Avoid prolonged submersion in water. Do not machine wash.</p>"
+          }
+        },
+        "block_feature_4": {
+          "type": "feature",
+          "settings": {
+            "name": "Full-Grain Leather",
+            "description": "Vegetable-tanned Italian hide \u2014 the highest grade. Shows the natural grain. Develops a rich patina with use."
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Multiple Sizes",
+            "description": "XS through XL \u2014 five sizes with multiple adjustment points. One collar fits every breed."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "Stainless Steel Hardware",
+            "description": "Anti-rust D-ring, buckle, and keeper. Hardware built to outlast the leather it sits on."
+          }
+        },
+        "block_review_7": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_size_chart_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_feature_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_review_7",
+        "block_review_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

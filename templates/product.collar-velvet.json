@@ -1,0 +1,106 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "Velvet softness. Statement hardware. Zero compromise.",
+        "review_count": "29",
+        "review_rating": "4.9",
+        "show_material_story": false,
+        "related_title": "You Might Also Like",
+        "related_subtitle": "More velvet & fabric collars"
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "About This Collar",
+            "label_1": "Material",
+            "value_1": "Plush velvet outer, nylon-webbing inner",
+            "label_2": "Hardware",
+            "value_2": "Rose-gold finish metal buckle & D-ring",
+            "label_3": "Hardware finish",
+            "value_3": "Rose gold / Gold / Silver \u2014 varies by colourway",
+            "label_4": "Closure",
+            "value_4": "Secure clip buckle (no traditional belt holes)",
+            "label_5": "Note",
+            "value_5": "Not suitable for dogs that pull \u2014 use with a harness"
+          }
+        },
+        "block_size_chart_1": {
+          "type": "size_chart",
+          "settings": {
+            "title": "Neck Size Guide",
+            "hint": "Measure at the base of the neck. Add 2cm for comfort.",
+            "table_html": "<table class=\"pawd-size-tbl\"><thead><tr><th>Size</th><th>Neck</th><th>Fits breed</th></tr></thead><tbody><tr><td>XS</td><td>20\u201328cm</td><td>Chihuahua, Pom, Cat</td></tr><tr><td>S</td><td>28\u201336cm</td><td>Shih Tzu, Maltese, Small cat</td></tr><tr><td>M</td><td>36\u201344cm</td><td>Cavoodle, French Bulldog</td></tr><tr><td>L</td><td>44\u201352cm</td><td>Labrador, Border Collie</td></tr><tr><td>XL</td><td>52\u201360cm</td><td>Large breeds</td></tr></tbody></table>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Care Instructions",
+            "content": "<p><strong>Spot clean only.</strong> Do not machine wash \u2014 velvet pile will mat. Use a soft, damp cloth on surface marks. Brush pile gently with a velvet brush to restore after storage.</p>"
+          }
+        },
+        "block_feature_4": {
+          "type": "feature",
+          "settings": {
+            "name": "Plush Velvet",
+            "description": "Soft pile exterior that feels as good as it looks. Gentle against sensitive skin and delicate coats."
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Statement Hardware",
+            "description": "Rose-gold or gold-finish clip buckle and D-ring. Matches the colourway \u2014 chosen for each, not one-size."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "Multiple Colourways",
+            "description": "Midnight Navy to Dusty Rose to Forest Green \u2014 each designed to coordinate beautifully with your pet's coat."
+          }
+        },
+        "block_review_7": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_size_chart_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_feature_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_review_7",
+        "block_review_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

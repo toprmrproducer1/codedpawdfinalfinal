@@ -1,0 +1,126 @@
+{% comment %}
+  PAWD Editorial Section
+  Supports two modes: "statement" (light, centred) or "editorial" (dark, full-width overlay)
+{% endcomment %}
+
+<section class="pawd-editorial pawd-editorial--{{ section.settings.style }}" data-section-id="{{ section.id }}">
+  {%- if section.settings.style == 'statement' -%}
+    {%- comment -%} Brand Statement — light, centred {%- endcomment -%}
+    <div class="bs">
+      <div class="bs-inner">
+        <div class="bs-rule"></div>
+        <h2 class="bs-hl">{{ section.settings.heading }}</h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="bs-sub">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_url }}" class="btn-d" style="margin-top:28px">{{ section.settings.button_text }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+  {%- else -%}
+    {%- comment -%} Editorial — dark, full-width, left-aligned {%- endcomment -%}
+    <div class="editorial">
+      <div class="ed-bg">
+        {%- if section.settings.image != blank -%}
+          <img src="{{ section.settings.image | image_url: width: 2000 }}" alt="{{ section.settings.heading | strip_html }}" loading="lazy" width="2000" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        {%- endif -%}
+      </div>
+      <div class="ed-grad"></div>
+      <div class="ed-text">
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="ed-eyebrow">{{ section.settings.eyebrow }}</div>
+        {%- endif -%}
+        <p class="ed-quote">{{ section.settings.heading }}</p>
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_url }}" class="ed-link">{{ section.settings.button_text }} →</a>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+<style>
+  /* Statement mode */
+  .bs{background:var(--ow);padding:96px 48px;text-align:center}
+  .bs-inner{max-width:620px;margin:0 auto}
+  .bs-rule{width:36px;height:1px;background:var(--fo);margin:0 auto 34px}
+  .bs-hl{font-family:var(--fd);font-size:clamp(28px,4vw,50px);font-weight:300;line-height:1.18;margin-bottom:16px}
+  .bs-hl em{font-style:italic}
+  .bs-sub{font-family:var(--fb);font-size:13px;color:var(--st);line-height:1.88;max-width:450px;margin:0 auto}
+
+  /* Editorial mode */
+  .editorial{height:72vh;background:var(--ch);position:relative;overflow:hidden;display:flex;align-items:center}
+  .ed-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--ob),var(--ch) 50%,var(--ob))}
+  .ed-grad{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.58) 0%,transparent 55%)}
+  .ed-text{position:relative;z-index:5;padding:0 72px;max-width:560px}
+  .ed-eyebrow{font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.36);margin-bottom:18px}
+  .ed-quote{font-family:var(--fd);font-size:clamp(22px,2.8vw,38px);font-weight:300;font-style:italic;color:var(--wh);line-height:1.34;margin-bottom:26px}
+  .ed-link{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:2px;transition:all .25s}
+  .ed-link:hover{color:var(--wh);border-color:rgba(255,255,255,.48)}
+
+  @media only screen and (max-width:768px){
+    .bs{padding:64px 24px}
+    .editorial{height:60vh}
+    .ed-text{padding:0 24px;max-width:100%}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PAWD Editorial",
+  "tag": "section",
+  "class": "pawd-editorial-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {"value":"statement","label":"Brand Statement (light, centred)"},
+        {"value":"editorial","label":"Editorial (dark, full-width)"}
+      ],
+      "default": "statement"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image (editorial mode)"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow (editorial mode)",
+      "default": "The PAWD standard"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading / quote",
+      "default": "Accessories that belong<br><em>in their world.</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading (statement mode)",
+      "default": "Built with the precision of fine accessories. Made for the lives your pets actually live."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Editorial"
+    }
+  ]
+}
+{% endschema %}

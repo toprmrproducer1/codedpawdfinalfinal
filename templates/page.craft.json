@@ -1,0 +1,243 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-craft",
+      "settings": {
+        "hero_eyebrow": "The Standard We Hold Ourselves To",
+        "hero_title": "Our<br><em>Craft.</em>",
+        "hero_subtitle": "The materials we choose. The people who make them. The process that turns raw goods into something your pet wears every day of their life.",
+        "manifesto_eyebrow": "The PAWD Standard",
+        "manifesto_title": "We Don’t Make<br><em>Products.</em><br>We Make Things<br>Worth Keeping.",
+        "manifesto_quote": "“The difference between a good product and a great one is usually invisible — until it isn’t.”",
+        "manifesto_btn_text": "Shop the Collection",
+        "manifesto_btn_url": "/collections/all",
+        "manifesto_p1": "At PAWD, every product starts with one question: would we buy this for our own dog? Not “is it good enough for the market” — is it good enough for us? That question has killed more product ideas than any spreadsheet ever has.",
+        "manifesto_p2": "We’re not a volume business. We don’t make hundreds of SKUs. We make a considered range of products, each chosen because there was a genuine gap — something missing or chronically underserved in the premium pet market.",
+        "manifesto_p3": "Everything we sell has been through at least twelve months of development before it reaches the site. Materials are sourced first, then designs are built around what the material can do — not the reverse.",
+        "manifesto_p4": "That process is slower and more expensive than how most pet accessories are made. We’ve accepted that. Because the alternative — fast, cheap, disposable — is exactly the problem we started PAWD to solve.",
+        "materials_eyebrow": "What We Work With",
+        "materials_title": "Materials Chosen<br>for <em style='font-style:italic;color:rgba(255,255,255,.4)'>Longevity.</em>",
+        "materials_intro": "We don’t specify materials based on cost. We specify them based on what they do over time — how they age, how they perform, what they feel like after two years of daily wear.",
+        "process_eyebrow": "How It’s Made",
+        "process_title": "Twelve Months<br>Before It Reaches You.",
+        "process_intro": "Every product in the PAWD range follows the same development process. It’s not the fastest way to build a range. It is the only way we know how to build one we’re proud of.",
+        "nonneg_eyebrow": "Our Non-Negotiables",
+        "nonneg_title": "The Things We<br>Won’t Compromise On.",
+        "nonneg_intro": "These aren’t aspirations or marketing claims. They’re specific commitments we’ve made about how PAWD products are made and what they’re made from.",
+        "supply_eyebrow": "Supply Chain Transparency",
+        "supply_title": "We Know Everyone<br>Who Makes <em style='font-style:italic'>Our Products.</em><br>By Name.",
+        "supply_p1": "PAWD operates a fully traceable supply chain. We work with nine suppliers across four countries — all visited in person, all in long-term relationships rather than spot orders.",
+        "supply_p2": "We don’t use sourcing agents or intermediaries. When a supplier’s capacity fills up, we wait. We don’t move production to an unknown factory to meet a deadline.",
+        "closing_eyebrow": "The End Result",
+        "closing_title": "Products Made to Be<br><em style='font-style:italic;color:var(--st)'>Worn Every Day.</em><br>For Years.",
+        "closing_sub": "Every decision in the PAWD supply chain — material, supplier, process, hardware — is made with one animal in mind: the one who’ll wear it.",
+        "closing_btn1_text": "Shop the Collection",
+        "closing_btn1_url": "/collections/all",
+        "closing_btn2_text": "Read Our Story",
+        "closing_btn2_url": "/pages/about"
+      },
+      "blocks": {
+        "mat-1": {
+          "type": "material",
+          "settings": {
+            "flag": "🇮🇹",
+            "title": "Full-Grain Leather",
+            "source": "Sourced · Veneto, Italy",
+            "description": "The highest grade of leather — the outermost layer of the hide with the natural grain intact. More expensive, harder to work with, and less uniform than corrected-grain alternatives. The only leather that genuinely improves with age, developing a rich patina unique to each animal.",
+            "used_in": "Used in: Leather Collars, Leads, Harness Sets"
+          }
+        },
+        "mat-2": {
+          "type": "material",
+          "settings": {
+            "flag": "🇵🇹",
+            "title": "Braided Rope & Cotton",
+            "source": "Sourced · Guimarães, Portugal",
+            "description": "Guimarães has been a centre of textile manufacturing since the 12th century. Our rope leads and woven components are made by a family-run mill operating there for four generations. OEKO-TEX certified, machine-washable, colourfast — soft enough for the most sensitive skin.",
+            "used_in": "Used in: Rope Leads, Braided Collars, Harness Webbing"
+          }
+        },
+        "mat-3": {
+          "type": "material",
+          "settings": {
+            "flag": "🇦🇺",
+            "title": "Hand-Thrown Ceramics",
+            "source": "Sourced · Byron Bay, Australia",
+            "description": "Our ceramic bowls are made in small batches by an independent ceramicist in northern NSW. Each piece is thrown on the wheel, bisque-fired, hand-glazed and kiln-fired — no two are identical. Food-safe, lead-free glaze. Each colourway is capped at 200 units.",
+            "used_in": "Used in: Ceramic Bowl Range, Double Bowl Stands"
+          }
+        },
+        "mat-4": {
+          "type": "material",
+          "settings": {
+            "flag": "🇩🇪",
+            "title": "Technical Fabrics",
+            "source": "Sourced · Bavaria, Germany",
+            "description": "Our harnesses, raincoats and reflective components use technical fabrics from a specialist mill in southern Germany. Tested for abrasion resistance, UV stability, moisture management and reflectivity. No compromises where safety intersects with function.",
+            "used_in": "Used in: Mesh Harnesses, Reflective Leads, Raincoats"
+          }
+        },
+        "step-1": {
+          "type": "process_step",
+          "settings": {
+            "number": "01",
+            "title": "Material First",
+            "description": "We source the material before we design the product. We visit suppliers, handle samples across multiple seasons and wear conditions, and decide on material quality before a single sketch is drawn.",
+            "gradient": "g-e",
+            "image_hint": "Material swatches — leather, rope, fabric samples arranged on surface"
+          }
+        },
+        "step-2": {
+          "type": "process_step",
+          "settings": {
+            "number": "02",
+            "title": "Design Around the Material",
+            "description": "The design is built around what the material can do well — its drape, hand-feel, strength, limitations. We don’t force materials into shapes they’re wrong for.",
+            "gradient": "g-f",
+            "image_hint": "Design sketches alongside material samples"
+          }
+        },
+        "step-3": {
+          "type": "process_step",
+          "settings": {
+            "number": "03",
+            "title": "Prototype & Test",
+            "description": "Every product goes through a minimum of four prototype rounds before production. Each prototype is tested on real animals in real conditions.",
+            "gradient": "g-j",
+            "image_hint": "Dog being fitted with prototype harness"
+          }
+        },
+        "step-4": {
+          "type": "process_step",
+          "settings": {
+            "number": "04",
+            "title": "Small-Run Production",
+            "description": "We produce in deliberate small runs — 150–400 units per colourway. Small runs mean quality control at every stage and no excess inventory that forces discounting.",
+            "gradient": "g-k",
+            "image_hint": "Finished products lined up — overhead studio shot"
+          }
+        },
+        "pimg-1": {
+          "type": "process_image",
+          "settings": {
+            "gradient": "g-a",
+            "image_hint": "Leather being cut and hand-stitched — artisan hands, warm workshop light",
+            "caption": "Cutting & Edge Finishing · Veneto"
+          }
+        },
+        "pimg-2": {
+          "type": "process_image",
+          "settings": {
+            "gradient": "g-k",
+            "image_hint": "Solid brass hardware — rings and buckles arranged on leather surface",
+            "caption": "Solid Brass Hardware"
+          }
+        },
+        "pimg-3": {
+          "type": "process_image",
+          "settings": {
+            "gradient": "g-d",
+            "image_hint": "Final quality check — hands holding finished collar",
+            "caption": "Final Quality Check"
+          }
+        },
+        "com-1": {
+          "type": "commitment",
+          "settings": {
+            "title": "No Split Leather, Ever",
+            "description": "We only use full-grain or top-grain leather. Split leather — the lower layer used in budget accessories — looks similar initially but degrades quickly and flakes with wear."
+          }
+        },
+        "com-2": {
+          "type": "commitment",
+          "settings": {
+            "title": "Solid Metal Hardware Only",
+            "description": "Every buckle, ring and clip is cast from solid brass or stainless steel — not plated zinc alloy, which corrodes with moisture and fails under sustained load."
+          }
+        },
+        "com-3": {
+          "type": "commitment",
+          "settings": {
+            "title": "OEKO-TEX Certified Textiles",
+            "description": "Every woven, knitted or fabric component is OEKO-TEX Standard 100 certified — tested and confirmed free from harmful substances including heavy metals, formaldehyde and pesticide residues."
+          }
+        },
+        "com-4": {
+          "type": "commitment",
+          "settings": {
+            "title": "Food-Safe Ceramics, Always",
+            "description": "All ceramic bowls use food-safe, lead-free glaze — kiln-fired at temperatures that permanently bond the glaze. We test every new colourway before release."
+          }
+        },
+        "com-5": {
+          "type": "commitment",
+          "settings": {
+            "title": "Breakaway Safety on All Cat Collars",
+            "description": "Every cat collar uses a safety breakaway buckle that releases under sustained pressure. We will never sell a non-breakaway cat collar. This is a safety commitment, not a feature."
+          }
+        },
+        "com-6": {
+          "type": "commitment",
+          "settings": {
+            "title": "Plastic-Free Packaging",
+            "description": "All products are packaged in recycled card, tissue and cotton ribbon. No plastic mailers, no bubble wrap. We offset carbon on every international shipment."
+          }
+        },
+        "stat-1": {
+          "type": "supply_stat",
+          "settings": {
+            "label": "Active Suppliers",
+            "value": "9 partners"
+          }
+        },
+        "stat-2": {
+          "type": "supply_stat",
+          "settings": {
+            "label": "Countries of Origin",
+            "value": "4 countries"
+          }
+        },
+        "stat-3": {
+          "type": "supply_stat",
+          "settings": {
+            "label": "Supplier Site Visits Per Year",
+            "value": "2× minimum"
+          }
+        },
+        "stat-4": {
+          "type": "supply_stat",
+          "settings": {
+            "label": "Packaging Plastic Content",
+            "value": "Zero"
+          }
+        }
+      },
+      "block_order": [
+        "mat-1",
+        "mat-2",
+        "mat-3",
+        "mat-4",
+        "step-1",
+        "step-2",
+        "step-3",
+        "step-4",
+        "pimg-1",
+        "pimg-2",
+        "pimg-3",
+        "com-1",
+        "com-2",
+        "com-3",
+        "com-4",
+        "com-5",
+        "com-6",
+        "stat-1",
+        "stat-2",
+        "stat-3",
+        "stat-4"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

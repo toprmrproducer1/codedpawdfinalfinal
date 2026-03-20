@@ -1,0 +1,258 @@
+{% comment %}
+  PAWD Resources Hub — Pixel-accurate from PAWD_Resources_1
+  Featured Hero · Latest Guides · Featured Article · Recent Articles · Topics Grid
+{% endcomment %}
+
+{{ 'pawd-resources.css' | asset_url | stylesheet_tag }}
+
+<!-- Resources sub-nav -->
+<div class="res-subnav">
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'subnav_item' -%}
+      <a href="{{ block.settings.url }}" class="res-snav-item{% if forloop.first %} active{% endif %}">{{ block.settings.label }}</a>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+<!-- Hero featured guide -->
+{%- assign guides_blog = blogs[section.settings.guides_blog] -%}
+{%- assign articles_blog = blogs[section.settings.articles_blog] -%}
+{%- if section.settings.hero_article != blank -%}
+  {%- assign hero_article = all_products[section.settings.hero_article] -%}
+{%- endif -%}
+
+{%- if guides_blog.articles.size > 0 -%}
+  {%- assign feat_guide = guides_blog.articles.first -%}
+  <div class="hub-hero">
+    <div class="hub-hero-img g-a">
+      {%- if feat_guide.image -%}
+        {{ feat_guide.image | image_url: width: 1200 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0' }}
+      {%- else -%}
+        <div class="iph"><div class="iph-l">AI Image</div></div>
+      {%- endif -%}
+    </div>
+    <div class="hub-hero-body">
+      <div class="hub-hero-tag-row">
+        {%- for tag in feat_guide.tags -%}
+          <span class="tag tag-{{ tag | handleize }}">{{ tag }}</span>
+        {%- endfor -%}
+      </div>
+      <div class="hub-hero-title">{{ feat_guide.title }}</div>
+      <div class="hub-hero-excerpt">{{ feat_guide.excerpt_or_content | strip_html | truncate: 200 }}</div>
+      <div class="hub-hero-meta">
+        <a href="{{ feat_guide.url }}" class="btn-txt">Read the Guide</a>
+        <span class="read-time">{{ feat_guide.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} min read</span>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+<!-- Latest Guides -->
+{%- if guides_blog.articles.size > 0 -%}
+  <div class="hub-section">
+    <div class="hub-sec-head">
+      <div>
+        <div style="font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--si);margin-bottom:8px">{{ section.settings.guides_eyebrow }}</div>
+        <div class="hub-sec-title">{{ section.settings.guides_title }}</div>
+      </div>
+      <a href="{{ section.settings.guides_url }}" class="btn-txt">See All Guides</a>
+    </div>
+    <div class="card-grid-3">
+      {%- for article in guides_blog.articles limit: 3 offset: 1 -%}
+        <a href="{{ article.url }}" class="card" style="text-decoration:none;color:inherit">
+          <div class="card-img g-c">
+            {%- if article.image -%}
+              {{ article.image | image_url: width: 800 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0' }}
+            {%- else -%}
+              <div class="iph"><div class="iph-l">AI Image</div></div>
+            {%- endif -%}
+          </div>
+          <div class="card-body">
+            <div class="card-tag-row">
+              {%- for tag in article.tags limit: 2 -%}
+                <span class="tag tag-{{ tag | handleize }}">{{ tag }}</span>
+              {%- endfor -%}
+            </div>
+            <div class="card-title">{{ article.title }}</div>
+            <div class="card-excerpt">{{ article.excerpt_or_content | strip_html | truncate: 160 }}</div>
+            <div class="card-meta">
+              <span class="read-time">{{ article.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} min</span>
+              <span class="btn-txt">Read</span>
+            </div>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+<!-- Featured article (wide) -->
+{%- if articles_blog.articles.size > 0 -%}
+  {%- assign feat_article = articles_blog.articles.first -%}
+  <div class="hub-section" style="background:var(--ow)">
+    <div class="hub-sec-head">
+      <div>
+        <div style="font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--si);margin-bottom:8px">{{ section.settings.feat_article_eyebrow }}</div>
+        <div class="hub-sec-title">{{ section.settings.feat_article_title }}</div>
+      </div>
+      <a href="{{ section.settings.articles_url }}" class="btn-txt">See All Articles</a>
+    </div>
+    <a href="{{ feat_article.url }}" class="card-wide" style="text-decoration:none;color:inherit">
+      <div class="card-wide-img g-l">
+        {%- if feat_article.image -%}
+          {{ feat_article.image | image_url: width: 1200 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0' }}
+        {%- else -%}
+          <div class="iph"><div class="iph-l">AI Image</div></div>
+        {%- endif -%}
+      </div>
+      <div class="card-wide-body">
+        <div class="card-tag-row" style="margin-bottom:16px">
+          {%- for tag in feat_article.tags limit: 2 -%}
+            <span class="tag tag-{{ tag | handleize }}">{{ tag }}</span>
+          {%- endfor -%}
+        </div>
+        <div style="font-family:var(--fd);font-size:clamp(24px,3vw,40px);font-weight:300;line-height:1.1;margin-bottom:16px">{{ feat_article.title }}</div>
+        <div style="font-family:var(--fb);font-size:13px;color:var(--st);line-height:1.8;margin-bottom:24px;max-width:420px">{{ feat_article.excerpt_or_content | strip_html | truncate: 220 }}</div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <span class="btn-txt">Read the Article</span>
+          <span class="read-time">{{ feat_article.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} min read</span>
+        </div>
+      </div>
+    </a>
+  </div>
+{%- endif -%}
+
+<!-- Recent Articles (4-up grid) -->
+{%- if articles_blog.articles.size > 1 -%}
+  <div class="hub-section">
+    <div class="hub-sec-head">
+      <div>
+        <div style="font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--si);margin-bottom:8px">{{ section.settings.recent_eyebrow }}</div>
+        <div class="hub-sec-title">{{ section.settings.recent_title }}</div>
+      </div>
+      <a href="{{ section.settings.articles_url }}" class="btn-txt">See All Articles</a>
+    </div>
+    <div class="card-grid-4">
+      {%- for article in articles_blog.articles limit: 4 offset: 1 -%}
+        <a href="{{ article.url }}" class="card" style="text-decoration:none;color:inherit">
+          <div class="card-img g-{{ forloop.index | modulo: 4 | plus: 1 | at_most: 4 }}">
+            {%- if article.image -%}
+              {{ article.image | image_url: width: 600 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0' }}
+            {%- else -%}
+              <div class="iph"><div class="iph-l">AI Image</div></div>
+            {%- endif -%}
+          </div>
+          <div class="card-body">
+            <div class="card-tag-row">
+              {%- for tag in article.tags limit: 1 -%}
+                <span class="tag tag-{{ tag | handleize }}">{{ tag }}</span>
+              {%- endfor -%}
+            </div>
+            <div class="card-title">{{ article.title }}</div>
+            <div class="card-excerpt">{{ article.excerpt_or_content | strip_html | truncate: 140 }}</div>
+            <div class="card-meta">
+              <span class="read-time">{{ article.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} min</span>
+              <span class="btn-txt">Read</span>
+            </div>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+<!-- Topics Grid -->
+<div style="background:var(--ob);padding:72px 80px">
+  <div style="display:grid;grid-template-columns:1fr 3fr;gap:80px;align-items:center">
+    <div>
+      <div style="font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:12px">{{ section.settings.topics_eyebrow }}</div>
+      <div style="font-family:var(--fd);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--wh);line-height:1.1">{{ section.settings.topics_title }}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+      {%- assign topic_count = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'topic_card' -%}
+          {%- assign topic_count = topic_count | plus: 1 -%}
+          <a href="{{ block.settings.url }}" {{ block.shopify_attributes }} style="padding:32px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);cursor:pointer;transition:background .2s;text-decoration:none;display:block" onmouseover="this.style.background='rgba(255,255,255,.08)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">
+            <div style="font-family:var(--fd);font-size:36px;font-weight:300;color:rgba(255,255,255,.15);margin-bottom:16px">{{ topic_count | prepend: '0' | slice: -2, 2 }}</div>
+            <div style="font-family:var(--fd);font-size:20px;font-weight:300;color:var(--wh);margin-bottom:8px">{{ block.settings.title }}</div>
+            <div style="font-family:var(--fb);font-size:12px;color:rgba(255,255,255,.35);line-height:1.7">{{ block.settings.description }}</div>
+            <div style="font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:16px">{{ block.settings.count_text }}</div>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PAWD Resources Hub",
+  "tag": "section",
+  "class": "pawd-resources-hub-section",
+  "settings": [
+    { "type": "header", "content": "Blog Sources" },
+    { "type": "text", "id": "guides_blog", "label": "Guides Blog Handle", "default": "guides" },
+    { "type": "text", "id": "articles_blog", "label": "Articles Blog Handle", "default": "journal" },
+
+    { "type": "header", "content": "Guides Section" },
+    { "type": "text", "id": "guides_eyebrow", "label": "Eyebrow", "default": "In-Depth" },
+    { "type": "html", "id": "guides_title", "label": "Title", "default": "Latest <em>Guides</em>" },
+    { "type": "url", "id": "guides_url", "label": "See All Guides Link" },
+
+    { "type": "header", "content": "Featured Article" },
+    { "type": "text", "id": "feat_article_eyebrow", "label": "Eyebrow", "default": "From the PAWD Journal" },
+    { "type": "html", "id": "feat_article_title", "label": "Title", "default": "Featured <em>Article</em>" },
+    { "type": "url", "id": "articles_url", "label": "See All Articles Link" },
+
+    { "type": "header", "content": "Recent Articles" },
+    { "type": "text", "id": "recent_eyebrow", "label": "Eyebrow", "default": "Journal" },
+    { "type": "html", "id": "recent_title", "label": "Title", "default": "Recent <em>Articles</em>" },
+
+    { "type": "header", "content": "Topics Grid" },
+    { "type": "text", "id": "topics_eyebrow", "label": "Eyebrow", "default": "Browse by Topic" },
+    { "type": "html", "id": "topics_title", "label": "Title", "default": "Find What<br>You Need." }
+  ],
+  "blocks": [
+    {
+      "type": "subnav_item",
+      "name": "Sub-nav Item",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "All" },
+        { "type": "url", "id": "url", "label": "Link" }
+      ]
+    },
+    {
+      "type": "topic_card",
+      "name": "Topic Card",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Sizing & Fit" },
+        { "type": "text", "id": "description", "label": "Description", "default": "Collar sizing, harness fit, breed guides." },
+        { "type": "text", "id": "count_text", "label": "Count Text", "default": "4 Guides" },
+        { "type": "url", "id": "url", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Resources Hub",
+      "blocks": [
+        { "type": "subnav_item", "settings": { "label": "All" } },
+        { "type": "subnav_item", "settings": { "label": "Guides" } },
+        { "type": "subnav_item", "settings": { "label": "Articles" } },
+        { "type": "subnav_item", "settings": { "label": "Dog Care" } },
+        { "type": "subnav_item", "settings": { "label": "Cat Care" } },
+        { "type": "subnav_item", "settings": { "label": "Sizing & Fit" } },
+        { "type": "subnav_item", "settings": { "label": "Materials" } },
+        { "type": "subnav_item", "settings": { "label": "Our Brand" } },
+        { "type": "topic_card", "settings": { "title": "Sizing & Fit", "description": "Collar sizing, harness fit, breed guides, the two-finger rule.", "count_text": "4 Guides" } },
+        { "type": "topic_card", "settings": { "title": "Product Care", "description": "Leather conditioning, washing, drying, storage, patina.", "count_text": "3 Guides" } },
+        { "type": "topic_card", "settings": { "title": "Training & Behaviour", "description": "Introducing collars, harness training, nervous dogs.", "count_text": "2 Guides" } },
+        { "type": "topic_card", "settings": { "title": "Materials & Craft", "description": "Leather grades, OEKO-TEX, what full-grain actually means.", "count_text": "5 Articles" } },
+        { "type": "topic_card", "settings": { "title": "Our Brand Story", "description": "Supply chain, founding story, our philosophy, the team.", "count_text": "4 Articles" } },
+        { "type": "topic_card", "settings": { "title": "Cat Guides", "description": "Collar fit, breakaway safety, harness introduction for cats.", "count_text": "3 Guides" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

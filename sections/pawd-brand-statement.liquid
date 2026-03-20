@@ -1,0 +1,51 @@
+{% comment %}
+  PAWD Brand Statement — centered text on --ow background
+  Pixel-accurate conversion from PAWD_Homepage_Mockup_2 v4
+{% endcomment %}
+
+<section class="bs">
+  <div class="bs-inner">
+    <div class="bs-rule"></div>
+    <h2 class="bs-hl">{{ section.settings.heading }}</h2>
+    <p class="bs-sub">{{ section.settings.subheading }}</p>
+  </div>
+</section>
+
+<style>
+  .bs{background:var(--ow);padding:96px 48px;text-align:center}
+  .bs-inner{max-width:620px;margin:0 auto}
+  .bs-rule{width:36px;height:1px;background:var(--fo);margin:0 auto 34px}
+  .bs-hl{font-family:var(--fd);font-size:clamp(28px,4vw,50px);font-weight:300;line-height:1.18;margin-bottom:16px}
+  .bs-hl em{font-style:italic}
+  .bs-sub{font-family:var(--fb);font-size:13px;color:var(--st);line-height:1.88;max-width:450px;margin:0 auto}
+  @media only screen and (max-width:768px){
+    .bs{padding:64px 24px}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PAWD Brand Statement",
+  "tag": "section",
+  "class": "pawd-brand-statement-section",
+  "settings": [
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading (HTML allowed for line breaks & italics)",
+      "default": "Accessories that belong<br><em>in their world.</em>"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Built with the precision of fine accessories. Made for the lives your pets actually live."
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Brand Statement"
+    }
+  ]
+}
+{% endschema %}

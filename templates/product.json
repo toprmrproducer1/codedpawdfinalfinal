@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "pawd_product_main": {
+      "type": "pawd-product-main",
+      "settings": {}
+    }
+  },
+  "order": [
+    "pawd_product_main"
+  ]
+}

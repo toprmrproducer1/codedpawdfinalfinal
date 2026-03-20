@@ -1,0 +1,112 @@
+{% comment %}
+  PAWD Reviews — 2-column review cards with star scores
+  Pixel-accurate conversion from PAWD_Homepage_Mockup_2 v4
+{% endcomment %}
+
+<section class="reviews">
+  <div class="rv-inner">
+    <div class="rv-head">
+      <h2 class="rv-title">{{ section.settings.heading }}</h2>
+      <div class="rv-score">★★★★★ &nbsp; {{ section.settings.score_text }}</div>
+    </div>
+    <div class="rv-grid">
+      {% for block in section.blocks %}
+        <div class="rv-card" {{ block.shopify_attributes }}>
+          <div class="rv-mark">"</div>
+          <div class="rv-stars">★★★★★</div>
+          <p class="rv-text">{{ block.settings.text }}</p>
+          <div class="rv-name">{{ block.settings.name }}</div>
+          <div class="rv-loc">{{ block.settings.location }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews{background:var(--ow);padding:80px 48px}
+  .rv-inner{max-width:1100px;margin:0 auto}.rv-head{text-align:center;margin-bottom:48px}
+  .rv-title{font-family:var(--fd);font-size:clamp(26px,3.5vw,40px);font-weight:300;margin-bottom:6px}
+  .rv-score{font-family:var(--fb);font-size:12px;color:var(--st);letter-spacing:.06em}
+  .rv-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--fo)}
+  .rv-card{background:var(--wh);padding:38px 34px}
+  .rv-mark{font-family:var(--fd);font-size:78px;font-weight:300;font-style:italic;color:var(--sm);line-height:.7;margin-bottom:12px}
+  .rv-stars{font-size:11px;color:var(--ch);letter-spacing:3px;margin-bottom:14px}
+  .rv-text{font-family:var(--fb);font-size:13px;color:var(--gr);line-height:1.82;margin-bottom:22px}
+  .rv-name{font-family:var(--fd);font-size:16px;font-weight:600}.rv-loc{font-family:var(--fb);font-size:11px;color:var(--st);margin-top:3px}
+  @media only screen and (max-width:768px){
+    .reviews{padding:56px 24px}
+    .rv-grid{grid-template-columns:1fr}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PAWD Reviews",
+  "tag": "section",
+  "class": "pawd-reviews-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What They're Saying"
+    },
+    {
+      "type": "text",
+      "id": "score_text",
+      "label": "Score text",
+      "default": "4.9 from 200+ reviews"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review text",
+          "default": "I've never seen my dog get this excited. The quality feels incredible — super durable and looks beautiful."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Reviewer name",
+          "default": "Olivia M."
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location",
+          "default": "Brisbane, QLD"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible — super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "name": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "text": "I ordered a personalised collar for my little Diana and it's the prettiest I've ever seen. The stitching, the softness, the engraving — all of it feels so intentional. Worth every cent.",
+            "name": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

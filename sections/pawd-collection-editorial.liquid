@@ -1,0 +1,84 @@
+{%- comment -%} PAWD Collection Editorial Strip {%- endcomment -%}
+{{ 'pawd-collection.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign image = section.settings.image
+  assign eyebrow = section.settings.eyebrow
+  assign title = section.settings.title
+  assign body = section.settings.body
+  assign btn_text = section.settings.button_text
+  assign btn_url = section.settings.button_url
+-%}
+
+<div class="pawd-ed-strip">
+  <div class="pawd-ed-strip-img">
+    {%- if image != blank -%}
+      {%- render 'image', image: image, width: 2000, sizes: '100vw', cover: true -%}
+    {%- else -%}
+      <div class="pawd-ed-strip-ph">Editorial Image</div>
+    {%- endif -%}
+  </div>
+  <div class="pawd-ed-strip-overlay"></div>
+  <div class="pawd-ed-strip-content">
+    {%- if eyebrow != blank -%}
+      <div class="pawd-ed-strip-eyebrow">{{ eyebrow }}</div>
+    {%- endif -%}
+    {%- if title != blank -%}
+      <h2 class="pawd-ed-strip-title">{{ title }}</h2>
+    {%- endif -%}
+    {%- if body != blank -%}
+      <p class="pawd-ed-strip-body">{{ body }}</p>
+    {%- endif -%}
+    {%- if btn_text != blank -%}
+      <a href="{{ btn_url }}" class="pawd-ed-strip-btn">{{ btn_text }}</a>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- schema -%}
+{
+  "name": "PAWD Editorial Strip",
+  "class": "pawd-ed-strip-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "The PAWD Story"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Designed for the Modern Pet"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "Every PAWD product is thoughtfully designed for modern pets and their humans."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Explore Our Story"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Editorial Strip"
+    }
+  ]
+}
+{%- endschema -%}

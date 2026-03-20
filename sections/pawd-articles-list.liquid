@@ -1,0 +1,208 @@
+{% comment %}
+  PAWD Articles Listing (Journal) — Pixel-accurate from PAWD_Resources_1
+  Header + search · Category bar · Hero article pair · 3-col grid · Pagination
+  This is a BLOG template section — it gets the `blog` object automatically
+{% endcomment %}
+
+{{ 'pawd-resources.css' | asset_url | stylesheet_tag }}
+
+{%- assign current_tag = '' -%}
+
+<!-- Sub-nav -->
+<div class="res-subnav">
+  <a href="{{ section.settings.resources_url | default: '/pages/resources' }}" class="res-snav-item">&#8592; All Resources</a>
+  <a href="{{ blog.url }}" class="res-snav-item{% unless current_tag != blank %} active{% endunless %}">All Articles</a>
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'subnav_tag' -%}
+      {%- assign tag_handle = block.settings.tag | handleize -%}
+      <a href="{{ blog.url }}/tagged/{{ tag_handle }}" class="res-snav-item{% if current_tag == tag_handle %} active{% endif %}">{{ block.settings.tag }}</a>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+<!-- Header with intro + search -->
+<div class="articles-header">
+  <div>
+    <div class="pg-breadcrumb">
+      <a href="{{ section.settings.resources_url | default: '/pages/resources' }}">Resources</a><span>/</span><span>Articles</span>
+    </div>
+    <div style="font-family:var(--fd);font-size:clamp(44px,6vw,80px);font-weight:300;line-height:.95;letter-spacing:-.01em">{{ section.settings.title }}</div>
+  </div>
+  <div style="padding-bottom:8px">
+    <div style="font-family:var(--fb);font-size:13.5px;color:var(--st);line-height:1.85;margin-bottom:28px">{{ section.settings.subtitle }}</div>
+    <form action="{{ blog.url }}" method="get" style="display:flex;gap:8px">
+      <input name="q" type="text" style="flex:1;border:1px solid var(--fo);padding:12px 16px;font-family:var(--fb);font-size:13px;outline:none;color:var(--ob)" placeholder="Search articles...">
+      <button type="submit" class="btn-d" style="font-size:10px;padding:12px 20px">Search</button>
+    </form>
+  </div>
+</div>
+
+<!-- Category bar -->
+<div class="cat-bar">
+  <span class="cat-bar-label">Filter:</span>
+  <a href="{{ blog.url }}" class="cat-bar-item{% unless current_tag != blank %} active{% endunless %}">All</a>
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'category_filter' -%}
+      {%- assign tag_handle = block.settings.tag | handleize -%}
+      <a href="{{ blog.url }}/tagged/{{ tag_handle }}" class="cat-bar-item{% if current_tag == tag_handle %} active{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+{%- if blog.articles.size > 0 -%}
+
+  <!-- Hero article pair -->
+  <div class="articles-grid-hero">
+    {%- assign hero1 = blog.articles[0] -%}
+    <a href="{{ hero1.url }}" class="card" style="border:none;text-decoration:none;color:inherit">
+      <div class="card-img g-l" style="aspect-ratio:unset;min-height:480px">
+        {%- if hero1.image -%}
+          {{ hero1.image | image_url: width: 1200 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0' }}
+        {%- else -%}
+          <div class="iph"><div class="iph-l">AI Image</div></div>
+        {%- endif -%}
+      </div>
+      <div class="card-body" style="padding:36px 40px 40px;border-top:3px solid var(--ob)">
+        <div class="card-tag-row">
+          {%- for tag in hero1.tags limit: 2 -%}
+            <span class="tag tag-{{ tag | handleize }}">{{ tag }}</span>
+          {%- endfor -%}
+        </div>
+        <div style="font-family:var(--fd);font-size:clamp(22px,2.8vw,36px);font-weight:300;line-height:1.1;margin-bottom:14px">{{ hero1.title }}</div>
+        <div class="card-excerpt" style="font-size:13.5px">{{ hero1.excerpt_or_content | strip_html | truncate: 220 }}</div>
+        <div class="card-meta">
+          <span class="card-author">By {{ hero1.author }} · {{ hero1.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} min read</span>
+          <span class="btn-txt">Read</span>
+        </div>
+      </div>
+    </a>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      {%- for i in (1..2) -%}
+        {%- assign hero_article = blog.articles[i] -%}
+        {%- if hero_article -%}
+          <a href="{{ hero_article.url }}" class="card" style="border:none;flex:1;text-decoration:none;color:inherit">
+            <div class="card-img g-{{ i | plus: 11 | modulo: 13 }}">
+              {%- if hero_article.image -%}
+                {{ hero_article.image | image_url: width: 800 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0' }}
+              {%- else -%}
+                <div class="iph"><div class="iph-l">AI Image</div></div>
+              {%- endif -%}
+            </div>
+            <div class="card-body">
+              <div class="card-tag-row">
+                {%- for tag in hero_article.tags limit: 1 -%}
+                  <span class="tag tag-{{ tag | handleize }}">{{ tag }}</span>
+                {%- endfor -%}
+              </div>
+              <div class="card-title">{{ hero_article.title }}</div>
+              <div class="card-meta">
+                <span class="card-author">By {{ hero_article.author }} · {{ hero_article.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} min</span>
+                <span class="btn-txt">Read</span>
+              </div>
+            </div>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <!-- Section label -->
+  <div style="padding:44px 80px 28px;border-top:1px solid var(--sm)">
+    <div style="font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--si)">All Articles</div>
+  </div>
+
+  <!-- 3-up grid -->
+  {%- assign gradient_classes = 'h,b,k,c,f,d,g,e,j,l,m,a' | split: ',' -%}
+  <div class="articles-grid-main" style="padding:0 80px 2px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+    {%- for article in blog.articles offset: 3 -%}
+      {%- assign gi = forloop.index0 | modulo: 12 -%}
+      <a href="{{ article.url }}" class="card" style="text-decoration:none;color:inherit">
+        <div class="card-img g-{{ gradient_classes[gi] }}">
+          {%- if article.image -%}
+            {{ article.image | image_url: width: 600 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0' }}
+          {%- else -%}
+            <div class="iph"><div class="iph-l">AI Image</div></div>
+          {%- endif -%}
+        </div>
+        <div class="card-body">
+          <div class="card-tag-row">
+            {%- for tag in article.tags limit: 1 -%}
+              <span class="tag tag-{{ tag | handleize }}">{{ tag }}</span>
+            {%- endfor -%}
+          </div>
+          <div class="card-title">{{ article.title }}</div>
+          <div class="card-excerpt">{{ article.excerpt_or_content | strip_html | truncate: 160 }}</div>
+          <div class="card-meta">
+            <span class="card-author">By {{ article.author }} · {{ article.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} min</span>
+            <span class="btn-txt">Read</span>
+          </div>
+        </div>
+      </a>
+    {%- endfor -%}
+  </div>
+
+  <!-- Pagination -->
+  {%- if blog.articles.size > 9 -%}
+    <div style="text-align:center;padding:48px 80px">
+      {%- if paginate.pages > 1 -%}
+        {% paginate blog.articles by 12 %}
+          <div style="display:flex;gap:8px;justify-content:center">
+            {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" class="btn-g">&#8592; Previous</a>{%- endif -%}
+            {%- if paginate.next -%}<a href="{{ paginate.next.url }}" class="btn-g">Load More Articles</a>{%- endif -%}
+          </div>
+        {% endpaginate %}
+      {%- else -%}
+        <button class="btn-g" disabled style="opacity:.4">All Articles Loaded</button>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+{%- else -%}
+  <div style="padding:80px;text-align:center;font-family:var(--fb);font-size:14px;color:var(--st)">No articles published yet.</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "PAWD Articles Listing",
+  "tag": "section",
+  "class": "pawd-articles-list-section",
+  "settings": [
+    { "type": "url", "id": "resources_url", "label": "Resources Hub URL" },
+    { "type": "html", "id": "title", "label": "Title", "default": "The<br>PAWD<br><em>Journal.</em>" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Stories from our supply chain, the thinking behind our products, and honest writing about what it means to make things properly. No content marketing. Just things worth reading." }
+  ],
+  "blocks": [
+    {
+      "type": "subnav_tag",
+      "name": "Sub-nav Tag",
+      "settings": [
+        { "type": "text", "id": "tag", "label": "Tag", "default": "Materials & Craft" }
+      ]
+    },
+    {
+      "type": "category_filter",
+      "name": "Category Filter",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Materials" },
+        { "type": "text", "id": "tag", "label": "Tag Handle", "default": "materials" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Articles Listing",
+      "blocks": [
+        { "type": "subnav_tag", "settings": { "tag": "Materials & Craft" } },
+        { "type": "subnav_tag", "settings": { "tag": "Brand Story" } },
+        { "type": "subnav_tag", "settings": { "tag": "Supply Chain" } },
+        { "type": "subnav_tag", "settings": { "tag": "Pet Lifestyle" } },
+        { "type": "category_filter", "settings": { "label": "Materials", "tag": "materials" } },
+        { "type": "category_filter", "settings": { "label": "Supply Chain", "tag": "supply-chain" } },
+        { "type": "category_filter", "settings": { "label": "Brand Story", "tag": "brand-story" } },
+        { "type": "category_filter", "settings": { "label": "Pet Lifestyle", "tag": "pet-lifestyle" } },
+        { "type": "category_filter", "settings": { "label": "Sustainability", "tag": "sustainability" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

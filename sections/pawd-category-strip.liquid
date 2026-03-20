@@ -1,0 +1,108 @@
+{% comment %}
+  PAWD Category Strip — Shop by Animal (3-panel)
+  Pixel-accurate conversion from PAWD_Homepage_Mockup_2 v4
+{% endcomment %}
+
+<section class="animals">
+  {% for block in section.blocks %}
+    <a href="{{ block.settings.link }}" class="ap" {{ block.shopify_attributes }}>
+      <div class="ap-img">
+        {% if block.settings.image %}
+          {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;' }}
+        {% else %}
+          <div>
+            <span class="ap-ph-label">AI Lifestyle · {{ block.settings.title }}</span>
+            <div class="ap-ph-desc">{{ block.settings.placeholder_text | default: 'Upload an image in the theme editor' }}</div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="ap-ov"></div>
+      <div class="ap-content">
+        <div class="ap-title">{{ block.settings.title }}</div>
+        <div class="ap-sub">{{ block.settings.subtitle }}</div>
+        <div class="ap-cta">{{ block.settings.cta_text }} <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </a>
+  {% endfor %}
+</section>
+
+<style>
+  .animals{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .ap{position:relative;height:56vh;min-height:360px;overflow:hidden;cursor:pointer;background:var(--ch);text-decoration:none}
+  .ap:not(:last-child){border-right:1px solid #0d0d0d}
+  .ap-img{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:transform .6s var(--ease)}.ap:hover .ap-img{transform:scale(1.04)}
+  .ap-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ap-ph-label{font-family:var(--fb);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.13);margin-bottom:8px;display:block;text-align:center}
+  .ap-ph-desc{font-family:var(--fd);font-size:13px;font-style:italic;color:rgba(255,255,255,.15);line-height:1.7;text-align:center;padding:24px}
+  .ap-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.74) 0%,rgba(0,0,0,.07) 52%);transition:opacity .3s var(--ease)}.ap:hover .ap-ov{background:linear-gradient(to top,rgba(0,0,0,.8) 0%,rgba(0,0,0,.18) 52%)}
+  .ap-content{position:absolute;bottom:0;left:0;padding:30px 34px}
+  .ap-title{font-family:var(--fd);font-size:clamp(30px,3.4vw,46px);font-weight:300;color:var(--wh);margin-bottom:5px;line-height:1}
+  .ap-sub{font-family:var(--fd);font-size:14px;font-style:italic;color:rgba(255,255,255,.5);margin-bottom:15px}
+  .ap-cta{font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.48);opacity:0;transform:translateY(8px);transition:all .28s var(--ease);display:flex;align-items:center;gap:6px}
+  .ap-cta svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2}
+  .ap:hover .ap-cta{opacity:1;transform:translateY(0)}
+  @media only screen and (max-width:768px){
+    .animals{grid-template-columns:1fr}
+    .ap{height:42vh;min-height:280px}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PAWD Category Strip",
+  "tag": "section",
+  "class": "pawd-category-strip-section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "panel",
+      "name": "Panel",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Dogs"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Collars, harnesses, leads & more"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA text",
+          "default": "Shop Dogs"
+        },
+        {
+          "type": "text",
+          "id": "placeholder_text",
+          "label": "Placeholder description (no image)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Category Strip",
+      "blocks": [
+        { "type": "panel", "settings": { "title": "Dogs", "subtitle": "Collars, harnesses, leads & more", "cta_text": "Shop Dogs" } },
+        { "type": "panel", "settings": { "title": "Cats", "subtitle": "Collars, toys, grooming & more", "cta_text": "Shop Cats" } },
+        { "type": "panel", "settings": { "title": "Personalise", "subtitle": "Engraved collars & custom sets", "cta_text": "Design Theirs" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

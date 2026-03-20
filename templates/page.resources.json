@@ -1,0 +1,149 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": false,
+        "show_content": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "resources_hub": {
+      "type": "pawd-resources-hub",
+      "settings": {
+        "guides_blog": "guides",
+        "articles_blog": "journal",
+        "guides_eyebrow": "In-Depth",
+        "guides_title": "Latest <em>Guides</em>",
+        "guides_url": "/pages/guides",
+        "feat_article_eyebrow": "From the PAWD Journal",
+        "feat_article_title": "Featured <em>Article</em>",
+        "articles_url": "/blogs/journal",
+        "recent_eyebrow": "Journal",
+        "recent_title": "Recent <em>Articles</em>",
+        "topics_eyebrow": "Browse by Topic",
+        "topics_title": "Find What<br>You Need."
+      },
+      "blocks": {
+        "sn1": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "All"
+          }
+        },
+        "sn2": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Guides"
+          }
+        },
+        "sn3": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Articles"
+          }
+        },
+        "sn4": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Dog Care"
+          }
+        },
+        "sn5": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Cat Care"
+          }
+        },
+        "sn6": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Sizing & Fit"
+          }
+        },
+        "sn7": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Materials"
+          }
+        },
+        "sn8": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Our Brand"
+          }
+        },
+        "tc1": {
+          "type": "topic_card",
+          "settings": {
+            "title": "Sizing & Fit",
+            "description": "Collar sizing, harness fit, breed guides, the two-finger rule.",
+            "count_text": "4 Guides"
+          }
+        },
+        "tc2": {
+          "type": "topic_card",
+          "settings": {
+            "title": "Product Care",
+            "description": "Leather conditioning, washing, drying, storage, patina.",
+            "count_text": "3 Guides"
+          }
+        },
+        "tc3": {
+          "type": "topic_card",
+          "settings": {
+            "title": "Training & Behaviour",
+            "description": "Introducing collars, harness training, nervous dogs.",
+            "count_text": "2 Guides"
+          }
+        },
+        "tc4": {
+          "type": "topic_card",
+          "settings": {
+            "title": "Materials & Craft",
+            "description": "Leather grades, OEKO-TEX, what full-grain actually means.",
+            "count_text": "5 Articles"
+          }
+        },
+        "tc5": {
+          "type": "topic_card",
+          "settings": {
+            "title": "Our Brand Story",
+            "description": "Supply chain, founding story, our philosophy, the team.",
+            "count_text": "4 Articles"
+          }
+        },
+        "tc6": {
+          "type": "topic_card",
+          "settings": {
+            "title": "Cat Guides",
+            "description": "Collar fit, breakaway safety, harness introduction for cats.",
+            "count_text": "3 Guides"
+          }
+        }
+      },
+      "block_order": [
+        "sn1",
+        "sn2",
+        "sn3",
+        "sn4",
+        "sn5",
+        "sn6",
+        "sn7",
+        "sn8",
+        "tc1",
+        "tc2",
+        "tc3",
+        "tc4",
+        "tc5",
+        "tc6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "resources_hub"
+  ]
+}

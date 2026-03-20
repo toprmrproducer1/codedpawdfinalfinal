@@ -1,0 +1,166 @@
+{% comment %}
+  PAWD FAQ — Pixel-accurate from PAWD_Info_Pages_2
+  9 categories, 38 items, accordion JS
+{% endcomment %}
+
+<style>
+.faq-content{padding:52px 80px 80px}
+.faq-search-bar{display:flex;gap:0;margin-bottom:52px;border:1px solid var(--fo)}
+.faq-search-input{flex:1;border:none;padding:14px 20px;font-family:var(--fb);font-size:13px;outline:none;color:var(--ob)}
+.faq-search-input::placeholder{color:var(--si)}
+.faq-search-btn{background:var(--ob);color:var(--wh);border:none;padding:14px 24px;font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.faq-cat{margin-bottom:64px}
+.faq-cat-eyebrow{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--si);margin-bottom:10px}
+.faq-item{border-bottom:1px solid var(--sm)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 0;cursor:pointer;gap:20px;user-select:none}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.faq-item.open .faq-a{max-height:600px}
+.faq-a-inner{padding:0 0 20px}
+.faq-a-inner p{font-family:var(--fb);font-size:13px;color:var(--gr);line-height:1.8}
+.faq-a-inner p+p{margin-top:10px}
+.faq-a-inner a{color:var(--ob)}
+.faq-a-tag{display:inline-block;font-family:var(--fb);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:var(--ow);color:var(--st);padding:4px 10px;margin-bottom:10px}
+</style>
+
+<!-- Hero -->
+<div class="pg-hero">
+  <div class="pg-breadcrumb"><a href="/">Home</a><span>/</span><span>FAQ</span></div>
+  <div class="pg-hero-eyebrow">{{ section.settings.hero_eyebrow }}</div>
+  <div class="pg-hero-title">{{ section.settings.hero_title }}</div>
+  <div class="pg-hero-sub">{{ section.settings.hero_subtitle }}</div>
+</div>
+
+<div class="faq-layout">
+  <!-- Sidebar Nav -->
+  <div class="faq-nav">
+    <div class="faq-nav-title">{{ section.settings.nav_title }}</div>
+    {% for block in section.blocks %}
+      {% if block.type == 'faq_category' %}
+        <div class="faq-nav-item{% if forloop.first %} active{% endif %}" onclick="scrollToFaqCat('faq-cat-{{ block.id }}', this)">{{ block.settings.title }}</div>
+      {% endif %}
+    {% endfor %}
+    <!-- Help Card -->
+    <div style="margin-top:32px;padding:20px;background:var(--ow);border:1px solid var(--sm)">
+      <div style="font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--si);margin-bottom:8px">{{ section.settings.help_eyebrow }}</div>
+      <div style="font-family:var(--fb);font-size:12px;color:var(--st);line-height:1.6;margin-bottom:12px">{{ section.settings.help_text }}</div>
+      <a href="{{ section.settings.help_url }}" style="font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ob);text-decoration:none;border-bottom:1px solid var(--ob)">{{ section.settings.help_link_text }}</a>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="faq-content">
+    <div class="faq-search-bar">
+      <input class="faq-search-input" type="text" placeholder="{{ section.settings.search_placeholder }}">
+      <button class="faq-search-btn">Search</button>
+    </div>
+
+    {% assign in_list = false %}
+    {% for block in section.blocks %}
+      {% if block.type == 'faq_category' %}
+        {% if in_list %}</div></div>{% endif %}
+        <div class="faq-cat" id="faq-cat-{{ block.id }}" {{ block.shopify_attributes }}>
+          <div class="faq-cat-eyebrow">{{ block.settings.eyebrow }}</div>
+          <div class="faq-cat-title">{{ block.settings.title }}</div>
+          <div class="faq-list">
+        {% assign in_list = true %}
+      {% elsif block.type == 'faq_item' %}
+        <div class="faq-item{% if block.settings.open_default %} open{% endif %}" {{ block.shopify_attributes }}>
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-text">{{ block.settings.question }}</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            {% if block.settings.tag != blank %}<div class="faq-a-tag">{{ block.settings.tag }}</div>{% endif %}
+            {{ block.settings.answer }}
+          </div></div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% if in_list %}</div></div>{% endif %}
+  </div>
+</div>
+
+<script>
+(function(){
+  function toggleFaq(el){
+    var item=el.closest('.faq-item');
+    var isOpen=item.classList.contains('open');
+    var list=item.closest('.faq-list');
+    list.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+    if(!isOpen) item.classList.add('open');
+  }
+  function scrollToFaqCat(id,navEl){
+    var el=document.getElementById(id);
+    if(el) el.scrollIntoView({behavior:'smooth'});
+    document.querySelectorAll('.faq-nav-item').forEach(function(n){n.classList.remove('active')});
+    if(navEl) navEl.classList.add('active');
+  }
+  window.toggleFaq=toggleFaq;
+  window.scrollToFaqCat=scrollToFaqCat;
+
+  /* Simple search filter */
+  var input=document.querySelector('.faq-search-input');
+  if(input){
+    input.addEventListener('input',function(){
+      var q=this.value.toLowerCase();
+      document.querySelectorAll('.faq-item').forEach(function(item){
+        var text=item.textContent.toLowerCase();
+        item.style.display=(!q||text.indexOf(q)>-1)?'':'none';
+      });
+    });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "PAWD FAQ",
+  "tag": "section",
+  "class": "pawd-faq-section",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Frequently Asked Questions" },
+    { "type": "html", "id": "hero_title", "label": "Title (HTML)", "default": "Everything<br><em>Answered.</em>" },
+    { "type": "html", "id": "hero_subtitle", "label": "Subtitle (HTML)", "default": "Shipping, returns, sizing, personalisation, materials, and more. If you can't find what you're looking for, <a href='/pages/contact' style='color:var(--ob)'>contact us directly</a> and we'll respond within 4 business hours." },
+    { "type": "header", "content": "Sidebar" },
+    { "type": "text", "id": "nav_title", "label": "Nav Title", "default": "Jump to Section" },
+    { "type": "text", "id": "help_eyebrow", "label": "Help Card Eyebrow", "default": "Still need help?" },
+    { "type": "text", "id": "help_text", "label": "Help Card Text", "default": "Contact our team directly for personalised support." },
+    { "type": "url", "id": "help_url", "label": "Help Link URL" },
+    { "type": "text", "id": "help_link_text", "label": "Help Link Text", "default": "Contact Us →" },
+    { "type": "header", "content": "Search" },
+    { "type": "text", "id": "search_placeholder", "label": "Search Placeholder", "default": "Search FAQs — e.g. 'how long does delivery take'" }
+  ],
+  "blocks": [
+    {
+      "type": "faq_category",
+      "name": "FAQ Category",
+      "settings": [
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Category" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Category Title" }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Your question here?" },
+        { "type": "html", "id": "answer", "label": "Answer (HTML)", "default": "<p>Answer text here.</p>" },
+        { "type": "text", "id": "tag", "label": "SEO Tag (optional)" },
+        { "type": "checkbox", "id": "open_default", "label": "Open by default", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD FAQ",
+      "blocks": [
+        { "type": "faq_category", "settings": { "eyebrow": "Orders & Payment", "title": "Orders & Payment" } },
+        { "type": "faq_item", "settings": { "question": "What payment methods does PAWD accept?", "answer": "<p>We accept Visa, Mastercard, American Express, Apple Pay, Google Pay, PayPal, and Afterpay.</p>", "tag": "SEO: payment methods pet shop australia", "open_default": true } },
+        { "type": "faq_item", "settings": { "question": "Does PAWD offer buy now, pay later?", "answer": "<p>Yes — Afterpay is available on all orders over $35 AUD.</p>", "tag": "SEO: afterpay pet accessories australia" } }
+      ]
+    }
+  ],
+  "max_blocks": 50
+}
+{% endschema %}

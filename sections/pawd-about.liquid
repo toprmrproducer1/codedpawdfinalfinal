@@ -1,0 +1,163 @@
+{% comment %}
+  PAWD About — Pixel-accurate from PAWD_Info_Pages_2
+{% endcomment %}
+
+<style>
+.about-info-layout{display:grid;grid-template-columns:1fr 1fr}
+.about-info-img{position:relative;min-height:500px;overflow:hidden}
+.iph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;padding:20px}
+.iph-l{font-family:var(--fb);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.iph-s{font-family:var(--fd);font-size:13px;font-style:italic;color:rgba(255,255,255,.18);max-width:240px;line-height:1.5}
+.g-a{background:linear-gradient(165deg,#1a1208,#0e0c08,#080808)}
+.stat-strip{background:var(--ob);display:grid;grid-template-columns:repeat(4,1fr)}
+.ss-item{padding:44px 40px;border-right:1px solid rgba(255,255,255,.06);text-align:center}
+.ss-item:last-child{border-right:none}
+.ss-num{font-family:var(--fd);font-size:clamp(40px,4vw,60px);font-weight:300;color:var(--wh);line-height:1;margin-bottom:6px}
+.ss-label{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gr)}
+.ss-sub{font-family:var(--fd);font-size:13px;font-style:italic;color:rgba(255,255,255,.2);margin-top:4px}
+.values-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:80px;background:var(--wh)}
+.val-c{padding:44px 40px;border:1px solid var(--sm)}
+.val-n{font-family:var(--fd);font-size:48px;font-weight:300;color:var(--fo);line-height:1;margin-bottom:22px}
+.val-t{font-family:var(--fd);font-size:24px;font-weight:300;margin-bottom:12px}
+.val-t em{font-style:italic}
+.val-b{font-family:var(--fb);font-size:13px;color:var(--st);line-height:1.8}
+.about-promise{padding:100px 80px;text-align:center;background:var(--ob)}
+.ap-title{font-family:var(--fd);font-size:clamp(34px,4.5vw,64px);font-weight:300;line-height:1.1;color:var(--wh);max-width:800px;margin:0 auto 28px}
+.ap-title em{font-style:italic;color:rgba(255,255,255,.45)}
+.ap-sub{font-family:var(--fb);font-size:13.5px;color:rgba(255,255,255,.45);max-width:540px;margin:0 auto 36px;line-height:1.8}
+.btn-w{background:var(--wh);color:var(--ob);border:none;padding:15px 36px;font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block}
+.pg-hero.dark{background:var(--ob);border-bottom-color:rgba(255,255,255,.06)}
+.pg-hero.dark .pg-hero-eyebrow{color:rgba(255,255,255,.3)}
+.pg-hero.dark .pg-hero-title{color:var(--wh)}
+.pg-hero.dark .pg-hero-sub{color:rgba(255,255,255,.45)}
+</style>
+
+<!-- Dark Hero -->
+<div class="pg-hero dark">
+  <div class="pg-breadcrumb" style="color:rgba(255,255,255,.3)"><a href="/" style="color:rgba(255,255,255,.3)">Home</a><span>/</span><span style="color:rgba(255,255,255,.6)">About</span></div>
+  <div class="pg-hero-eyebrow">{{ section.settings.hero_eyebrow }}</div>
+  <div class="pg-hero-title">{{ section.settings.hero_title }}</div>
+  <div class="pg-hero-sub">{{ section.settings.hero_subtitle }}</div>
+</div>
+
+<!-- Split: Image + Story -->
+<div class="about-info-layout">
+  <div class="about-info-img g-a">
+    {% if section.settings.story_image %}
+      {{ section.settings.story_image | image_url: width: 1200 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0;' }}
+    {% else %}
+      <div class="iph"><div class="iph-l">← AI Image Placement</div><div class="iph-s">Founders with their dogs — golden hour, outdoor Sydney setting, warm and candid</div></div>
+    {% endif %}
+  </div>
+  <div style="padding:80px;display:flex;flex-direction:column;justify-content:center;background:var(--ow)">
+    <div class="section-eyebrow">{{ section.settings.story_eyebrow }}</div>
+    <div class="section-title">{{ section.settings.story_title }}</div>
+    <div class="body-text">{{ section.settings.story_p1 }}</div>
+    <div class="body-text">{{ section.settings.story_p2 }}</div>
+    <div class="body-text">{{ section.settings.story_p3 }}</div>
+  </div>
+</div>
+
+<!-- Stat Strip -->
+<div class="stat-strip">
+  {% for block in section.blocks %}
+    {% if block.type == 'stat' %}
+      <div class="ss-item" {{ block.shopify_attributes }}>
+        <div class="ss-num">{{ block.settings.number }}</div>
+        <div class="ss-label">{{ block.settings.label }}</div>
+        {% if block.settings.sub != blank %}<div class="ss-sub">{{ block.settings.sub }}</div>{% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!-- Values -->
+<div class="values-row">
+  {% for block in section.blocks %}
+    {% if block.type == 'value' %}
+      <div class="val-c" {{ block.shopify_attributes }}>
+        <div class="val-n">{{ block.settings.number }}</div>
+        <div class="val-t">{{ block.settings.title }}</div>
+        <div class="val-b">{{ block.settings.body }}</div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!-- Closing Promise -->
+<div class="about-promise">
+  <div class="pg-hero-eyebrow" style="color:rgba(255,255,255,.3);text-align:center;margin-bottom:20px">{{ section.settings.promise_eyebrow }}</div>
+  <div class="ap-title">{{ section.settings.promise_title }}</div>
+  <div class="ap-sub">{{ section.settings.promise_sub }}</div>
+  <div style="display:inline-flex;gap:16px">
+    {% if section.settings.promise_btn1_text != blank %}
+      <a href="{{ section.settings.promise_btn1_url }}" class="btn-w" style="text-decoration:none">{{ section.settings.promise_btn1_text }}</a>
+    {% endif %}
+    {% if section.settings.promise_btn2_text != blank %}
+      <a href="{{ section.settings.promise_btn2_url }}" class="btn-g" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.25);text-decoration:none">{{ section.settings.promise_btn2_text }}</a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PAWD About",
+  "tag": "section",
+  "class": "pawd-about-section",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Our Story" },
+    { "type": "html", "id": "hero_title", "label": "Title (HTML)", "default": "Made by <em>Pet Lovers.</em><br>For Pet Lovers." },
+    { "type": "textarea", "id": "hero_subtitle", "label": "Subtitle", "default": "PAWD started in 2021 in a spare bedroom in Sydney, with a dog called Jake snoring in the corner. This is what happened next." },
+    { "type": "header", "content": "Story Section" },
+    { "type": "image_picker", "id": "story_image", "label": "Story Image" },
+    { "type": "text", "id": "story_eyebrow", "label": "Story Eyebrow", "default": "How PAWD Began" },
+    { "type": "html", "id": "story_title", "label": "Story Title (HTML)", "default": "We Couldn't Find<br><em>What We Wanted.</em><br>So We Built It." },
+    { "type": "textarea", "id": "story_p1", "label": "Paragraph 1", "default": "After years of buying pet accessories that fell apart, looked cheap, or just felt wrong — we decided the problem wasn't about budget. It was about expectation. The pet industry had settled for \"good enough\" for too long." },
+    { "type": "textarea", "id": "story_p2", "label": "Paragraph 2", "default": "We wanted collars made from the same Italian leather as the bags we saved up for. Beds with the same care for support as the mattresses we spent on ourselves. Bowls that looked like they belonged in the home — not hidden in a corner because they were ugly." },
+    { "type": "textarea", "id": "story_p3", "label": "Paragraph 3", "default": "So we spent two years developing relationships with small-batch suppliers and artisans across Australia, Italy and Portugal. We tested products on our own dogs. We rejected more than we kept. In 2023, PAWD launched — and we haven't looked back." },
+    { "type": "header", "content": "Promise Section" },
+    { "type": "text", "id": "promise_eyebrow", "label": "Promise Eyebrow", "default": "Our Promise" },
+    { "type": "html", "id": "promise_title", "label": "Promise Title (HTML)", "default": "We'll never stop asking: <em>is this actually good enough</em> for the animal wearing it?" },
+    { "type": "textarea", "id": "promise_sub", "label": "Promise Subtitle", "default": "Because that's the only question that matters. Everything else follows from there." },
+    { "type": "text", "id": "promise_btn1_text", "label": "Button 1 Text", "default": "Shop the Collection" },
+    { "type": "url", "id": "promise_btn1_url", "label": "Button 1 Link" },
+    { "type": "text", "id": "promise_btn2_text", "label": "Button 2 Text", "default": "Our Craft Story" },
+    { "type": "url", "id": "promise_btn2_url", "label": "Button 2 Link" }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "2021" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Founded in Sydney" },
+        { "type": "text", "id": "sub", "label": "Sub-note", "default": "A spare bedroom. One dog." }
+      ]
+    },
+    {
+      "type": "value",
+      "name": "Value Card",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "01" },
+        { "type": "html", "id": "title", "label": "Title (HTML)", "default": "<em>Quality</em> First. Always." },
+        { "type": "textarea", "id": "body", "label": "Body", "default": "We use materials that improve with age — full-grain leathers that develop a patina, natural fibres that soften, ceramics that last decades." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD About",
+      "blocks": [
+        { "type": "stat", "settings": { "number": "2021", "label": "Founded in Sydney", "sub": "A spare bedroom. One dog." } },
+        { "type": "stat", "settings": { "number": "14,000+", "label": "Happy Pets Worldwide", "sub": "Across 38 countries." } },
+        { "type": "stat", "settings": { "number": "4.9★", "label": "Average Review Score", "sub": "3,200+ verified purchases." } },
+        { "type": "stat", "settings": { "number": "92%", "label": "Return Customers", "sub": "Our best metric. Always." } },
+        { "type": "value", "settings": { "number": "01", "title": "<em>Quality</em> First. Always.", "body": "We use materials that improve with age — full-grain leathers that develop a patina, natural fibres that soften, ceramics that last decades. If something doesn't meet the standard we'd hold ourselves to as consumers, it doesn't go into the range." } },
+        { "type": "value", "settings": { "number": "02", "title": "Honest <em>Sourcing.</em>", "body": "Every material in our range is traced to its origin. We work with small-batch suppliers who share our values — no mass factories, no compromises on conditions. We can tell you exactly where every collar, bowl and toy comes from." } },
+        { "type": "value", "settings": { "number": "03", "title": "Design <em>That Lasts.</em>", "body": "We don't chase trends. Our colour palette and aesthetic are built to be timeless — because a collar that goes out of fashion in a season is one you'll replace. Our products are designed to live alongside your home for years." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

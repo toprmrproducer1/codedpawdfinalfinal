@@ -1,0 +1,231 @@
+{% comment %}
+  PAWD Contact — Pixel-accurate from PAWD_Info_Pages_2
+{% endcomment %}
+
+<style>
+.contact-form-side{padding:80px;border-right:1px solid var(--sm)}
+.contact-info-side{padding:80px;background:var(--ow)}
+.form-group{margin-bottom:22px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-note{font-family:var(--fb);font-size:12px;color:var(--si);line-height:1.6}
+.form-note a{color:var(--ob)}
+textarea.form-input{resize:vertical;min-height:140px;line-height:1.6}
+select.form-input{cursor:pointer;-webkit-appearance:none}
+.form-input::placeholder{color:var(--si)}
+.contact-channel{display:flex;gap:20px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--sm)}
+.contact-channel:first-child{padding-top:0}
+.contact-channel:last-child{border-bottom:none}
+.ch-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.ch-label{font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--si);margin-bottom:5px}
+.ch-value{font-family:var(--fd);font-size:22px;font-weight:300;color:var(--ob);margin-bottom:4px}
+.ch-note{font-family:var(--fb);font-size:12px;color:var(--si);line-height:1.6}
+.contact-response-bar{background:var(--ob);padding:28px 80px;display:flex;align-items:center;gap:60px}
+.crb-item{display:flex;align-items:center;gap:14px}
+.crb-num{font-family:var(--fd);font-size:32px;font-weight:300;color:var(--wh)}
+.crb-label{font-family:var(--fb);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.08em;line-height:1.5}
+</style>
+
+<div class="pg-hero">
+  <div class="pg-breadcrumb"><a href="/">Home</a><span>/</span><span>Contact</span></div>
+  <div class="pg-hero-eyebrow">{{ section.settings.hero_eyebrow }}</div>
+  <div class="pg-hero-title">{{ section.settings.hero_title }}</div>
+  <div class="pg-hero-sub">{{ section.settings.hero_subtitle }}</div>
+</div>
+
+<!-- Response Time Bar -->
+<div class="contact-response-bar">
+  {% for block in section.blocks %}
+    {% if block.type == 'response_item' %}
+      <div class="crb-item" {{ block.shopify_attributes }}>
+        <div class="crb-num">{{ block.settings.number }}</div>
+        <div class="crb-label">{{ block.settings.label }}</div>
+      </div>
+    {% endif %}
+  {% endfor %}
+  <div class="crb-item" style="margin-left:auto"><span style="font-family:var(--fb);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase">{{ section.settings.response_tagline }}</span></div>
+</div>
+
+<!-- Main Layout -->
+<div class="contact-layout">
+  <!-- FORM SIDE -->
+  <div class="contact-form-side">
+    <div class="section-eyebrow">{{ section.settings.form_eyebrow }}</div>
+    <div class="section-title">{{ section.settings.form_title }}</div>
+    <div class="body-text" style="margin-bottom:36px">{{ section.settings.form_intro }}</div>
+
+    {% form 'contact' %}
+      {% if form.posted_successfully? %}
+        <div style="background:var(--ow);border-left:3px solid var(--ob);padding:20px 24px;margin-bottom:28px;font-family:var(--fb);font-size:13px;color:var(--gr);line-height:1.8">
+          <strong style="color:var(--ob)">Message sent.</strong> Thank you — we'll be in touch within 1 business day.
+        </div>
+      {% endif %}
+
+      {% if form.errors %}
+        <div style="background:#fdf2f2;border-left:3px solid var(--sale);padding:20px 24px;margin-bottom:28px;font-family:var(--fb);font-size:13px;color:var(--gr);line-height:1.8">
+          {{ form.errors | default_errors }}
+        </div>
+      {% endif %}
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="ContactFirst-{{ section.id }}">First Name *</label>
+          <input class="form-input" type="text" name="contact[first_name]" id="ContactFirst-{{ section.id }}" placeholder="Jess" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="ContactLast-{{ section.id }}">Last Name *</label>
+          <input class="form-input" type="text" name="contact[last_name]" id="ContactLast-{{ section.id }}" placeholder="Harlow" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ContactEmail-{{ section.id }}">Email Address *</label>
+        <input class="form-input" type="email" name="contact[email]" id="ContactEmail-{{ section.id }}" placeholder="jess@example.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ContactOrder-{{ section.id }}">Order Number</label>
+        <input class="form-input" type="text" name="contact[order_number]" id="ContactOrder-{{ section.id }}" placeholder="PAWD-12345 (if applicable)">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ContactSubject-{{ section.id }}">Subject *</label>
+        <select class="form-input" name="contact[subject]" id="ContactSubject-{{ section.id }}" required>
+          <option value="" disabled selected>Select a topic</option>
+          <option>Order Status or Tracking</option>
+          <option>Return or Exchange</option>
+          <option>Product Question</option>
+          <option>Personalisation Query</option>
+          <option>Sizing &amp; Fit Help</option>
+          <option>Damaged or Incorrect Item</option>
+          <option>Wholesale Enquiry</option>
+          <option>Press or Media</option>
+          <option>Something Else</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ContactPet-{{ section.id }}">Your Pet's Name <span style="color:var(--si);font-weight:400">(optional, we love to know)</span></label>
+        <input class="form-input" type="text" name="contact[pet_name]" id="ContactPet-{{ section.id }}" placeholder="Jake, Luna, Archie...">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ContactBody-{{ section.id }}">Message *</label>
+        <textarea class="form-input" name="contact[body]" id="ContactBody-{{ section.id }}" placeholder="Tell us how we can help. The more detail you include, the faster we can resolve your query." required></textarea>
+      </div>
+      <button class="btn-d" style="width:100%;text-align:center" type="submit">{{ section.settings.form_button }}</button>
+      <div class="form-note" style="margin-top:16px">{{ section.settings.form_note }}</div>
+    {% endform %}
+  </div>
+
+  <!-- INFO SIDE -->
+  <div class="contact-info-side">
+    <div class="section-eyebrow">{{ section.settings.info_eyebrow }}</div>
+    <div class="section-title" style="margin-bottom:36px">{{ section.settings.info_title }}</div>
+
+    <div class="contact-channel">
+      <div class="ch-icon">✉</div>
+      <div>
+        <div class="ch-label">Email</div>
+        <div class="ch-value">{{ section.settings.email_address }}</div>
+        <div class="ch-note">{{ section.settings.email_note }}</div>
+      </div>
+    </div>
+    <div class="contact-channel">
+      <div class="ch-icon">📸</div>
+      <div>
+        <div class="ch-label">Instagram DM</div>
+        <div class="ch-value">{{ section.settings.instagram_handle }}</div>
+        <div class="ch-note">{{ section.settings.instagram_note }}</div>
+      </div>
+    </div>
+    <div class="contact-channel">
+      <div class="ch-icon">📍</div>
+      <div>
+        <div class="ch-label">Based In</div>
+        <div class="ch-value">{{ section.settings.location }}</div>
+        <div class="ch-note">{{ section.settings.location_note }}</div>
+      </div>
+    </div>
+    <div class="contact-channel">
+      <div class="ch-icon">🕐</div>
+      <div>
+        <div class="ch-label">Business Hours</div>
+        <div class="ch-value">{{ section.settings.hours }}</div>
+        <div class="ch-note">{{ section.settings.hours_note }}</div>
+      </div>
+    </div>
+
+    <!-- FAQ Shortcut -->
+    <div style="margin-top:48px;padding:32px;background:var(--wh);border:1px solid var(--sm)">
+      <div style="font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--si);margin-bottom:10px">{{ section.settings.faq_eyebrow }}</div>
+      <div style="font-family:var(--fd);font-size:22px;font-weight:300;margin-bottom:12px">{{ section.settings.faq_title }}</div>
+      <div style="font-family:var(--fb);font-size:13px;color:var(--st);line-height:1.75;margin-bottom:20px">{{ section.settings.faq_text }}</div>
+      <a href="{{ section.settings.faq_url }}" class="btn-d" style="font-size:10px;padding:12px 24px;text-decoration:none">{{ section.settings.faq_button }}</a>
+    </div>
+
+    <!-- Press Card -->
+    <div style="margin-top:16px;padding:32px;background:var(--ob)">
+      <div style="font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px">{{ section.settings.press_eyebrow }}</div>
+      <div style="font-family:var(--fd);font-size:22px;font-weight:300;color:var(--wh);margin-bottom:12px">{{ section.settings.press_title }}</div>
+      <div style="font-family:var(--fb);font-size:13px;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:20px">{{ section.settings.press_text }}</div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PAWD Contact",
+  "tag": "section",
+  "class": "pawd-contact-section",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Get in Touch" },
+    { "type": "html", "id": "hero_title", "label": "Title (HTML)", "default": "We're <em>Here</em><br>to Help." },
+    { "type": "textarea", "id": "hero_subtitle", "label": "Subtitle", "default": "Real answers from real people — not bots. We typically respond within 4 business hours during our operating hours Monday–Friday, 9am–5pm AEST." },
+    { "type": "header", "content": "Response Bar" },
+    { "type": "html", "id": "response_tagline", "label": "Tagline (HTML)", "default": "No chatbots. No scripts.<br>Just our team." },
+    { "type": "header", "content": "Form Section" },
+    { "type": "text", "id": "form_eyebrow", "label": "Form Eyebrow", "default": "Send Us a Message" },
+    { "type": "html", "id": "form_title", "label": "Form Title (HTML)", "default": "What Can We<br><em>Help With?</em>" },
+    { "type": "textarea", "id": "form_intro", "label": "Form Intro", "default": "Fill out the form below and one of our team will get back to you directly. For order queries, have your order number ready and include it in the message field." },
+    { "type": "text", "id": "form_button", "label": "Submit Button", "default": "Send Message" },
+    { "type": "html", "id": "form_note", "label": "Form Note (HTML)", "default": "By submitting this form you agree to our <a href='/pages/privacy' style='color:var(--ob)'>Privacy Policy</a>. We'll use your details solely to respond to your enquiry." },
+    { "type": "header", "content": "Contact Channels" },
+    { "type": "text", "id": "info_eyebrow", "label": "Info Eyebrow", "default": "Other Ways to Reach Us" },
+    { "type": "html", "id": "info_title", "label": "Info Title (HTML)", "default": "Direct<br><em>Channels.</em>" },
+    { "type": "text", "id": "email_address", "label": "Email", "default": "support@pawdstore.com" },
+    { "type": "textarea", "id": "email_note", "label": "Email Note", "default": "For all general enquiries, order support, and returns. We respond within 4 business hours Mon–Fri." },
+    { "type": "text", "id": "instagram_handle", "label": "Instagram", "default": "@pawdpets" },
+    { "type": "textarea", "id": "instagram_note", "label": "Instagram Note", "default": "Quick questions? Slide into our DMs. We monitor Instagram daily and respond to messages during business hours." },
+    { "type": "text", "id": "location", "label": "Location", "default": "Sydney, Australia" },
+    { "type": "textarea", "id": "location_note", "label": "Location Note", "default": "We're an online-only brand — no physical storefront. Orders are dispatched from warehouses around the globe. All times listed are AEST." },
+    { "type": "text", "id": "hours", "label": "Hours", "default": "Mon–Fri, 9am–5pm" },
+    { "type": "textarea", "id": "hours_note", "label": "Hours Note", "default": "AEST (UTC+10). We observe all NSW public holidays. Enquiries received outside these hours will be responded to on the next business day." },
+    { "type": "header", "content": "FAQ Card" },
+    { "type": "text", "id": "faq_eyebrow", "label": "FAQ Eyebrow", "default": "Before You Write" },
+    { "type": "html", "id": "faq_title", "label": "FAQ Title", "default": "Check the <em>FAQ First</em>" },
+    { "type": "textarea", "id": "faq_text", "label": "FAQ Text", "default": "Our FAQ covers shipping times, returns, sizing, personalisation, and more. Many questions are answered there instantly." },
+    { "type": "url", "id": "faq_url", "label": "FAQ Link" },
+    { "type": "text", "id": "faq_button", "label": "FAQ Button", "default": "Visit FAQ Page" },
+    { "type": "header", "content": "Press Card" },
+    { "type": "text", "id": "press_eyebrow", "label": "Press Eyebrow", "default": "Press & Media" },
+    { "type": "html", "id": "press_title", "label": "Press Title", "default": "Working on a <em>Story?</em>" },
+    { "type": "html", "id": "press_text", "label": "Press Text", "default": "Press enquiries, product samples, and brand assets are available on request. Contact us at <span style='color:rgba(255,255,255,.7)'>press@pawdstore.com</span>" }
+  ],
+  "blocks": [
+    {
+      "type": "response_item",
+      "name": "Response Time",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "4hrs" },
+        { "type": "html", "id": "label", "label": "Label (HTML)", "default": "Average email response<br>Mon–Fri, 9am–5pm AEST" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Contact",
+      "blocks": [
+        { "type": "response_item", "settings": { "number": "4hrs", "label": "Average email response<br>Mon–Fri, 9am–5pm AEST" } },
+        { "type": "response_item", "settings": { "number": "24hrs", "label": "Maximum response time<br>on business days" } },
+        { "type": "response_item", "settings": { "number": "48hrs", "label": "Weekend & public holiday<br>response time" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

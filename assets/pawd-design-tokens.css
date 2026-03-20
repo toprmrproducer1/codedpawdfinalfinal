@@ -1,0 +1,80 @@
+/**
+ * PAWD Design Tokens
+ * Story: TM-003 — Implement CSS Design Tokens
+ * Brief Reference: Section 2.3 (CSS Design Tokens)
+ *
+ * HOW TO USE IN BROADCAST v8:
+ *   1. Paste this block into Shopify Admin → Online Store → Themes
+ *      → Edit Code → Assets → base.css  (or a new file: pawd-tokens.css)
+ *   2. If using a separate file, add:
+ *        {{ 'pawd-tokens.css' | asset_url | stylesheet_tag }}
+ *      to the <head> in layout/theme.liquid, BEFORE any other PAWD stylesheets.
+ *   3. Reference tokens throughout all custom sections and snippets using
+ *      var(--token-name). Never hardcode hex values or font names.
+ *
+ * ─────────────────────────────────────────────────────────────────────────────
+ * ACCEPTANCE CRITERIA COVERAGE
+ *   AC-01  --c-obsidian   #0A0A0A   ✓
+ *   AC-02  --c-charcoal   #1C1C1E   ✓
+ *   AC-03  --c-graphite   #3A3A3C   ✓
+ *   AC-04  --c-stone      #636366   ✓
+ *   AC-05  --c-silver     #AEAEB2   ✓
+ *   AC-06  --c-fog        #D1D1D6   ✓
+ *   AC-07  --c-smoke      #E5E5EA   ✓
+ *   AC-08  --c-offwhite   #F5F5F7   ✓
+ *   AC-09  --c-white      #FFFFFF   ✓
+ *   AC-10  --font-display Cormorant Garamond, Georgia, serif   ✓
+ *   AC-11  --font-body    DM Sans, system-ui, sans-serif       ✓
+ *   AC-12  --space-xs/sm/md/lg/xl                              ✓
+ *   AC-13  --ease         cubic-bezier(0.25, 0.1, 0.25, 1)    ✓
+ *   AC-14  --transition   all 0.3s var(--ease)                 ✓
+ *   AC-15  Usage rule enforced via code comments below         ✓
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+:root {
+
+  /* ── COLOUR TOKENS ────────────────────────────────────────────────────────
+   * Full palette: Obsidian → Charcoal → Graphite → Stone → Silver →
+   *               Fog → Smoke → Off-White → Pure White
+   * No warm tones. No gold (#AB8C52 / #C5AA76) anywhere.
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --c-obsidian:  #0A0A0A;   /* Primary text, buttons, icons, active states    */
+  --c-charcoal:  #1C1C1E;   /* H1–H2 headings, nav, prominent labels          */
+  --c-graphite:  #3A3A3C;   /* Body copy, secondary text                      */
+  --c-stone:     #636366;   /* Captions, breadcrumbs, prices (secondary)      */
+  --c-silver:    #AEAEB2;   /* Placeholder text, disabled states               */
+  --c-fog:       #D1D1D6;   /* Dividers, input borders, card edges            */
+  --c-smoke:     #E5E5EA;   /* Hover states, tag backgrounds                  */
+  --c-offwhite:  #F5F5F7;   /* Section alt backgrounds, card backgrounds      */
+  --c-white:     #FFFFFF;   /* Primary background canvas                      */
+
+  /* ── TYPOGRAPHY TOKENS ───────────────────────────────────────────────────
+   * Loaded via Google Fonts @import in pawd-fonts.css (see TM-004).
+   * Always use these tokens — never hardcode font names.
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* ── SPACING TOKENS ──────────────────────────────────────────────────────
+   * 5-step scale. Use these for padding, margin, and gap values.
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --space-xs:   8px;
+  --space-sm:  16px;
+  --space-md:  32px;
+  --space-lg:  64px;
+  --space-xl: 120px;
+
+  /* ── TRANSITION TOKENS ───────────────────────────────────────────────────
+   * Apply --transition to all interactive elements (buttons, links, overlays).
+   * Use --ease directly when only the timing function is needed.
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --ease:       cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition: all 0.3s var(--ease);
+
+}
+

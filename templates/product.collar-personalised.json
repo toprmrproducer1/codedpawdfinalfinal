@@ -1,0 +1,118 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "Their name. Your choice. Made to order.",
+        "review_count": "42",
+        "review_rating": "4.9",
+        "show_material_story": true,
+        "material_headline": "Made for them. By you.",
+        "material_body": "Every personalised PAWD collar is made to order. We engrave the name plate after you place your order \u2014 so allow 2\u20133 extra days. The wait is worth it. This is the collar they'll wear for years.",
+        "material_link_text": "Read our craft story",
+        "related_title": "More Made-to-Order",
+        "related_subtitle": "Other personalised options",
+        "pers_max_chars": 12,
+        "pers_hint": "Engraved in metal. Max 12 characters. Allow 2\u20133 extra business days.",
+        "pers_note": "Personalised items are final sale (unless faulty)."
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "Engraving Details",
+            "label_1": "Max characters",
+            "value_1": "12 (name, nickname, or short phrase)",
+            "label_2": "Engraving style",
+            "value_2": "Serif caps on solid metal plate",
+            "label_3": "Lead time",
+            "value_3": "2\u20133 extra business days for engraving",
+            "label_4": "Returns",
+            "value_4": "Personalised items are final sale (unless faulty)"
+          }
+        },
+        "block_size_chart_1": {
+          "type": "size_chart",
+          "settings": {
+            "title": "Neck Size Guide",
+            "hint": "Measure neck, add 2cm. When between sizes, go up.",
+            "table_html": "<table class=\"pawd-size-tbl\"><thead><tr><th>Size</th><th>Neck</th><th>Fits</th></tr></thead><tbody><tr><td>XS</td><td>20\u201328cm</td><td>Chihuahua, tiny breeds, small cats</td></tr><tr><td>S</td><td>28\u201336cm</td><td>Maltese, Shih Tzu</td></tr><tr><td>M</td><td>36\u201344cm</td><td>Cavoodle, French Bulldog</td></tr><tr><td>L</td><td>44\u201352cm</td><td>Labrador, Spaniel</td></tr><tr><td>XL</td><td>52\u201360cm</td><td>German Shepherd, large breeds</td></tr></tbody></table>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Engraving & Lead Time",
+            "content": "<p>Your pet's name is engraved on a metal plate, riveted to the collar after your order is placed. Allow 2\u20133 additional business days before dispatch.</p><p><strong>Personalised items cannot be returned</strong> unless faulty. Please double-check your name spelling before ordering.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_4": {
+          "type": "accordion",
+          "settings": {
+            "title": "Care Instructions",
+            "content": "<p>Spot clean with damp cloth. Do not machine wash. Store flat to preserve bow tie shape.</p>"
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Made to Order",
+            "description": "Each collar is personalised after your order is placed. No two are the same. Allow 2\u20133 extra business days."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "12 Characters",
+            "description": "Name, nickname, or short phrase. Engraved in clean serif caps on a solid metal name plate."
+          }
+        },
+        "block_feature_7": {
+          "type": "feature",
+          "settings": {
+            "name": "Multiple Colourways",
+            "description": "From Taupe to Ivory to Dusty Rose. Each designed to photograph beautifully against any coat colour."
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_9": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_size_chart_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_accordion_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_feature_7",
+        "block_review_8",
+        "block_review_9"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

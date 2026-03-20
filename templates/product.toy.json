@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "Three balls. Three ranges. Zero effort from you.",
+        "review_count": "52",
+        "review_rating": "4.7",
+        "show_material_story": false,
+        "related_title": "They'll Want These Too",
+        "related_subtitle": "More from the Play collection"
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "What's in the Box",
+            "label_1": "Includes",
+            "value_1": "1\u00d7 launcher, 3\u00d7 standard tennis balls, 1\u00d7 power adapter",
+            "label_2": "Range settings",
+            "value_2": "3 adjustable (2\u20134m / 4\u20137m / 7\u20139m)",
+            "label_3": "Power",
+            "value_3": "Mains adapter (included) \u2014 no batteries required",
+            "label_4": "Ball type",
+            "value_4": "Standard tennis balls \u2014 replacements available anywhere",
+            "label_5": "Suitable for",
+            "value_5": "Dogs over 10kg familiar with fetch"
+          }
+        },
+        "block_accordion_1": {
+          "type": "accordion",
+          "settings": {
+            "title": "Safety & Suitability",
+            "content": "<p><strong>Minimum weight:</strong> 10kg. Not suitable for very small dogs or dogs that have never played fetch.</p><p><strong>Supervised use only.</strong> Do not allow your dog to stand directly in front of the launcher while loaded. Introduce gradually.</p>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Setup & Use",
+            "content": "<p>Place launcher on a flat surface. Load a ball from the top opening. The launcher will automatically fire after a short delay. Your dog will figure it out \u2014 most do within 10 minutes.</p>"
+          }
+        },
+        "block_feature_4": {
+          "type": "feature",
+          "settings": {
+            "name": "Enrichment First",
+            "description": "Play that engages their brain, not just their jaws. Every PAWD toy is chosen for enrichment value."
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Pet-Safe Materials",
+            "description": "Natural rubber, fleece, and rope \u2014 no toxic plastics, no sharp edges."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "For Every Play Style",
+            "description": "Chewers, chasers, tuggers, and fetch fanatics \u2014 we stock toys matched to how your pet plays."
+          }
+        },
+        "block_review_7": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_accordion_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_feature_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_review_7",
+        "block_review_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "Escape-proof fit. 3M visibility. Everything included.",
+        "review_count": "56",
+        "review_rating": "4.8",
+        "show_material_story": false,
+        "related_title": "Pair It With",
+        "related_subtitle": "Built for the Walk collection"
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "What's Included",
+            "label_1": "Includes",
+            "value_1": "1\u00d7 mesh harness + 1\u00d7 matching leash",
+            "label_2": "Harness material",
+            "value_2": "Oxford nylon mesh + 3M Scotchlite reflective",
+            "label_3": "Hardware",
+            "value_3": "Aluminium D-rings, plastic quick-release clips",
+            "label_4": "Leash length",
+            "value_4": "1.2m standard",
+            "label_5": "Machine wash",
+            "value_5": "Yes \u2014 cold, gentle cycle. Air dry."
+          }
+        },
+        "block_size_chart_1": {
+          "type": "size_chart",
+          "settings": {
+            "title": "Chest Girth Guide",
+            "hint": "Measure chest at widest point (behind front legs). Not neck.",
+            "table_html": "<table class=\"pawd-size-tbl\"><thead><tr><th>Size</th><th>Chest girth</th><th>Weight</th></tr></thead><tbody><tr><td>XS</td><td>28\u201336cm</td><td>1\u20133kg</td></tr><tr><td>S</td><td>36\u201348cm</td><td>3\u20138kg</td></tr><tr><td>M</td><td>48\u201362cm</td><td>8\u201315kg</td></tr><tr><td>L</td><td>62\u201374cm</td><td>15\u201326kg</td></tr><tr><td>XL</td><td>74\u201390cm</td><td>26kg+</td></tr></tbody></table>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wash & Care",
+            "content": "<p>Machine wash cold on a gentle cycle. Air dry only \u2014 do not tumble dry. Do not iron the reflective strips. Inspect clips before each use.</p>"
+          }
+        },
+        "block_feature_4": {
+          "type": "feature",
+          "settings": {
+            "name": "Escape-Proof Fit",
+            "description": "Step-in vest design with dual adjustment straps. No backing out, no slipping."
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Adjustable Fit",
+            "description": "Dual adjustment straps fit the chest and neck independently without restricting movement."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "Set Included",
+            "description": "Matching leash in the box. No separate purchase. Everything coordinates."
+          }
+        },
+        "block_review_7": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_size_chart_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_feature_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_review_7",
+        "block_review_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

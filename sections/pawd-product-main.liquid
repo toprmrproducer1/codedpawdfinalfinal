@@ -1,0 +1,653 @@
+{%- comment -%} PAWD Product Main Section {%- endcomment -%}
+{{ 'pawd-product.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign tagline = section.settings.tagline
+  assign review_count = section.settings.review_count | default: 48
+  assign review_rating = section.settings.review_rating | default: '4.9'
+  assign show_mat_story = section.settings.show_material_story
+  assign mat_headline = section.settings.material_headline
+  assign mat_body = section.settings.material_body
+  assign mat_image = section.settings.material_image
+  assign mat_link_text = section.settings.material_link_text
+  assign mat_link_url = section.settings.material_link_url
+  assign editorial_image = section.settings.editorial_image
+  assign feat_eyebrow = section.settings.features_eyebrow | default: 'Why PAWD'
+  assign feat_title = section.settings.features_title | default: 'Built to last. Made to be noticed.'
+  assign rel_title = section.settings.related_title | default: 'You Might Also Like'
+  assign rel_subtitle = section.settings.related_subtitle
+  assign has_pers = false
+  if product.tags contains 'personalised'
+    assign has_pers = true
+  endif
+-%}
+
+{%- comment -%} ── Sticky ATC Bar ── {%- endcomment -%}
+<div class="pawd-sticky-bar" id="pawdStickyBar">
+  <div class="pawd-sb-left">
+    <div>
+      <div class="pawd-sb-name">{{ product.title | truncate: 38 }}</div>
+      <div class="pawd-sb-variant">{{ current_variant.title }}</div>
+    </div>
+    <div class="pawd-sb-price">{{ current_variant.price | money }} AUD</div>
+  </div>
+  <a href="#pawdAtcBtn" class="pawd-sb-btn">Add to Cart</a>
+</div>
+
+{%- comment -%} ── Breadcrumbs ── {%- endcomment -%}
+<nav class="pawd-bc" aria-label="Breadcrumb">
+  <a href="/">Home</a><span>/</span>
+  {%- if product.collections.first -%}
+    <a href="{{ product.collections.first.url }}">{{ product.collections.first.title }}</a><span>/</span>
+  {%- endif -%}
+  {{ product.title }}
+</nav>
+
+{%- comment -%} ── PDP Grid ── {%- endcomment -%}
+<div class="pawd-pdp">
+
+  {%- comment -%} Image Gallery {%- endcomment -%}
+  <div class="pawd-img-strip">
+    <div class="pawd-thumbs">
+      {%- for image in product.images -%}
+        <div class="pawd-thumb{% if forloop.first %} active{% endif %}" data-pawd-thumb="{{ forloop.index0 }}">
+          <img src="{{ image | image_url: width: 160 }}" alt="{{ image.alt | default: product.title | escape }}" width="80" height="80" loading="lazy">
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="pawd-main-img" id="pawdMainImg">
+      {%- if product.featured_image -%}
+        <img
+          src="{{ product.featured_image | image_url: width: 900 }}"
+          srcset="{{ product.featured_image | image_url: width: 600 }} 600w, {{ product.featured_image | image_url: width: 900 }} 900w, {{ product.featured_image | image_url: width: 1200 }} 1200w"
+          sizes="(max-width:899px) 100vw, 55vw"
+          alt="{{ product.featured_image.alt | default: product.title | escape }}"
+          width="{{ product.featured_image.width }}"
+          height="{{ product.featured_image.height }}"
+          id="pawdMainImgEl"
+        >
+      {%- endif -%}
+      {%- if current_variant.compare_at_price > current_variant.price -%}
+        <span class="pawd-prod-tag sale">Sale</span>
+      {%- elsif product.tags contains 'new' -%}
+        <span class="pawd-prod-tag">New Season</span>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- comment -%} Product Info {%- endcomment -%}
+  <div class="pawd-prod-info">
+
+    {%- if product.collections.first -%}
+      <span class="pawd-coll-badge">{{ product.collections.first.title }}</span>
+    {%- endif -%}
+
+    <h1 class="pawd-prod-name">{{ product.title }}</h1>
+
+    {%- if tagline != blank -%}
+      <p class="pawd-prod-tagline">{{ tagline }}</p>
+    {%- endif -%}
+
+    <div class="pawd-stars-row">
+      <span class="pawd-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <a class="pawd-review-ct" href="#pawdReviews">{{ review_count }} reviews</a>
+    </div>
+
+    <div class="pawd-price-row">
+      <span class="pawd-price" data-pawd-price>{{ current_variant.price | money }} AUD</span>
+      {%- if current_variant.compare_at_price > current_variant.price -%}
+        <span class="pawd-price-was">{{ current_variant.compare_at_price | money }}</span>
+        {%- assign save_amount = current_variant.compare_at_price | minus: current_variant.price -%}
+        <span class="pawd-price-save">Save {{ save_amount | money }}</span>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Variant Selectors ── {%- endcomment -%}
+    {%- for option in product.options_with_values -%}
+      {%- assign opt_name_down = option.name | downcase -%}
+      <div class="pawd-var-section">
+        <div class="pawd-var-label">{{ option.name }}</div>
+
+        {%- if opt_name_down == 'colour' or opt_name_down == 'color' -%}
+          <div class="pawd-var-selected" data-pawd-colour-label>{{ option.selected_value }}</div>
+          <div class="pawd-swatches" data-pawd-option-index="{{ forloop.index0 }}">
+            {%- for value in option.values -%}
+              <span
+                class="pawd-swatch{% if value == option.selected_value %} active{% endif %}"
+                data-value="{{ value | escape }}"
+                title="{{ value }}"
+                style="background:{{ value | handleize | replace: '-', '' }}"
+              ></span>
+            {%- endfor -%}
+          </div>
+
+        {%- elsif opt_name_down == 'size' -%}
+          <div class="pawd-sz-btns" data-pawd-option-index="{{ forloop.index0 }}">
+            {%- for value in option.values -%}
+              <button type="button" class="pawd-sz-btn{% if value == option.selected_value %} active{% endif %}" data-value="{{ value | escape }}">{{ value }}</button>
+            {%- endfor -%}
+          </div>
+
+        {%- else -%}
+          <div class="pawd-txt-btns" data-pawd-option-index="{{ forloop.index0 }}">
+            {%- for value in option.values -%}
+              <button type="button" class="pawd-txt-btn{% if value == option.selected_value %} active{% endif %}" data-value="{{ value | escape }}">{{ value }}</button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+
+    {%- comment -%} ── Personalisation ── {%- endcomment -%}
+    {%- if has_pers -%}
+      <div class="pawd-pers-block">
+        <div class="pawd-pers-header">
+          <span class="pawd-pers-title">&#10022; Personalise It</span>
+          <span class="pawd-pers-tag">Made to Order</span>
+        </div>
+        <input
+          class="pawd-pers-input"
+          type="text"
+          name="properties[Engraving]"
+          placeholder="What's their name?"
+          maxlength="{{ section.settings.pers_max_chars | default: 12 }}"
+          form="pawdProductForm"
+          data-pawd-pers-input
+        >
+        <div class="pawd-char-count"><span data-pawd-char-count>0</span>/{{ section.settings.pers_max_chars | default: 12 }} characters</div>
+        {%- if section.settings.pers_hint != blank -%}
+          <div class="pawd-pers-hint">{{ section.settings.pers_hint }}</div>
+        {%- endif -%}
+        {%- if section.settings.pers_note != blank -%}
+          <div class="pawd-pers-hint" style="margin-top:8px;font-weight:500">{{ section.settings.pers_note }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} ── Info Blocks (from blocks) ── {%- endcomment -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'info_block' -%}
+        <div class="pawd-info-block" {{ block.shopify_attributes }}>
+          <div class="pawd-info-block-title">{{ block.settings.title }}</div>
+          {%- for i in (1..5) -%}
+            {%- assign lbl_key = 'label_' | append: i -%}
+            {%- assign val_key = 'value_' | append: i -%}
+            {%- if block.settings[lbl_key] != blank -%}
+              <div class="pawd-info-row">
+                <span class="pawd-info-label">{{ block.settings[lbl_key] }}</span>
+                <span class="pawd-info-val">{{ block.settings[val_key] }}</span>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if block.type == 'size_chart' -%}
+        <div class="pawd-info-block" {{ block.shopify_attributes }}>
+          <div class="pawd-info-block-title">{{ block.settings.title }}</div>
+          {%- if block.settings.hint != blank -%}
+            <div style="font-family:var(--fb);font-size:11px;color:var(--st);margin-bottom:8px">{{ block.settings.hint }}</div>
+          {%- endif -%}
+          {{ block.settings.table_html }}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- comment -%} ── ATC Form ── {%- endcomment -%}
+    {%- form 'product', product, id: 'pawdProductForm' -%}
+      <input type="hidden" name="id" value="{{ current_variant.id }}" data-pawd-variant-id>
+      <button type="submit" class="pawd-atc-btn" id="pawdAtcBtn"{% unless current_variant.available %} disabled{% endunless %}>
+        <span>{%- if current_variant.available -%}Add to Cart{%- else -%}Sold Out{%- endif -%}</span>
+      </button>
+    {%- endform -%}
+
+    <div class="pawd-atc-note">
+      <svg viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Free Worldwide Shipping
+    </div>
+    {%- assign afterpay_price = current_variant.price | divided_by: 4 -%}
+    <div class="pawd-afterpay-line">or 4 payments of <strong>{{ afterpay_price | money }}</strong> with Afterpay</div>
+
+    {%- comment -%} ── Trust Row ── {%- endcomment -%}
+    <div class="pawd-trust-row">
+      <div class="pawd-trust-item">
+        <svg class="pawd-trust-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <div class="pawd-trust-lbl">30-Day<br>Returns</div>
+      </div>
+      <div class="pawd-trust-item">
+        <svg class="pawd-trust-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <div class="pawd-trust-lbl">Free Worldwide<br>Shipping</div>
+      </div>
+      <div class="pawd-trust-item">
+        <svg class="pawd-trust-icon" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        <div class="pawd-trust-lbl">Secure<br>Checkout</div>
+      </div>
+    </div>
+
+    {%- comment -%} ── Accordions (from blocks) ── {%- endcomment -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'accordion' -%}
+        <div class="pawd-acc{% if forloop.index == 1 %} open{% endif %}" {{ block.shopify_attributes }} data-pawd-acc>
+          <button type="button" class="pawd-acc-trigger">{{ block.settings.title }}<span class="pawd-acc-icon">+</span></button>
+          <div class="pawd-acc-body"><div class="pawd-acc-content">{{ block.settings.content }}</div></div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+  </div>
+</div>
+
+{%- comment -%} ══════ Below-Fold Sections ══════ {%- endcomment -%}
+
+{%- comment -%} ── Editorial Image ── {%- endcomment -%}
+<div class="pawd-editorial-sec">
+  {%- if editorial_image != blank -%}
+    {%- render 'image', image: editorial_image, width: 2000, sizes: '100vw', cover: true -%}
+  {%- endif -%}
+</div>
+
+{%- comment -%} ── Features Grid ── {%- endcomment -%}
+<div class="pawd-feature-sec">
+  <div class="pawd-feat-eyebrow">{{ feat_eyebrow }}</div>
+  <h2 class="pawd-feat-title">{{ feat_title }}</h2>
+  <div class="pawd-feat-grid">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'feature' -%}
+        <div class="pawd-feat" {{ block.shopify_attributes }}>
+          <svg class="pawd-feat-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          <div class="pawd-feat-name">{{ block.settings.name }}</div>
+          <div class="pawd-feat-desc">{{ block.settings.description }}</div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- comment -%} ── Material Story (conditional) ── {%- endcomment -%}
+{%- if show_mat_story -%}
+  <div class="pawd-mat-story">
+    <div class="pawd-mat-img">
+      {%- if mat_image != blank -%}
+        {%- render 'image', image: mat_image, width: 1000, sizes: '50vw', cover: true -%}
+      {%- endif -%}
+    </div>
+    <div class="pawd-mat-text">
+      <div class="pawd-mat-eyebrow">The Material</div>
+      {%- if mat_headline != blank -%}
+        <h2 class="pawd-mat-hl">{{ mat_headline }}</h2>
+      {%- endif -%}
+      {%- if mat_body != blank -%}
+        <p class="pawd-mat-body">{{ mat_body }}</p>
+      {%- endif -%}
+      {%- if mat_link_text != blank -%}
+        <a class="pawd-mat-link" href="{{ mat_link_url | default: '/pages/our-story' }}">{{ mat_link_text }} &rarr;</a>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{%- comment -%} ── Reviews ── {%- endcomment -%}
+<div class="pawd-reviews-sec" id="pawdReviews">
+  <div class="pawd-rv-inner">
+    <div class="pawd-rv-header">
+      <h2 class="pawd-rv-title">Customer Reviews</h2>
+      <span class="pawd-rv-count">&#9733;&#9733;&#9733;&#9733;&#9733; &nbsp;{{ review_rating }} &middot; {{ review_count }} reviews</span>
+    </div>
+    <div class="pawd-rv-grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'review' -%}
+          <div class="pawd-rv-card" {{ block.shopify_attributes }}>
+            <div class="pawd-rv-mark">&ldquo;</div>
+            <div class="pawd-rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="pawd-rv-text">{{ block.settings.text }}</p>
+            <div class="pawd-rv-name">{{ block.settings.author }}</div>
+            <div class="pawd-rv-loc">{{ block.settings.location }}</div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{%- comment -%} ── Related Products ── {%- endcomment -%}
+{%- if product.collections.first -%}
+  <div class="pawd-related-sec">
+    <h2 class="pawd-rel-hl">{{ rel_title }}</h2>
+    {%- if rel_subtitle != blank -%}
+      <p class="pawd-rel-sub">{{ rel_subtitle }}</p>
+    {%- endif -%}
+    <div class="pawd-rel-grid">
+      {%- assign related_collection = product.collections.first -%}
+      {%- for rel_product in related_collection.products limit: 4 -%}
+        {%- if rel_product.id != product.id -%}
+          <a href="{{ rel_product.url }}" class="pawd-rel-card">
+            <div class="pawd-rel-img">
+              {%- if rel_product.featured_image -%}
+                <img
+                  src="{{ rel_product.featured_image | image_url: width: 400 }}"
+                  alt="{{ rel_product.title | escape }}"
+                  loading="lazy"
+                  width="{{ rel_product.featured_image.width }}"
+                  height="{{ rel_product.featured_image.height }}"
+                >
+              {%- endif -%}
+            </div>
+            <div class="pawd-rel-cat">{{ rel_product.type }}</div>
+            <div class="pawd-rel-name">{{ rel_product.title }}</div>
+            <div class="pawd-rel-price">{{ rel_product.price | money }} AUD</div>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{%- comment -%} ══════ JavaScript ══════ {%- endcomment -%}
+<script>
+(function(){
+  /* ── Variant data ── */
+  var variants = {{ product.variants | json }};
+  var images = [
+    {%- for image in product.images -%}
+      { src600: {{ image | image_url: width: 600 | json }}, src900: {{ image | image_url: width: 900 | json }}, src1200: {{ image | image_url: width: 1200 | json }}, alt: {{ image.alt | default: product.title | json }} }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ];
+  var optionCount = {{ product.options.size }};
+  var selectedOptions = [
+    {%- for option in product.options_with_values -%}
+      {{ option.selected_value | json }}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ];
+
+  /* ── Thumbnail gallery ── */
+  document.querySelectorAll('[data-pawd-thumb]').forEach(function(thumb){
+    thumb.addEventListener('click', function(){
+      var idx = parseInt(this.getAttribute('data-pawd-thumb'));
+      document.querySelectorAll('[data-pawd-thumb]').forEach(function(t){ t.classList.remove('active'); });
+      this.classList.add('active');
+      var img = document.getElementById('pawdMainImgEl');
+      if (img && images[idx]) {
+        img.src = images[idx].src900;
+        img.srcset = images[idx].src600 + ' 600w, ' + images[idx].src900 + ' 900w, ' + images[idx].src1200 + ' 1200w';
+        img.alt = images[idx].alt;
+      }
+    });
+  });
+
+  /* ── Option selectors ── */
+  function handleOptionClick(el, optIndex){
+    var value = el.getAttribute('data-value');
+    selectedOptions[optIndex] = value;
+
+    /* Update UI */
+    var parent = el.closest('[data-pawd-option-index]');
+    if (parent) {
+      parent.querySelectorAll('.active').forEach(function(a){ a.classList.remove('active'); });
+      el.classList.add('active');
+    }
+
+    /* Update colour label */
+    var colLabel = document.querySelector('[data-pawd-colour-label]');
+    if (colLabel && optIndex === 0) colLabel.textContent = value;
+
+    /* Find matching variant */
+    var match = null;
+    for (var i = 0; i < variants.length; i++) {
+      var v = variants[i];
+      var opts = [v.option1, v.option2, v.option3];
+      var isMatch = true;
+      for (var j = 0; j < optionCount; j++) {
+        if (opts[j] !== selectedOptions[j]) { isMatch = false; break; }
+      }
+      if (isMatch) { match = v; break; }
+    }
+
+    if (match) {
+      /* Update hidden input */
+      var idInput = document.querySelector('[data-pawd-variant-id]');
+      if (idInput) idInput.value = match.id;
+
+      /* Update price */
+      var priceEl = document.querySelector('[data-pawd-price]');
+      if (priceEl) priceEl.textContent = Shopify.formatMoney(match.price) + ' AUD';
+
+      /* Update ATC button */
+      var atcBtn = document.getElementById('pawdAtcBtn');
+      if (atcBtn) {
+        if (match.available) {
+          atcBtn.disabled = false;
+          atcBtn.querySelector('span').textContent = 'Add to Cart';
+        } else {
+          atcBtn.disabled = true;
+          atcBtn.querySelector('span').textContent = 'Sold Out';
+        }
+      }
+
+      /* Update sticky bar */
+      var sbVariant = document.querySelector('.pawd-sb-variant');
+      if (sbVariant) sbVariant.textContent = match.title;
+      var sbPrice = document.querySelector('.pawd-sb-price');
+      if (sbPrice) sbPrice.textContent = Shopify.formatMoney(match.price) + ' AUD';
+
+      /* Update URL */
+      if (history.replaceState) {
+        var url = new URL(window.location);
+        url.searchParams.set('variant', match.id);
+        history.replaceState({}, '', url);
+      }
+    }
+  }
+
+  /* Swatches */
+  document.querySelectorAll('.pawd-swatches .pawd-swatch').forEach(function(s){
+    s.addEventListener('click', function(){
+      var idx = parseInt(this.closest('[data-pawd-option-index]').getAttribute('data-pawd-option-index'));
+      handleOptionClick(this, idx);
+    });
+  });
+
+  /* Size & text buttons */
+  document.querySelectorAll('.pawd-sz-btn, .pawd-txt-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var idx = parseInt(this.closest('[data-pawd-option-index]').getAttribute('data-pawd-option-index'));
+      handleOptionClick(this, idx);
+    });
+  });
+
+  /* ── Accordions ── */
+  document.querySelectorAll('[data-pawd-acc]').forEach(function(acc){
+    acc.querySelector('.pawd-acc-trigger').addEventListener('click', function(){
+      acc.classList.toggle('open');
+    });
+  });
+
+  /* ── Personalisation char count ── */
+  var persInput = document.querySelector('[data-pawd-pers-input]');
+  if (persInput) {
+    persInput.addEventListener('input', function(){
+      var ct = document.querySelector('[data-pawd-char-count]');
+      if (ct) ct.textContent = this.value.length;
+    });
+  }
+
+  /* ── Sticky bar observer ── */
+  var atcBtn = document.getElementById('pawdAtcBtn');
+  var stickyBar = document.getElementById('pawdStickyBar');
+  if (atcBtn && stickyBar) {
+    new IntersectionObserver(function(entries){
+      stickyBar.classList.toggle('show', !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(atcBtn);
+  }
+})();
+</script>
+
+{%- schema -%}
+{
+  "name": "PAWD Product Main",
+  "class": "pawd-product-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Product tagline",
+      "info": "Italic text below the product name"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review count",
+      "default": "48"
+    },
+    {
+      "type": "text",
+      "id": "review_rating",
+      "label": "Review rating",
+      "default": "4.9"
+    },
+    {
+      "type": "image_picker",
+      "id": "editorial_image",
+      "label": "Editorial image (below fold)"
+    },
+    {
+      "type": "text",
+      "id": "features_eyebrow",
+      "label": "Features eyebrow text",
+      "default": "Why PAWD"
+    },
+    {
+      "type": "text",
+      "id": "features_title",
+      "label": "Features title",
+      "default": "Built to last. Made to be noticed."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_material_story",
+      "label": "Show material story section",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "material_image",
+      "label": "Material story image"
+    },
+    {
+      "type": "text",
+      "id": "material_headline",
+      "label": "Material headline"
+    },
+    {
+      "type": "textarea",
+      "id": "material_body",
+      "label": "Material body text"
+    },
+    {
+      "type": "text",
+      "id": "material_link_text",
+      "label": "Material link text",
+      "default": "Read our craft story"
+    },
+    {
+      "type": "url",
+      "id": "material_link_url",
+      "label": "Material link URL"
+    },
+    {
+      "type": "text",
+      "id": "related_title",
+      "label": "Related products title",
+      "default": "You Might Also Like"
+    },
+    {
+      "type": "text",
+      "id": "related_subtitle",
+      "label": "Related products subtitle"
+    },
+    {
+      "type": "range",
+      "id": "pers_max_chars",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "label": "Personalisation max characters",
+      "default": 12
+    },
+    {
+      "type": "text",
+      "id": "pers_hint",
+      "label": "Personalisation hint text",
+      "default": "Engraved in metal. Max 12 characters. Allow 2-3 extra business days."
+    },
+    {
+      "type": "text",
+      "id": "pers_note",
+      "label": "Personalisation note (e.g. final sale)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info_block",
+      "name": "Info block",
+      "limit": 2,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Block title", "default": "Product Details" },
+        { "type": "text", "id": "label_1", "label": "Label 1" },
+        { "type": "text", "id": "value_1", "label": "Value 1" },
+        { "type": "text", "id": "label_2", "label": "Label 2" },
+        { "type": "text", "id": "value_2", "label": "Value 2" },
+        { "type": "text", "id": "label_3", "label": "Label 3" },
+        { "type": "text", "id": "value_3", "label": "Value 3" },
+        { "type": "text", "id": "label_4", "label": "Label 4" },
+        { "type": "text", "id": "value_4", "label": "Value 4" },
+        { "type": "text", "id": "label_5", "label": "Label 5" },
+        { "type": "text", "id": "value_5", "label": "Value 5" }
+      ]
+    },
+    {
+      "type": "size_chart",
+      "name": "Size chart",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Chart title", "default": "Size Guide" },
+        { "type": "text", "id": "hint", "label": "Sizing hint" },
+        { "type": "html", "id": "table_html", "label": "Size table HTML" }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "limit": 5,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Accordion title" },
+        { "type": "richtext", "id": "content", "label": "Accordion content" }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "name", "label": "Feature name" },
+        { "type": "textarea", "id": "description", "label": "Feature description" }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review",
+      "limit": 6,
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Review text" },
+        { "type": "text", "id": "author", "label": "Author name" },
+        { "type": "text", "id": "location", "label": "Location" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Product Main"
+    }
+  ]
+}
+{%- endschema -%}

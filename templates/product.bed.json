@@ -1,0 +1,109 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "The nap upgrade they didn't know they needed.",
+        "review_count": "67",
+        "review_rating": "4.9",
+        "show_material_story": true,
+        "material_headline": "The nap they deserve.",
+        "material_body": "We designed this bed around the way pets actually sleep \u2014 curled tight, fully stretched out, or somewhere in between. High-density foam supports joints and holds its shape. Plush microfibre keeps them warm. The washable cover keeps you sane.",
+        "material_link_text": "Read our craft story",
+        "related_title": "They'll Want These Too",
+        "related_subtitle": "More from the Sleep collection"
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "Product Details",
+            "label_1": "Fill",
+            "value_1": "High-density foam + plush microfibre top",
+            "label_2": "Cover",
+            "value_2": "Removable, zip-off machine-washable cover",
+            "label_3": "Base",
+            "value_3": "Non-slip silicone dot base",
+            "label_4": "Suitable for",
+            "value_4": "Dogs and cats \u2014 all breeds, all sizes",
+            "label_5": "Machine wash",
+            "value_5": "Cover only, cold, gentle cycle"
+          }
+        },
+        "block_size_chart_1": {
+          "type": "size_chart",
+          "settings": {
+            "title": "Bed Size Guide",
+            "hint": "Measure your pet nose-to-tail when sleeping curled. Choose next size up.",
+            "table_html": "<table class=\"pawd-size-tbl\"><thead><tr><th>Bed size</th><th>Dimensions</th><th>Best for</th></tr></thead><tbody><tr><td>Small</td><td>50\u00d740cm</td><td>Cats, small dogs under 5kg</td></tr><tr><td>Medium</td><td>70\u00d755cm</td><td>Dogs 5\u201315kg, most cats</td></tr><tr><td>Large</td><td>90\u00d770cm</td><td>Dogs 15\u201330kg</td></tr></tbody></table>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wash & Care",
+            "content": "<p><strong>Cover:</strong> Zip off and machine wash cold, gentle cycle. Tumble dry low or air dry.</p><p><strong>Inner:</strong> Spot clean only \u2014 do not machine wash the foam insert. Air regularly.</p>"
+          }
+        },
+        "block_feature_4": {
+          "type": "feature",
+          "settings": {
+            "name": "High-Density Foam",
+            "description": "Supports joints and holds its shape wash after wash. Especially valuable for senior pets and larger breeds."
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Washable Cover",
+            "description": "Zip-off cover goes straight in the machine. Because beds get dirty. That's allowed."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "Non-Slip Base",
+            "description": "Silicone dot base grips hard floors and tiles. No sliding, no bumping into walls."
+          }
+        },
+        "block_review_7": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_size_chart_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_feature_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_review_7",
+        "block_review_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

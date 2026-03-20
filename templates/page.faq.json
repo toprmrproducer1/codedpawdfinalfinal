@@ -1,0 +1,417 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-faq",
+      "settings": {
+        "hero_eyebrow": "Frequently Asked Questions",
+        "hero_title": "Everything<br><em>Answered.</em>",
+        "hero_subtitle": "Shipping, returns, sizing, personalisation, materials, and more. If you can't find what you're looking for, <a href='/pages/contact' style='color:var(--ob)'>contact us directly</a> and we'll respond within 4 business hours.",
+        "nav_title": "Jump to Section",
+        "help_eyebrow": "Still need help?",
+        "help_text": "Contact our team directly for personalised support.",
+        "help_url": "/pages/contact",
+        "help_link_text": "Contact Us →",
+        "search_placeholder": "Search FAQs — e.g. 'how long does delivery take'"
+      },
+      "blocks": {
+        "c1": {
+          "type": "faq_category",
+          "settings": {
+            "eyebrow": "Orders & Payment",
+            "title": "Orders & Payment"
+          }
+        },
+        "i1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What payment methods does PAWD accept?",
+            "answer": "<p>We accept Visa, Mastercard, American Express, Apple Pay, Google Pay, PayPal, and Afterpay. All transactions are processed in AUD and secured by SSL encryption. No card details are stored on our servers — all payments are processed through Stripe or PayPal's secure infrastructure.</p>",
+            "tag": "SEO: payment methods pet shop australia",
+            "open_default": true
+          }
+        },
+        "i2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does PAWD offer buy now, pay later?",
+            "answer": "<p>Yes — Afterpay is available on all orders over $35 AUD. Select Afterpay at checkout for four equal fortnightly payments, always interest-free. Afterpay is subject to eligibility and their standard terms apply.</p>",
+            "tag": "SEO: afterpay pet accessories australia"
+          }
+        },
+        "i3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I change or cancel my order after placing it?",
+            "answer": "<p>We process and dispatch orders quickly — often within 1–2 business hours. If you need to change or cancel, contact us immediately at support@pawdstore.com with your order number. We'll do our best, but cannot guarantee changes once an order has entered picking and packing. Personalised orders cannot be cancelled once the engraving process has begun.</p>"
+          }
+        },
+        "i4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "I entered the wrong shipping address. What do I do?",
+            "answer": "<p>Contact us immediately at support@pawdstore.com. Include your order number and the correct address. If your order hasn't been dispatched, we can update it. Once dispatched, we cannot redirect most carriers — you may need to contact the carrier directly with your tracking number.</p>"
+          }
+        },
+        "i5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to pay on PAWD's website?",
+            "answer": "<p>Yes. Our site uses SSL encryption and all payment processing is handled by Stripe or PayPal — two of the most trusted payment platforms globally. We never see or store your full card details.</p>"
+          }
+        },
+        "c2": {
+          "type": "faq_category",
+          "settings": {
+            "eyebrow": "Shipping & Delivery",
+            "title": "Shipping & Delivery"
+          }
+        },
+        "i6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does delivery take within Australia?",
+            "answer": "<p>Standard Australian delivery takes 2–5 business days from dispatch. Express delivery (1–2 business days) is available at checkout for an additional fee. Metro areas typically receive orders at the lower end of this range.</p>",
+            "tag": "SEO: PAWD delivery time australia"
+          }
+        },
+        "i7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does PAWD offer free shipping?",
+            "answer": "<p>Yes — free standard shipping is available on all Australian orders over $75 AUD. Orders under $75 AUD incur a flat $8.95 shipping fee. Free worldwide shipping is available on all international orders, regardless of order value.</p>",
+            "tag": "SEO: free shipping pet accessories australia"
+          }
+        },
+        "i8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>Yes — we ship to 38+ countries worldwide. International standard shipping is free on all orders and typically takes 5–12 business days depending on destination. International express (3–6 business days) is available at checkout.</p><p>Popular destinations: United States (7–10 days), United Kingdom (6–9 days), Canada (8–12 days), New Zealand (3–5 days), Singapore (4–7 days). Customs fees and import duties may apply.</p>",
+            "tag": "SEO: PAWD international shipping"
+          }
+        },
+        "i9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I track my order?",
+            "answer": "<p>Once your order is dispatched, you'll receive a shipping confirmation email with a tracking number and a direct link to track your parcel. Australian orders are tracked via Australia Post or StarTrack. International orders are tracked via your local postal service once they arrive in your country.</p>"
+          }
+        },
+        "i10": {
+          "type": "faq_item",
+          "settings": {
+            "question": "My parcel says delivered but I haven't received it. What do I do?",
+            "answer": "<p>First, check with neighbours and any safe-drop locations around your property. If still unresolved, contact the carrier directly with your tracking number to open an investigation. Then contact us at support@pawdstore.com — we'll assist in any way we can.</p>"
+          }
+        },
+        "i11": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need to pay customs or import duties?",
+            "answer": "<p>PAWD ships from Australia and marks all packages at full declared value. Customs duties, taxes and import fees vary by destination country and are the responsibility of the recipient. Most countries have a de minimis threshold below which no duties apply.</p>",
+            "tag": "SEO: import tax pet accessories international"
+          }
+        },
+        "c3": {
+          "type": "faq_category",
+          "settings": {
+            "eyebrow": "Returns & Exchanges",
+            "title": "Returns & Exchanges"
+          }
+        },
+        "i12": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is PAWD's return policy?",
+            "answer": "<p>We offer 30-day returns on all non-personalised items in original, unworn, and unused condition with original packaging. To initiate a return, email support@pawdstore.com with your order number and reason for return.</p><p>Personalised items (engraved collars, custom tags) are final sale and cannot be returned unless faulty or damaged. Sale items are eligible for return under the same 30-day policy.</p>",
+            "tag": "SEO: PAWD returns policy"
+          }
+        },
+        "i13": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I start a return?",
+            "answer": "<p>Email support@pawdstore.com with: (1) your order number, (2) the item(s) you'd like to return, and (3) your reason for return. We'll send you a Return Merchandise Authorisation (RMA) number and return address within 1 business day.</p>"
+          }
+        },
+        "i14": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who pays for return shipping?",
+            "answer": "<p>For change-of-mind returns, return shipping costs are the customer's responsibility. We recommend using a tracked service — PAWD is not responsible for returns lost in transit. For items that arrived faulty, damaged, or incorrect, we will provide a prepaid return label.</p>"
+          }
+        },
+        "i15": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does a refund take?",
+            "answer": "<p>Once we receive and inspect your return (typically within 1–2 business days of arrival), we'll process your refund within 2 business days. Refunds are issued to the original payment method. Allow 3–5 business days for the refund to appear in your account.</p>"
+          }
+        },
+        "i16": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I exchange for a different size or colour?",
+            "answer": "<p>Yes — we process exchanges in the same way as returns. Email us with your order number, the item you'd like to return, and what you'd like instead. We'll confirm availability and issue a new order once we receive your return.</p>"
+          }
+        },
+        "c4": {
+          "type": "faq_category",
+          "settings": {
+            "eyebrow": "Products & Materials",
+            "title": "Products & Materials"
+          }
+        },
+        "i17": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What leather does PAWD use in its collars and leads?",
+            "answer": "<p>We use full-grain leather sourced from Veneto, Italy — the highest grade of leather available, retaining the natural grain of the outermost hide layer. It's more expensive and harder to work with than corrected-grain or bonded leather, but it's the only type that improves with age.</p><p>We never use split leather or bonded leather. Our hardware is solid brass or stainless steel — never plated zinc alloy.</p>",
+            "tag": "SEO: full grain leather dog collar australia"
+          }
+        },
+        "i18": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are PAWD products safe for dogs and cats?",
+            "answer": "<p>Yes. All textile components are OEKO-TEX Standard 100 certified — independently tested and confirmed free from harmful substances. Our ceramic bowls use food-safe, lead-free glaze. Our leather is tanned using traditional vegetable tanning methods.</p><p>All cat collars use breakaway safety buckles that release under pressure — a critical safety feature for cats.</p>",
+            "tag": "SEO: safe dog collar materials"
+          }
+        },
+        "i19": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Where are PAWD products made?",
+            "answer": "<p>PAWD is an Australian-founded and owned brand, based in Sydney. Our products are made by specialist suppliers in four countries: leather goods from Veneto, Italy; rope and woven products from Guimarães, Portugal; ceramics from Byron Bay, Australia; and technical fabrics from Bavaria, Germany.</p>",
+            "tag": "SEO: where are PAWD products made"
+          }
+        },
+        "i20": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do PAWD collars have a warranty?",
+            "answer": "<p>Yes — all PAWD products carry a 12-month warranty against manufacturing defects. If your product fails due to a defect in materials or workmanship within 12 months of purchase, we'll replace or repair it free of charge. Contact support@pawdstore.com with photos and your order number.</p>"
+          }
+        },
+        "c5": {
+          "type": "faq_category",
+          "settings": {
+            "eyebrow": "Sizing & Fit",
+            "title": "Sizing & Fit"
+          }
+        },
+        "i21": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I measure my dog for a collar?",
+            "answer": "<p>Using a soft tape measure, measure the circumference of your dog's neck at its midpoint — not too tight to the throat, not too far down toward the shoulders. Add 2cm to this measurement for comfort. The two-finger rule: you should always be able to slide two fingers comfortably between collar and neck.</p><p>When between sizes, always size up. Puppies grow quickly — check the fit every 2–4 weeks.</p>",
+            "tag": "SEO: how to measure dog collar size"
+          }
+        },
+        "i22": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I measure my dog for a harness?",
+            "answer": "<p>Measure the widest part of your dog's chest — wrap the tape around the chest behind the front legs (the girth). Also measure the neck circumference. Our harness product pages include breed-specific size recommendations alongside measurements.</p>",
+            "tag": "SEO: dog harness sizing guide"
+          }
+        },
+        "i23": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer different sizes for cats?",
+            "answer": "<p>Yes — all PAWD cat collars and harnesses are sized specifically for cats, not scaled-down dog products. Cat collars typically come in one adjustable size that fits most adult cats. Cat harnesses come in XS/S/M.</p>"
+          }
+        },
+        "i24": {
+          "type": "faq_item",
+          "settings": {
+            "question": "I'm between sizes. Which should I choose?",
+            "answer": "<p>Always size up when between sizes. A slightly larger collar can be adjusted tighter; a too-small collar cannot be extended. If in doubt, email us at support@pawdstore.com with your measurements.</p>"
+          }
+        },
+        "c6": {
+          "type": "faq_category",
+          "settings": {
+            "eyebrow": "Personalisation",
+            "title": "Personalisation"
+          }
+        },
+        "i25": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does personalisation work at PAWD?",
+            "answer": "<p>After you order a personalised item, our team laser-engraves your pet's name onto a metal nameplate — not printed, not hand-stamped. The engraved plate is then hand-riveted to the collar or accessory. The process is permanent: the engraving will not fade, scratch off, or wear away with normal use.</p>",
+            "tag": "SEO: personalised dog collar australia"
+          }
+        },
+        "i26": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How many characters can I use for personalisation?",
+            "answer": "<p>Up to 12 characters including spaces and punctuation. This accommodates most pet names comfortably. If you're unsure your desired text will fit, contact us before ordering at support@pawdstore.com.</p>"
+          }
+        },
+        "i27": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does personalisation take?",
+            "answer": "<p>Allow 2–3 additional business days on top of standard processing time. We'll send a dispatch confirmation email when your personalised item ships.</p>"
+          }
+        },
+        "i28": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I return a personalised item?",
+            "answer": "<p>Personalised items are final sale and cannot be returned for change of mind. Please double-check the spelling before completing your order. Items that arrive faulty or damaged are covered under our standard warranty.</p>"
+          }
+        },
+        "c7": {
+          "type": "faq_category",
+          "settings": {
+            "eyebrow": "Product Care",
+            "title": "Product Care"
+          }
+        },
+        "i29": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I clean a leather collar or lead?",
+            "answer": "<p>Wipe down with a damp cloth after muddy walks and dry naturally away from direct heat. Every 2–3 months, apply a small amount of leather conditioner to keep the leather supple. Do not soak leather products in water, do not machine wash, and do not dry with direct heat.</p>",
+            "tag": "SEO: how to clean leather dog collar"
+          }
+        },
+        "i30": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are rope and nylon collars machine washable?",
+            "answer": "<p>Yes — our rope and nylon collars and leads are machine washable on a cold, gentle cycle. Place in a mesh laundry bag to protect the hardware. Air dry flat — do not tumble dry.</p>"
+          }
+        },
+        "i31": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I clean the ceramic bowls?",
+            "answer": "<p>Our ceramic bowls are dishwasher safe (top rack recommended). For hand washing, use warm water and dish soap — avoid abrasive scrubbers. The ceramic stands are not dishwasher safe — wipe with a damp cloth. Do not microwave.</p>"
+          }
+        },
+        "i32": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I wash a dog bed or coat?",
+            "answer": "<p>Bed covers are removable and machine washable at 40°C on a gentle cycle. Close the zip before washing. Air dry — do not tumble dry memory foam. Dog coats: cold gentle cycle, fasten all velcro before washing, hang to air dry.</p>"
+          }
+        },
+        "c8": {
+          "type": "faq_category",
+          "settings": {
+            "eyebrow": "Account & Orders",
+            "title": "Account & Orders"
+          }
+        },
+        "i33": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need an account to order?",
+            "answer": "<p>No — you can check out as a guest. Creating an account gives you order history, faster future checkout, early access to new arrivals, and the ability to track all your orders in one place.</p>"
+          }
+        },
+        "i34": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I track my order?",
+            "answer": "<p>You'll receive a shipping confirmation email with a tracking number once your order is dispatched. Click the tracking link in the email to follow your parcel. If you have an account, you can also track orders in your account dashboard.</p>"
+          }
+        },
+        "i35": {
+          "type": "faq_item",
+          "settings": {
+            "question": "I haven't received my order confirmation email. What should I do?",
+            "answer": "<p>Check your spam or junk folder first. If it's not there, check that you entered your email address correctly at checkout. If you paid via PayPal, your confirmation may be sent to your PayPal email address. Contact us if still unresolved.</p>"
+          }
+        },
+        "c9": {
+          "type": "faq_category",
+          "settings": {
+            "eyebrow": "Sustainability",
+            "title": "Sustainability"
+          }
+        },
+        "i36": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is PAWD a sustainable brand?",
+            "answer": "<p>We approach sustainability practically rather than performatively. Our packaging is entirely plastic-free — recycled card, tissue and cotton ribbon — and we offset the carbon on every international shipment. We produce in small runs to eliminate excess inventory.</p><p>Our products are designed to last years, not seasons — which is the most sustainable approach: buying less, buying better.</p>",
+            "tag": "SEO: sustainable pet accessories australia"
+          }
+        },
+        "i37": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is the leather in PAWD products ethically sourced?",
+            "answer": "<p>Our leather is a by-product of the meat industry — not from animals raised for their hide. It is sourced from tanneries in Veneto, Italy that operate under EU animal welfare and environmental regulations. Our leathers are vegetable-tanned where possible, avoiding chromium-heavy processing.</p>"
+          }
+        },
+        "i38": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does PAWD use recycled materials?",
+            "answer": "<p>Our packaging uses recycled and recyclable materials throughout. We're actively exploring recycled material options for future product lines. Currently, our priority is material longevity over recycled content — a product that lasts five years has a significantly lower environmental footprint than a recycled-material product that lasts one.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "c2",
+        "i6",
+        "i7",
+        "i8",
+        "i9",
+        "i10",
+        "i11",
+        "c3",
+        "i12",
+        "i13",
+        "i14",
+        "i15",
+        "i16",
+        "c4",
+        "i17",
+        "i18",
+        "i19",
+        "i20",
+        "c5",
+        "i21",
+        "i22",
+        "i23",
+        "i24",
+        "c6",
+        "i25",
+        "i26",
+        "i27",
+        "i28",
+        "c7",
+        "i29",
+        "i30",
+        "i31",
+        "i32",
+        "c8",
+        "i33",
+        "i34",
+        "i35",
+        "c9",
+        "i36",
+        "i37",
+        "i38"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

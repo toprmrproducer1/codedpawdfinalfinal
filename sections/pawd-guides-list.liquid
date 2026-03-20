@@ -1,0 +1,186 @@
+{% comment %}
+  PAWD Guides Listing — Pixel-accurate from PAWD_Resources_1
+  Sidebar with topic filters + sizing calc · Featured guide (full-width) · Guide grid · Pagination
+{% endcomment %}
+
+{{ 'pawd-resources.css' | asset_url | stylesheet_tag }}
+
+{%- assign blog_handle = section.settings.blog_handle -%}
+{%- assign the_blog = blogs[blog_handle] -%}
+{%- assign current_tag = '' -%}
+
+<!-- Sub-nav -->
+<div class="res-subnav">
+  <a href="{{ section.settings.resources_url | default: '/pages/resources' }}" class="res-snav-item">&#8592; All Resources</a>
+  <a href="{{ the_blog.url }}" class="res-snav-item{% unless current_tag != blank %} active{% endunless %}">All Guides</a>
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'subnav_tag' -%}
+      {%- assign tag_handle = block.settings.tag | handleize -%}
+      <a href="{{ the_blog.url }}/tagged/{{ tag_handle }}" class="res-snav-item{% if current_tag == tag_handle %} active{% endif %}">{{ block.settings.tag }}</a>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+<!-- Page Hero -->
+<div class="pg-hero">
+  <div class="pg-breadcrumb">
+    <a href="{{ section.settings.resources_url | default: '/pages/resources' }}">Resources</a><span>/</span><span>Guides</span>
+  </div>
+  <div class="pg-hero-eyebrow">{{ section.settings.eyebrow }}</div>
+  <div class="pg-hero-title">{{ section.settings.title }}</div>
+  <div class="pg-hero-sub">{{ section.settings.subtitle }}</div>
+</div>
+
+<div class="guides-layout">
+  <!-- Sidebar -->
+  <div class="guides-sidebar">
+    <div class="gsb-title">Topics</div>
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'sidebar_topic' -%}
+        {%- assign tag_handle = block.settings.tag | handleize -%}
+        <a href="{{ the_blog.url }}/tagged/{{ tag_handle }}" class="gsb-item{% if current_tag == tag_handle %} active{% endif %}" {{ block.shopify_attributes }} style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:10px;cursor:pointer">
+          <span class="gsb-dot" style="background:{{ block.settings.dot_color | default: '#7a6a50' }}"></span>{{ block.settings.label }}
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+
+    <!-- Sizing calc widget -->
+    <div style="margin-top:40px;padding:24px;background:var(--ow);border:1px solid var(--sm)">
+      <div style="font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--si);margin-bottom:10px">Sizing Calculator</div>
+      <div style="font-family:var(--fd);font-size:18px;font-weight:300;margin-bottom:10px">Not Sure <em>What Size?</em></div>
+      <div style="font-family:var(--fb);font-size:12px;color:var(--st);line-height:1.6;margin-bottom:14px">Enter your pet's neck measurement for an instant size recommendation.</div>
+      <input id="neckInput" style="width:100%;border:1px solid var(--fo);padding:10px 12px;font-family:var(--fb);font-size:13px;outline:none;margin-bottom:8px;box-sizing:border-box" placeholder="Neck circumference (cm)">
+      <button class="btn-d" style="width:100%;text-align:center;font-size:10px;padding:11px" onclick="calcSize()">Get Recommendation</button>
+      <div id="sizeResult" style="margin-top:10px;font-family:var(--fb);font-size:12px;color:var(--st);display:none"></div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="guides-body">
+    {%- if the_blog.articles.size > 0 -%}
+
+      <!-- Featured guide (first article, full-width) -->
+      {%- assign feat = the_blog.articles.first -%}
+      <a href="{{ feat.url }}" class="guide-feat" style="text-decoration:none;color:inherit">
+        <div class="gf-img g-a">
+          {%- if feat.image -%}
+            {{ feat.image | image_url: width: 1200 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0' }}
+          {%- else -%}
+            <div class="iph"><div class="iph-l">AI Image</div></div>
+          {%- endif -%}
+        </div>
+        <div class="gf-body">
+          <div class="gf-num">01</div>
+          <div class="tag tag-guide" style="margin-bottom:16px">Most Read Guide</div>
+          <div class="gf-title">{{ feat.title }}</div>
+          <div class="gf-excerpt">{{ feat.excerpt_or_content | strip_html | truncate: 250 }}</div>
+          <div style="display:flex;align-items:center;gap:16px">
+            <span class="btn-d" style="font-size:10px;padding:12px 24px">Read Guide</span>
+            <span class="read-time">{{ feat.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} min</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Guides grid -->
+      <div class="guides-grid">
+        {%- assign gradient_classes = 'c,e,j,d,f,b,g,h,k,l,m,a' | split: ',' -%}
+        {%- for article in the_blog.articles offset: 1 -%}
+          {%- assign gi = forloop.index0 | modulo: 12 -%}
+          <a href="{{ article.url }}" class="guide-card" style="text-decoration:none;color:inherit">
+            <div class="gc-img g-{{ gradient_classes[gi] }}">
+              {%- if article.image -%}
+                {{ article.image | image_url: width: 800 | image_tag: loading: 'lazy', style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0' }}
+              {%- else -%}
+                <div class="iph"><div class="iph-l">AI Image</div></div>
+              {%- endif -%}
+            </div>
+            <div class="gc-body">
+              <div class="gc-tag-row">
+                {%- for tag in article.tags limit: 2 -%}
+                  <span class="tag tag-{{ tag | handleize }}">{{ tag }}</span>
+                {%- endfor -%}
+              </div>
+              <div class="gc-title">{{ article.title }}</div>
+              <div class="gc-excerpt">{{ article.excerpt_or_content | strip_html | truncate: 180 }}</div>
+              <div class="gc-footer">
+                <span class="gc-steps">{{ article.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} min</span>
+                <span class="btn-txt">Read Guide</span>
+              </div>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+
+      <!-- Pagination / Load more -->
+      {%- if the_blog.articles.size > 7 -%}
+        <div style="text-align:center;padding:20px 0 40px">
+          <button class="btn-g">Load More Guides</button>
+        </div>
+      {%- endif -%}
+
+    {%- else -%}
+      <div style="padding:80px 0;text-align:center;font-family:var(--fb);font-size:14px;color:var(--st)">No guides published yet.</div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  function calcSize(){
+    var v=parseFloat(document.getElementById('neckInput').value),
+        r=document.getElementById('sizeResult');
+    if(isNaN(v)||v<1){r.style.display='block';r.textContent='Please enter a valid measurement.';return}
+    var s=v<25?'XS (20–25 cm)':v<30?'S (25–30 cm)':v<38?'M (30–38 cm)':v<48?'L (38–48 cm)':'XL (48–56 cm)';
+    r.style.display='block';r.innerHTML='<strong>Recommended:</strong> '+s+'<br><span style="font-size:11px;color:var(--si)">Add 2 cm for comfort. When between sizes, size up.</span>';
+  }
+</script>
+
+{% schema %}
+{
+  "name": "PAWD Guides Listing",
+  "tag": "section",
+  "class": "pawd-guides-list-section",
+  "settings": [
+    { "type": "text", "id": "blog_handle", "label": "Blog Handle", "default": "guides" },
+    { "type": "url", "id": "resources_url", "label": "Resources Hub URL" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "In-Depth Guides" },
+    { "type": "html", "id": "title", "label": "Title", "default": "Practical <em>Guides</em><br>For Pet Owners." },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Step-by-step guidance on sizing, care, fitting, and training — written by people who actually own pets and know the difference between advice that sounds good and advice that works." }
+  ],
+  "blocks": [
+    {
+      "type": "subnav_tag",
+      "name": "Sub-nav Tag",
+      "settings": [
+        { "type": "text", "id": "tag", "label": "Tag", "default": "Sizing & Fit" }
+      ]
+    },
+    {
+      "type": "sidebar_topic",
+      "name": "Sidebar Topic",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "All Guides (9)" },
+        { "type": "text", "id": "tag", "label": "Tag Handle", "default": "all" },
+        { "type": "color", "id": "dot_color", "label": "Dot Color", "default": "#7a6a50" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Guides Listing",
+      "blocks": [
+        { "type": "subnav_tag", "settings": { "tag": "Sizing & Fit" } },
+        { "type": "subnav_tag", "settings": { "tag": "Product Care" } },
+        { "type": "subnav_tag", "settings": { "tag": "Training" } },
+        { "type": "subnav_tag", "settings": { "tag": "Cat Guides" } },
+        { "type": "subnav_tag", "settings": { "tag": "Dog Guides" } },
+        { "type": "sidebar_topic", "settings": { "label": "All Guides (9)", "tag": "all", "dot_color": "#7a6a50" } },
+        { "type": "sidebar_topic", "settings": { "label": "Sizing & Fit (4)", "tag": "sizing-fit", "dot_color": "#3a4a7a" } },
+        { "type": "sidebar_topic", "settings": { "label": "Product Care (3)", "tag": "product-care", "dot_color": "#6a4a7a" } },
+        { "type": "sidebar_topic", "settings": { "label": "Training (2)", "tag": "training", "dot_color": "#3a6a5a" } },
+        { "type": "sidebar_topic", "settings": { "label": "Cat Guides (3)", "tag": "cat-guides", "dot_color": "#5a3a6a" } },
+        { "type": "sidebar_topic", "settings": { "label": "Dog Guides (6)", "tag": "dog-guides", "dot_color": "#4a6a3a" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

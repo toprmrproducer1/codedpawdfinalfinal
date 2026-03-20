@@ -1,0 +1,57 @@
+/* =============================================================================
+ * 3. HEADLINE
+ *    AC-07: Cormorant Garamond Light 300, white.
+ *    Desktop: clamp(72px, 6vw, 80px). Mobile: clamp(40px, 10vw, 48px).
+ * ============================================================================= */
+
+.index-hero .hero__title {
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-weight: 300;
+  font-style: normal;
+  font-size: clamp(72px, 6vw, 80px);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+@media (max-width: 749px) {
+  .index-hero .hero__title {
+    font-size: clamp(40px, 10vw, 48px);
+  }
+}
+
+
+
+
+/* =============================================================================
+ * 5. CTA BUTTON
+ *    AC-13: Transparent bg, 1px solid white border, white text, DM Sans 600 uppercase.
+ *    AC-14: Hover — fill white, text turns Obsidian.
+ *    ⚠ DO NOT change to a filled colour button. Brief is explicit on this.
+ * ============================================================================= */
+
+.index-hero .hero__button .btn,
+.index-hero .hero__button .button,
+.index-hero .hero__button-group .btn,
+.index-hero .hero__button-group .button {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  padding: 14px 32px;
+  transition: var(--transition, all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1));
+}
+
+.index-hero .hero__button .btn:hover,
+.index-hero .hero__button .button:hover,
+.index-hero .hero__button-group .btn:hover,
+.index-hero .hero__button-group .button:hover {
+  background: #ffffff;
+  color: var(--c-obsidian, #0A0A0A);
+  border-color: #ffffff;
+}

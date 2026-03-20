@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "5 metres of freedom. One thumb to stop them.",
+        "review_count": "33",
+        "review_rating": "4.7",
+        "show_material_story": false,
+        "related_title": "You Might Also Like",
+        "related_subtitle": "Walk collection essentials"
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "Product Specifications",
+            "label_1": "Max length",
+            "value_1": "5 metres (or 3M \u2014 select above)",
+            "label_2": "Cord",
+            "value_2": "Nylon traction rope with 3M reflective coating",
+            "label_3": "Brake system",
+            "value_3": "Thumb brake + side lock switch",
+            "label_4": "Max weight rating",
+            "value_4": "50kg tensile load",
+            "label_5": "Housing",
+            "value_5": "ABS ergonomic grip, anti-slip texture"
+          }
+        },
+        "block_accordion_1": {
+          "type": "accordion",
+          "settings": {
+            "title": "How to Use the Brake & Lock",
+            "content": "<p><strong>Brake:</strong> Press thumb button to slow or stop instantly. <strong>Lock:</strong> Flick side switch while brake is pressed to hold at fixed length hands-free. <strong>Release:</strong> Press brake + release switch simultaneously.</p><p>Always use brake lock near roads. Not a replacement for training.</p>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Care",
+            "content": "<p>Retract cord fully after every walk to prevent tangling. Wipe housing with damp cloth. Do not submerge in water. Check cord integrity monthly \u2014 replace if frayed.</p>"
+          }
+        },
+        "block_feature_4": {
+          "type": "feature",
+          "settings": {
+            "name": "Tangle-Free Cord",
+            "description": "Smooth retraction mechanism keeps cord flowing freely. No knotting, no jamming."
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Brake + Lock",
+            "description": "Instant thumb brake for hazards. Side lock holds at fixed length hands-free."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "50kg Rated",
+            "description": "Nylon rope rated to 50kg tensile load. Handles the strongest pullers safely."
+          }
+        },
+        "block_review_7": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_accordion_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_feature_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_review_7",
+        "block_review_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

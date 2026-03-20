@@ -1,0 +1,88 @@
+{% comment %}
+  PAWD Privacy Policy — Pixel-accurate from PAWD_Info_Pages_2
+{% endcomment %}
+
+<style>
+.policy-body{padding:52px 80px 100px;max-width:860px}
+.policy-updated{font-family:var(--fb);font-size:11px;color:var(--si);letter-spacing:.1em;text-transform:uppercase;margin-bottom:48px;padding-bottom:14px;border-bottom:1px solid var(--sm)}
+.policy-section{margin-bottom:56px;scroll-margin-top:80px}
+.policy-section-title{font-family:var(--fd);font-size:28px;font-weight:300;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--sm)}
+.policy-body-text{font-family:var(--fb);font-size:13.5px;color:var(--gr);line-height:1.85;margin-bottom:16px}
+.policy-body-text a{color:var(--ob)}
+.policy-ul{list-style:none;margin:0 0 18px;padding:0}
+.policy-ul li{font-family:var(--fb);font-size:13.5px;color:var(--gr);line-height:1.8;padding:8px 0 8px 20px;border-bottom:1px solid var(--sm);position:relative}
+.policy-ul li::before{content:'—';position:absolute;left:0;color:var(--si)}
+.policy-table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-family:var(--fb);font-size:12.5px}
+.policy-table th{background:var(--ob);color:var(--wh);padding:12px 16px;text-align:left;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:10px}
+.policy-table td{padding:13px 16px;border-bottom:1px solid var(--sm);color:var(--gr);line-height:1.6;vertical-align:top}
+.policy-table tr:nth-child(even) td{background:var(--ow)}
+.policy-highlight{background:var(--ow);border-left:3px solid var(--ob);padding:20px 24px;margin:20px 0;font-family:var(--fb);font-size:13px;color:var(--gr);line-height:1.8}
+.policy-highlight strong{color:var(--ob);font-weight:600}
+.policy-sub-title{font-family:var(--fd);font-size:20px;font-weight:300;margin:28px 0 10px}
+</style>
+
+<!-- Hero -->
+<div class="pg-hero">
+  <div class="pg-breadcrumb"><a href="/">Home</a><span>/</span><span>Privacy Policy</span></div>
+  <div class="pg-hero-eyebrow">{{ section.settings.hero_eyebrow }}</div>
+  <div class="pg-hero-title">{{ section.settings.hero_title }}</div>
+  <div class="pg-hero-sub">{{ section.settings.hero_subtitle }}</div>
+</div>
+
+<div class="policy-layout">
+  <!-- Sidebar TOC -->
+  <div class="policy-sidebar">
+    <div class="policy-toc-title">Contents</div>
+    {% for block in section.blocks %}
+      {% if block.type == 'policy_section' %}
+        <div class="policy-toc-item" onclick="document.getElementById('pol-{{ block.id }}').scrollIntoView({behavior:'smooth'})">{{ block.settings.title }}</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Body -->
+  <div class="policy-body">
+    <div class="policy-updated">{{ section.settings.updated_text }}</div>
+
+    {% for block in section.blocks %}
+      {% if block.type == 'policy_section' %}
+        <div class="policy-section" id="pol-{{ block.id }}" {{ block.shopify_attributes }}>
+          <div class="policy-section-title">{{ block.settings.title }}</div>
+          {{ block.settings.body }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PAWD Privacy Policy",
+  "tag": "section",
+  "class": "pawd-privacy-section",
+  "settings": [
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Privacy Policy" },
+    { "type": "html", "id": "hero_title", "label": "Title (HTML)", "default": "<em>Privacy</em><br>Policy." },
+    { "type": "textarea", "id": "hero_subtitle", "label": "Subtitle", "default": "PAWD Australia Pty Ltd is committed to protecting your personal information. This policy explains what we collect, how we use it, and your rights." },
+    { "type": "text", "id": "updated_text", "label": "Last Updated", "default": "Last Updated: 4 March 2026 · PAWD Australia Pty Ltd" }
+  ],
+  "blocks": [
+    {
+      "type": "policy_section",
+      "name": "Policy Section",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Section Title", "default": "Section Title" },
+        { "type": "html", "id": "body", "label": "Body (HTML)", "default": "<div class='policy-body-text'>Content here.</div>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD Privacy Policy",
+      "blocks": [
+        { "type": "policy_section", "settings": { "title": "Who We Are", "body": "<div class='policy-body-text'>PAWD Australia Pty Ltd operates the website pawd.com.au and sells premium pet accessories.</div>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

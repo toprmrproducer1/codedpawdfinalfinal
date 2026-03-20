@@ -1,0 +1,109 @@
+{
+  "sections": {
+    "main": {
+      "type": "pawd-product-main",
+      "settings": {
+        "tagline": "Handknit cotton. Soft from the very first wear.",
+        "review_count": "36",
+        "review_rating": "4.8",
+        "show_material_story": true,
+        "material_headline": "Soft from the first wear.",
+        "material_body": "Our braided rope collars are handknit from 100% natural cotton \u2014 no synthetic fibres, no harsh dyes. Designed for dogs and cats with sensitive skin or fine coats.",
+        "material_link_text": "Read our craft story",
+        "related_title": "Complete the Look",
+        "related_subtitle": "More collars for them"
+      },
+      "blocks": {
+        "block_info_block_0": {
+          "type": "info_block",
+          "settings": {
+            "title": "About This Collar",
+            "label_1": "Material",
+            "value_1": "100% cotton braided rope with PU leather trim",
+            "label_2": "Hardware",
+            "value_2": "Stainless steel D-ring, PU leather keeper",
+            "label_3": "Closure",
+            "value_3": "Adjustable slip or buckle",
+            "label_4": "Width",
+            "value_4": "10mm uniform braid",
+            "label_5": "Wash",
+            "value_5": "Hand wash cold, air dry flat"
+          }
+        },
+        "block_size_chart_1": {
+          "type": "size_chart",
+          "settings": {
+            "title": "Neck Size Guide",
+            "hint": "Measure neck, add 2cm. When between sizes, go up.",
+            "table_html": "<table class=\"pawd-size-tbl\"><thead><tr><th>Size</th><th>Neck</th><th>Example breeds</th></tr></thead><tbody><tr><td>S</td><td>25\u201335cm</td><td>Chihuahua, Yorkshire Terrier, small cats</td></tr><tr><td>M</td><td>35\u201345cm</td><td>Cavoodle, French Bulldog, Beagle</td></tr><tr><td>L</td><td>45\u201355cm</td><td>Border Collie, Cocker Spaniel, Dalmatian</td></tr></tbody></table>"
+          }
+        },
+        "block_accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free worldwide shipping on all orders. Express available at checkout.</p><p>Free 30-day returns on all non-personalised items. Items must be unworn and in original packaging.</p>"
+          }
+        },
+        "block_accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wash & Care",
+            "content": "<p><strong>Hand wash</strong> in cold water with mild detergent. <strong>Air dry flat</strong> \u2014 do not tumble dry or wring. Colours may soften with repeated washing. Do not bleach.</p>"
+          }
+        },
+        "block_feature_4": {
+          "type": "feature",
+          "settings": {
+            "name": "Handknit Cotton",
+            "description": "100% natural cotton, braided by hand. Gentle on sensitive skin and fine coats \u2014 zero chafing."
+          }
+        },
+        "block_feature_5": {
+          "type": "feature",
+          "settings": {
+            "name": "Lightweight",
+            "description": "Weighs under 30g. They'll forget they're wearing it. Perfect for everyday."
+          }
+        },
+        "block_feature_6": {
+          "type": "feature",
+          "settings": {
+            "name": "Stainless Hardware",
+            "description": "Rust-resistant D-ring holds leash clips, ID tags, and poop bag holders without corroding."
+          }
+        },
+        "block_review_7": {
+          "type": "review",
+          "settings": {
+            "text": "I've never seen my dog get this excited. The quality feels incredible \u2014 super durable and looks beautiful. It's rare to find pet products that are both functional and this stylish. PAWD nailed it.",
+            "author": "Olivia M.",
+            "location": "Brisbane, QLD"
+          }
+        },
+        "block_review_8": {
+          "type": "review",
+          "settings": {
+            "text": "The personalised collar is the prettiest I've ever seen. The stitching, the softness, the engraving \u2014 all of it feels so intentional. Worth every cent and more.",
+            "author": "Jack L.",
+            "location": "Gold Coast, QLD"
+          }
+        }
+      },
+      "block_order": [
+        "block_info_block_0",
+        "block_size_chart_1",
+        "block_accordion_2",
+        "block_accordion_3",
+        "block_feature_4",
+        "block_feature_5",
+        "block_feature_6",
+        "block_review_7",
+        "block_review_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
