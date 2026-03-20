@@ -17,6 +17,9 @@
 .pawd-sb-btn{background:var(--ob,#0A0A0A);color:var(--wh,#FFFFFF);border:2px solid var(--ob,#0A0A0A);padding:11px 28px;font-family:var(--fb,'DM Sans',sans-serif);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:0;transition:all .3s cubic-bezier(.25,.1,.25,1);min-width:130px;text-align:center;text-decoration:none;display:inline-block}
 .pawd-sb-btn:hover{background:var(--gr,#3A3A3C);border-color:var(--gr,#3A3A3C)}
 
+/* ── Section Wrapper — force light scheme ── */
+.pawd-product-section{background:var(--wh,#FFFFFF);color:var(--ob,#0A0A0A)}
+
 /* ── PDP Grid Layout ── */
 .pawd-pdp{max-width:1400px;margin:0 auto;padding:24px 48px 80px;display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:start}
 @media(max-width:899px){.pawd-pdp{grid-template-columns:1fr;gap:32px;padding:16px 20px 48px}}

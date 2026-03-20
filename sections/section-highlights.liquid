@@ -29,6 +29,46 @@
     --columns-small: {{ columns_small }};
     --columns-mobile: {{ columns_mobile }};
   }
+
+  /* Pill-tab override when style = button */
+  #highlights--{{ unique }} .highlights__items {
+    gap: 8px;
+    justify-content: center;
+  }
+  #highlights--{{ unique }} .highlights__item--button {
+    flex-basis: auto;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  #highlights--{{ unique }} .highlights__item--button .btn {
+    min-width: auto;
+    padding: 8px 18px;
+    font-family: var(--fb, 'DM Sans', sans-serif);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    border-radius: 980px;
+    border: 1px solid var(--btn-border, var(--COLOR-BORDER, #D1D1D6));
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  #highlights--{{ unique }} .highlights__item--button .btn .highlights__item__content {
+    padding: 0;
+  }
+  @media only screen and (max-width: 749px) {
+    #highlights--{{ unique }} .highlights__items {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0 var(--outer, 20px);
+    }
+    #highlights--{{ unique }} .highlights__items::-webkit-scrollbar { display: none; }
+    #highlights--{{ unique }} .highlights__item--button {
+      flex-shrink: 0;
+    }
+  }
 {%- endstyle -%}
 
 {%- render 'stylesheet', name: 'highlights.css' -%}
