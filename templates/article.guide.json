@@ -2,21 +2,26 @@
   "sections": {
     "main": {
       "type": "article",
+      "settings": {
+        "show_date": true,
+        "show_author": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "title_tag": "automatic"
+      },
       "blocks": {
-        "related-products": {
+        "related_guides": {
           "type": "related",
-          "settings": {}
-        },
-        "recent-articles": {
-          "type": "recent",
-          "settings": {}
+          "settings": {
+            "title": "Related Guides &amp; Articles",
+            "show_count": 3
+          }
         }
       },
       "block_order": [
-        "related-products",
-        "recent-articles"
-      ],
-      "settings": {}
+        "related_guides"
+      ]
     }
   },
   "order": [

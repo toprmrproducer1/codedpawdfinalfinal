@@ -1,5 +1,92 @@
 {
-  "resource": {
-    "type": "blog"
-  }
+  "sections": {
+    "resources_hub": {
+      "type": "pawd-resources-hub",
+      "settings": {
+        "guides_blog": "guides",
+        "articles_blog": "journal",
+        "guides_eyebrow": "In-Depth",
+        "guides_title": "Latest <em>Guides</em>",
+        "guides_url": "/blogs/guides",
+        "feat_article_eyebrow": "From the PAWD Journal",
+        "feat_article_title": "Featured <em>Article</em>",
+        "articles_url": "/blogs/journal",
+        "recent_eyebrow": "Journal",
+        "recent_title": "Recent <em>Articles</em>",
+        "topics_eyebrow": "Browse by Topic",
+        "topics_title": "Find What<br>You Need."
+      },
+      "blocks": {
+        "sn_all": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "All",
+            "url": "/blogs/resources"
+          }
+        },
+        "sn_guides": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Guides",
+            "url": "/blogs/guides"
+          }
+        },
+        "sn_articles": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Articles",
+            "url": "/blogs/journal"
+          }
+        },
+        "sn_dog_care": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Dog Care",
+            "url": "/blogs/resources?tag=dog-care"
+          }
+        },
+        "sn_cat_care": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Cat Care",
+            "url": "/blogs/resources?tag=cat-care"
+          }
+        },
+        "sn_sizing": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Sizing & Fit",
+            "url": "/blogs/resources?tag=sizing-fit"
+          }
+        },
+        "sn_materials": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Materials",
+            "url": "/blogs/resources?tag=materials"
+          }
+        },
+        "sn_brand": {
+          "type": "subnav_item",
+          "settings": {
+            "label": "Our Brand",
+            "url": "/blogs/resources?tag=brand-story"
+          }
+        }
+      },
+      "block_order": [
+        "sn_all",
+        "sn_guides",
+        "sn_articles",
+        "sn_dog_care",
+        "sn_cat_care",
+        "sn_sizing",
+        "sn_materials",
+        "sn_brand"
+      ]
+    }
+  },
+  "order": [
+    "resources_hub"
+  ]
 }

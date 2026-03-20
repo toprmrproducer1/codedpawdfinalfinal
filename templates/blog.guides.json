@@ -1,0 +1,84 @@
+{
+  "sections": {
+    "guides_list": {
+      "type": "pawd-guides-list",
+      "settings": {
+        "resources_url": "/blogs/resources",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "sn1": {
+          "type": "subnav_tag",
+          "settings": {
+            "label": "← All Resources",
+            "url": "/blogs/resources"
+          }
+        },
+        "sn2": {
+          "type": "subnav_tag",
+          "settings": {
+            "label": "All Guides",
+            "tag": ""
+          }
+        },
+        "sn3": {
+          "type": "subnav_tag",
+          "settings": {
+            "label": "Sizing & Fit",
+            "tag": "sizing-fit"
+          }
+        },
+        "sn4": {
+          "type": "subnav_tag",
+          "settings": {
+            "label": "Product Care",
+            "tag": "product-care"
+          }
+        },
+        "sn5": {
+          "type": "subnav_tag",
+          "settings": {
+            "label": "Training",
+            "tag": "training"
+          }
+        },
+        "sn6": {
+          "type": "subnav_tag",
+          "settings": {
+            "label": "Cat Guides",
+            "tag": "cat-guides"
+          }
+        },
+        "sn7": {
+          "type": "subnav_tag",
+          "settings": {
+            "label": "Dog Guides",
+            "tag": "dog-guides"
+          }
+        },
+        "sc1": {
+          "type": "sizing_calculator",
+          "settings": {
+            "title": "Not Sure <em>What Size?</em>",
+            "description": "Enter your pet's neck measurement for an instant size recommendation."
+          }
+        }
+      },
+      "block_order": [
+        "sn1",
+        "sn2",
+        "sn3",
+        "sn4",
+        "sn5",
+        "sn6",
+        "sn7",
+        "sc1"
+      ]
+    }
+  },
+  "order": [
+    "guides_list"
+  ]
+}

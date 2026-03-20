@@ -17,7 +17,7 @@
         "articles_blog": "journal",
         "guides_eyebrow": "In-Depth",
         "guides_title": "Latest <em>Guides</em>",
-        "guides_url": "/pages/guides",
+        "guides_url": "/blogs/guides",
         "feat_article_eyebrow": "From the PAWD Journal",
         "feat_article_title": "Featured <em>Article</em>",
         "articles_url": "/blogs/journal",
@@ -30,49 +30,57 @@
         "sn1": {
           "type": "subnav_item",
           "settings": {
-            "label": "All"
+            "label": "All",
+            "url": "/blogs/resources"
           }
         },
         "sn2": {
           "type": "subnav_item",
           "settings": {
-            "label": "Guides"
+            "label": "Guides",
+            "url": "/blogs/guides"
           }
         },
         "sn3": {
           "type": "subnav_item",
           "settings": {
-            "label": "Articles"
+            "label": "Articles",
+            "url": "/blogs/journal"
           }
         },
         "sn4": {
           "type": "subnav_item",
           "settings": {
-            "label": "Dog Care"
+            "label": "Dog Care",
+            "url": "/blogs/resources?tag=dog-care"
           }
         },
         "sn5": {
           "type": "subnav_item",
           "settings": {
-            "label": "Cat Care"
+            "label": "Cat Care",
+            "url": "/blogs/resources?tag=cat-care"
           }
         },
         "sn6": {
           "type": "subnav_item",
           "settings": {
-            "label": "Sizing & Fit"
+            "label": "Sizing & Fit",
+            "url": "/blogs/resources?tag=sizing-fit"
           }
         },
         "sn7": {
           "type": "subnav_item",
           "settings": {
-            "label": "Materials"
+            "label": "Materials",
+            "url": "/blogs/resources?tag=materials"
           }
         },
         "sn8": {
           "type": "subnav_item",
           "settings": {
-            "label": "Our Brand"
+            "label": "Our Brand",
+            "url": "/blogs/resources?tag=brand-story"
           }
         },
         "tc1": {

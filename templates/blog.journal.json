@@ -11,39 +11,57 @@
         "sn1": {
           "type": "subnav_tag",
           "settings": {
-            "tag": "Materials & Craft"
+            "label": "← All Resources",
+            "url": "/blogs/resources"
           }
         },
         "sn2": {
           "type": "subnav_tag",
           "settings": {
-            "tag": "Brand Story"
+            "label": "All Articles",
+            "tag": ""
           }
         },
         "sn3": {
           "type": "subnav_tag",
           "settings": {
-            "tag": "Supply Chain"
+            "label": "Materials & Craft",
+            "tag": "materials-craft"
           }
         },
         "sn4": {
           "type": "subnav_tag",
           "settings": {
-            "tag": "Pet Lifestyle"
+            "label": "Brand Story",
+            "tag": "brand-story"
+          }
+        },
+        "sn5": {
+          "type": "subnav_tag",
+          "settings": {
+            "label": "Supply Chain",
+            "tag": "supply-chain"
+          }
+        },
+        "sn6": {
+          "type": "subnav_tag",
+          "settings": {
+            "label": "Pet Lifestyle",
+            "tag": "pet-lifestyle"
           }
         },
         "cf1": {
           "type": "category_filter",
           "settings": {
-            "label": "Materials",
-            "tag": "materials"
+            "label": "All",
+            "tag": ""
           }
         },
         "cf2": {
           "type": "category_filter",
           "settings": {
-            "label": "Supply Chain",
-            "tag": "supply-chain"
+            "label": "Materials & Craft",
+            "tag": "materials-craft"
           }
         },
         "cf3": {
@@ -56,11 +74,18 @@
         "cf4": {
           "type": "category_filter",
           "settings": {
+            "label": "Supply Chain",
+            "tag": "supply-chain"
+          }
+        },
+        "cf5": {
+          "type": "category_filter",
+          "settings": {
             "label": "Pet Lifestyle",
             "tag": "pet-lifestyle"
           }
         },
-        "cf5": {
+        "cf6": {
           "type": "category_filter",
           "settings": {
             "label": "Sustainability",
@@ -73,11 +98,14 @@
         "sn2",
         "sn3",
         "sn4",
+        "sn5",
+        "sn6",
         "cf1",
         "cf2",
         "cf3",
         "cf4",
-        "cf5"
+        "cf5",
+        "cf6"
       ]
     }
   },
