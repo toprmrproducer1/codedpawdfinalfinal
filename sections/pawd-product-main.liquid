@@ -165,6 +165,54 @@
       </div>
     {%- endif -%}
 
+    {%- comment -%} ── Auto Info from Product Metafields ── {%- endcomment -%}
+    {%- liquid
+      assign meta_material = product.metafields.pawd.material.value
+      assign meta_hardware = product.metafields.pawd.hardware.value
+      assign meta_closure = product.metafields.pawd.closure.value
+      assign meta_width = product.metafields.pawd.width.value
+      assign meta_origin = product.metafields.pawd.origin.value
+      assign has_meta_info = false
+      if meta_material != blank or meta_hardware != blank or meta_closure != blank or meta_width != blank or meta_origin != blank
+        assign has_meta_info = true
+      endif
+    -%}
+    {%- if has_meta_info -%}
+      <div class="pawd-info-block">
+        <div class="pawd-info-block-title">About This Product</div>
+        {%- if meta_material != blank -%}
+          <div class="pawd-info-row">
+            <span class="pawd-info-label">Material</span>
+            <span class="pawd-info-val">{{ meta_material }}</span>
+          </div>
+        {%- endif -%}
+        {%- if meta_hardware != blank -%}
+          <div class="pawd-info-row">
+            <span class="pawd-info-label">Hardware</span>
+            <span class="pawd-info-val">{{ meta_hardware }}</span>
+          </div>
+        {%- endif -%}
+        {%- if meta_closure != blank -%}
+          <div class="pawd-info-row">
+            <span class="pawd-info-label">Closure</span>
+            <span class="pawd-info-val">{{ meta_closure }}</span>
+          </div>
+        {%- endif -%}
+        {%- if meta_width != blank -%}
+          <div class="pawd-info-row">
+            <span class="pawd-info-label">Width</span>
+            <span class="pawd-info-val">{{ meta_width }}</span>
+          </div>
+        {%- endif -%}
+        {%- if meta_origin != blank -%}
+          <div class="pawd-info-row">
+            <span class="pawd-info-label">Origin</span>
+            <span class="pawd-info-val">{{ meta_origin }}</span>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
     {%- comment -%} ── Info Blocks (from blocks) ── {%- endcomment -%}
     {%- for block in section.blocks -%}
       {%- if block.type == 'info_block' -%}

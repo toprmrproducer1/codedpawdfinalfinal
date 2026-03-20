@@ -1,1 +1,231 @@
-{"sections":{"section_divider_dVzcmz":{"type":"section-divider","settings":{"show_line":true,"width":"wrapper--full","color_scheme":"scheme-6","padding_top":0,"padding_bottom":0}},"hero":{"type":"collection-image-with-title","settings":{"show_title":true,"show_description":true,"flex_align":"align--middle-left","color_scheme":"","show_text_background":false,"overlay_type":"disabled","show_image":false,"banner_layout":"overlay","height":"screen-height-one-third","mobile_height":"screen-height-one-half--mobile","padding_top":20,"padding_bottom":0}},"section_highlights_6xx8H9":{"type":"section-highlights","blocks":{"highlight_nhkf7G":{"type":"highlight","settings":{"heading":"New Arrivals","url":"","color":"#0a0a0a","bg_color":"#ffffff","border_color":"#d1d1d6"}},"highlight_WREypK":{"type":"highlight","settings":{"heading":"Best Sellers","url":"","color":"#0a0a0a","bg_color":"#ffffff","border_color":"#d1d1d6"}},"highlight_LKpYtB":{"type":"highlight","settings":{"heading":"Sale","url":"","color":"#0a0a0a","bg_color":"#ffffff","border_color":"#d1d1d6"}},"highlight_Cr3qqN":{"type":"highlight","settings":{"heading":"Rings","url":"","color":"#0a0a0a","bg_color":"#ffffff","border_color":"#d1d1d6"}},"highlight_BfUMW8":{"type":"highlight","settings":{"heading":"Earrings","url":"","color":"#0a0a0a","bg_color":"#ffffff","border_color":"#d1d1d6"}},"highlight_J6Ue7q":{"type":"highlight","settings":{"heading":"Necklaces","url":"","color":"#0a0a0a","bg_color":"#ffffff","border_color":"#d1d1d6"}}},"block_order":["highlight_nhkf7G","highlight_WREypK","highlight_LKpYtB","highlight_Cr3qqN","highlight_BfUMW8","highlight_J6Ue7q"],"disabled":true,"settings":{"style":"button","grid":6,"heading":"","heading_position":"text-center","heading_font_size":"heading-large","text_font_size":"body-small","width":"wrapper--full-padded","layout_mobile":"2","color_scheme":"scheme-1","padding_top":0,"padding_bottom":40,"heading_tag":"automatic"}},"subcollections":{"type":"subcollections","disabled":true,"settings":{"subcollection_layout":"grid","subcollection_description":false,"select_image":"collection","color_scheme":"","color":"#ffffff","bg_color":"","padding_top":20,"padding_bottom":20}},"main":{"type":"collection","blocks":{"featured_image_9z8PEP":{"type":"featured_image","disabled":true,"settings":{"position":3,"featured_heading":"{{ collection.title }}","heading_font_size":"heading-medium","featured_text":"<p>Sculpted in Stone. Designed for Now.<\/p>","featured_button_text":"Shop now","featured_button_link":"","button_type":"btn--white","button_size":"","button_style":"btn--solid","show_arrow":false,"featured_color_text":"#ffffff","overlay_type":"opacity","heading_tag":"automatic"}},"featured_image_z6adnV":{"type":"featured_image","disabled":true,"settings":{"position":7,"featured_heading":"","heading_font_size":"heading-medium","featured_text":"<p>Our top sellers on hand in the studio, perfect for quick gifts or if you're after something ready to wear. All other pieces are handmade to order, and it'll take about 4-8 weeks to craft.<\/p>","featured_button_text":"","featured_button_link":"","button_type":"btn--primary","button_size":"","button_style":"btn--outline","show_arrow":false,"featured_color_text":"#ffffff","overlay_type":"opacity","heading_tag":"automatic"}}},"block_order":["featured_image_9z8PEP","featured_image_z6adnV"],"settings":{"enable_sort":true,"enable_filters":true,"filter_layout":"slide-out","default_open":true,"collection_linklist":"","grid":3,"grid_mobile":"2","products_per_page":24,"color_scheme":"scheme-1","padding_top":0,"padding_bottom":0}}},"order":["section_divider_dVzcmz","hero","section_highlights_6xx8H9","subcollections","main"]}
+{
+  "sections": {
+    "divider_top": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "color_scheme": "scheme-6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "hero": {
+      "type": "pawd-collection-hero",
+      "settings": {
+        "eyebrow": "PAWD Collection",
+        "show_title": true,
+        "show_description": true
+      }
+    },
+    "highlights": {
+      "type": "section-highlights",
+      "blocks": {
+        "hl_all": {
+          "type": "highlight",
+          "settings": {
+            "heading": "All",
+            "url": "",
+            "color": "#0a0a0a",
+            "bg_color": "#ffffff",
+            "border_color": "#d1d1d6"
+          }
+        },
+        "hl_collars": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Collars",
+            "url": "",
+            "color": "#0a0a0a",
+            "bg_color": "#ffffff",
+            "border_color": "#d1d1d6"
+          }
+        },
+        "hl_harnesses": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Harnesses",
+            "url": "",
+            "color": "#0a0a0a",
+            "bg_color": "#ffffff",
+            "border_color": "#d1d1d6"
+          }
+        },
+        "hl_leads": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Leads",
+            "url": "",
+            "color": "#0a0a0a",
+            "bg_color": "#ffffff",
+            "border_color": "#d1d1d6"
+          }
+        },
+        "hl_play": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Play",
+            "url": "",
+            "color": "#0a0a0a",
+            "bg_color": "#ffffff",
+            "border_color": "#d1d1d6"
+          }
+        },
+        "hl_sleep": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Sleep",
+            "url": "",
+            "color": "#0a0a0a",
+            "bg_color": "#ffffff",
+            "border_color": "#d1d1d6"
+          }
+        },
+        "hl_wear": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Wear",
+            "url": "",
+            "color": "#0a0a0a",
+            "bg_color": "#ffffff",
+            "border_color": "#d1d1d6"
+          }
+        },
+        "hl_eat": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Eat",
+            "url": "",
+            "color": "#0a0a0a",
+            "bg_color": "#ffffff",
+            "border_color": "#d1d1d6"
+          }
+        }
+      },
+      "block_order": [
+        "hl_all",
+        "hl_collars",
+        "hl_harnesses",
+        "hl_leads",
+        "hl_play",
+        "hl_sleep",
+        "hl_wear",
+        "hl_eat"
+      ],
+      "settings": {
+        "style": "button",
+        "grid": 8,
+        "heading": "",
+        "heading_position": "text-center",
+        "heading_font_size": "heading-large",
+        "text_font_size": "body-small",
+        "width": "wrapper--full-padded",
+        "layout_mobile": "2",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "heading_tag": "automatic"
+      }
+    },
+    "subcollections": {
+      "type": "subcollections",
+      "settings": {
+        "subcollection_layout": "grid",
+        "subcollection_description": false,
+        "select_image": "collection",
+        "color_scheme": "",
+        "color": "#ffffff",
+        "bg_color": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "collection",
+      "settings": {
+        "enable_sort": true,
+        "enable_filters": true,
+        "filter_layout": "slide-out",
+        "default_open": true,
+        "collection_linklist": "",
+        "grid": 4,
+        "grid_mobile": "2",
+        "products_per_page": 24,
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "editorial": {
+      "type": "pawd-collection-editorial",
+      "settings": {
+        "eyebrow": "The Full Range",
+        "title": "Everything They Deserve.",
+        "body": "From the morning walk to the evening wind-down — every product in the PAWD dog range is chosen against one standard: quality we'd buy for our own dog.",
+        "button_text": "Explore All Dogs",
+        "button_url": ""
+      }
+    },
+    "faq": {
+      "type": "pawd-collection-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What's the difference between a collar and a harness for dogs?",
+            "answer": "<p>A collar is best for dogs that walk calmly and don't pull. A harness distributes pressure across the chest, making it safer for pullers, puppies, and dogs with respiratory or neck issues. We recommend a harness for most dogs during walk training.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I measure my dog for a collar or harness?",
+            "answer": "<p>For collars, measure around the base of the neck with a soft tape measure and add 2cm for comfort. For harnesses, measure the widest part of the chest (just behind the front legs). Check each product's size guide for exact sizing.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you ship internationally from Australia?",
+            "answer": "<p>Yes — we offer free worldwide shipping on every order. Express shipping is also available at checkout for an additional fee. Most Australian orders arrive within 3–5 business days. International orders typically arrive within 7–14 business days.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer free 30-day returns on all non-personalised items. Items must be unworn, unused, and in their original packaging. Personalised items are final sale unless faulty. Contact us to start a return.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I buy now and pay later?",
+            "answer": "<p>Yes — we offer Afterpay on all orders. Split your purchase into 4 interest-free payments. Select Afterpay at checkout to get started.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {
+        "eyebrow": "Help & FAQs",
+        "title": "Common Questions",
+        "body": "<p>Everything you need to know before you shop the PAWD dog range. Can't find what you're looking for? <a href=\"/pages/contact\">Contact us<\/a>.</p>"
+      }
+    }
+  },
+  "order": [
+    "divider_top",
+    "hero",
+    "highlights",
+    "subcollections",
+    "main",
+    "editorial",
+    "faq"
+  ]
+}
