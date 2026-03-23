@@ -3,7 +3,7 @@
     "guides_list": {
       "type": "pawd-guides-list",
       "settings": {
-        "resources_url": "/blogs/resources",
+        "resources_url": "/pages/resources",
         "color_scheme": "scheme-1",
         "padding_top": 0,
         "padding_bottom": 60
@@ -13,7 +13,7 @@
           "type": "subnav_tag",
           "settings": {
             "label": "← All Resources",
-            "url": "/blogs/resources"
+            "url": "/pages/resources"
           }
         },
         "sn2": {

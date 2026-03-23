@@ -941,6 +941,7 @@ nav.main a {
 .pg-hero {
   padding: 80px;
   border-bottom: 1px solid var(--sm);
+  background-color: var(--wh);
 }
 
 .pg-hero-eyebrow {
@@ -974,6 +975,7 @@ nav.main a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: calc(100vh - 200px);
+  background-color: var(--wh);
 }
 
 .form-label {
@@ -1009,6 +1011,7 @@ nav.main a {
   display: grid;
   grid-template-columns: 240px 1fr;
   align-items: start;
+  background-color: var(--wh);
 }
 
 .faq-nav {
@@ -1018,6 +1021,7 @@ nav.main a {
   border-right: 1px solid var(--sm);
   height: calc(100vh - 68px);
   overflow-y: auto;
+  background-color: var(--wh);
 }
 
 .faq-nav-title {
@@ -1092,6 +1096,7 @@ nav.main a {
   display: grid;
   grid-template-columns: 220px 1fr;
   align-items: start;
+  background-color: var(--wh);
 }
 
 .policy-sidebar {
@@ -1101,6 +1106,7 @@ nav.main a {
   border-right: 1px solid var(--sm);
   height: calc(100vh - 68px);
   overflow-y: auto;
+  background-color: var(--wh);
 }
 
 .policy-toc-title {

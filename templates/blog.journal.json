@@ -3,7 +3,7 @@
     "articles_list": {
       "type": "pawd-articles-list",
       "settings": {
-        "resources_url": "/blogs/resources",
+        "resources_url": "/pages/resources",
         "title": "The<br>PAWD<br><em>Journal.</em>",
         "subtitle": "Stories from our supply chain, the thinking behind our products, and honest writing about what it means to make things properly. No content marketing. Just things worth reading."
       },
@@ -12,7 +12,7 @@
           "type": "subnav_tag",
           "settings": {
             "label": "← All Resources",
-            "url": "/blogs/resources"
+            "url": "/pages/resources"
           }
         },
         "sn2": {
