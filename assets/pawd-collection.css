@@ -220,6 +220,12 @@
 /* Force white background on collection wrapper */
 .collection-products{background:var(--wh,#FFFFFF)}
 
+/* ── Product card portrait ratio (3:4) to match mockup ── */
+.collection-products .product-item__image{padding-top:133.33%}
+
+/* ── Product grid gap ── */
+.collection-products .collection__products .grid{gap:2px}
+
 /* ── Collection nav bar (SHOW FILTERS / SORT BY) ── */
 .collection__nav{border-bottom:1px solid var(--sm,#E5E5EA);background:var(--wh,#FFFFFF);padding:0 64px}
 .collection__nav .popout__toggle,
@@ -227,16 +233,28 @@
 .collection__nav .collection__sort__button{font-family:var(--fb,'DM Sans',sans-serif);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob,#0A0A0A)}
 
 /* ── Product card typography overrides ── */
-.collection-products .product-grid-item .product-grid-item__title{font-family:var(--fd,'Cormorant Garamond',serif);font-size:17px;font-weight:300;line-height:1.2;color:var(--ob,#0A0A0A)}
-.collection-products .product-grid-item .product-grid-item__price .price{font-family:var(--fd,'Cormorant Garamond',serif);font-size:16px;font-weight:300;color:var(--ob,#0A0A0A)}
-.collection-products .product-grid-item .product-grid-item__info{padding:12px 0 20px}
+.collection-products .product-item__title{font-family:var(--fd,'Cormorant Garamond',serif);font-size:17px;font-weight:300;line-height:1.2;color:var(--ob,#0A0A0A)}
+.collection-products .product-item__price .new-price,
+.collection-products .product-item__price .old-price,
+.collection-products .product-information .price{font-family:var(--fd,'Cormorant Garamond',serif);font-size:16px;font-weight:300;color:var(--ob,#0A0A0A)}
+.collection-products .product-item__info{padding:12px 0 20px}
+.collection-products .product-item__cutline{font-family:var(--fb,'DM Sans',sans-serif);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--si,#AEAEB2)}
 
 /* ── Highlight pills (section-highlights in collection context) ── */
 .pawd-coll-hero-section + .highlights .highlights__items{gap:8px;justify-content:center}
 .highlights .highlights__item--button{flex-basis:auto !important;padding:0 !important;margin-bottom:0 !important}
-.highlights .highlights__item--button .btn{min-width:auto !important;padding:8px 18px !important;font-family:var(--fb,'DM Sans',sans-serif) !important;font-size:11px !important;font-weight:500 !important;letter-spacing:.12em !important;text-transform:uppercase !important;line-height:1.4 !important;border-radius:0 !important;border:none !important;border-bottom:2px solid transparent !important;background:transparent !important;color:var(--si,#AEAEB2) !important;transition:all .2s !important}
+.highlights .highlights__item--button .btn{min-width:auto !important;padding:8px 18px !important;font-family:var(--fb,'DM Sans',sans-serif) !important;font-size:10px !important;font-weight:500 !important;letter-spacing:.14em !important;text-transform:uppercase !important;line-height:1.4 !important;border-radius:0 !important;border:none !important;border-bottom:2px solid transparent !important;background:transparent !important;color:var(--si,#AEAEB2) !important;transition:all .2s !important}
 .highlights .highlights__item--button .btn:hover,
 .highlights .highlights__item--button .btn[style*="--btn-bg: #0a0a0a"],
 .highlights .highlights__item--button:first-child .btn{color:var(--ob,#0A0A0A) !important;border-bottom-color:var(--ob,#0A0A0A) !important;background:transparent !important}
 .highlights .highlights__item--button .btn .highlights__item__background{display:none !important}
 .highlights .highlights__item--button .btn::after{display:none !important}
+
+/* ── Broadcast responsive overrides for collection ── */
+@media(max-width:999px){
+  .collection__nav{padding:0 28px}
+  .collection-products .product-item__image{padding-top:133.33%}
+}
+@media(max-width:599px){
+  .collection__nav{padding:0 16px}
+}
