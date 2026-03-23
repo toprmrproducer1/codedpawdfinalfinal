@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "pawd-terms": {
+      "type": "pawd-terms",
+      "settings": {}
+    }
+  },
+  "order": ["pawd-terms"]
+}

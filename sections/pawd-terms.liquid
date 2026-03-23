@@ -1,0 +1,103 @@
+{% comment %}
+  PAWD Terms & Conditions — Pixel-accurate from PAWD_Info_Pages_2
+{% endcomment %}
+
+<style>
+:root {
+  --ob: #0A0A0A;
+  --ch: #1C1C1E;
+  --gr: #3A3A3C;
+  --st: #636366;
+  --si: #AEAEB2;
+  --fo: #D1D1D6;
+  --sm: #E5E5EA;
+  --ow: #F5F5F7;
+  --wh: #FFFFFF;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'DM Sans', system-ui, sans-serif;
+  --ease: cubic-bezier(.25,.1,.25,1);
+}
+.terms-body{padding:52px 80px 100px;max-width:860px}
+.terms-updated{font-family:var(--fb);font-size:11px;color:var(--si);letter-spacing:.1em;text-transform:uppercase;margin-bottom:48px;padding-bottom:14px;border-bottom:1px solid var(--sm)}
+.terms-section{margin-bottom:56px;scroll-margin-top:80px}
+.terms-section-title{font-family:var(--fd);font-size:28px;font-weight:300;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--sm)}
+.terms-body-text{font-family:var(--fb);font-size:13.5px;color:var(--gr);line-height:1.85;margin-bottom:16px}
+.terms-body-text a{color:var(--ob)}
+.terms-ul{list-style:none;margin:0 0 18px;padding:0}
+.terms-ul li{font-family:var(--fb);font-size:13.5px;color:var(--gr);line-height:1.8;padding:8px 0 8px 20px;border-bottom:1px solid var(--sm);position:relative}
+.terms-ul li::before{content:'—';position:absolute;left:0;color:var(--si)}
+.terms-highlight{background:var(--ow);border-left:3px solid var(--ob);padding:20px 24px;margin:20px 0;font-family:var(--fb);font-size:13px;color:var(--gr);line-height:1.8}
+.terms-highlight strong{color:var(--ob);font-weight:600}
+.terms-sub-title{font-family:var(--fd);font-size:20px;font-weight:300;margin:28px 0 10px}
+</style>
+
+<!-- Hero -->
+<div class="pg-hero">
+  <div class="pg-breadcrumb"><a href="/">Home</a><span>/</span><span>Terms &amp; Conditions</span></div>
+  <div class="pg-hero-eyebrow">{{ section.settings.hero_eyebrow }}</div>
+  <div class="pg-hero-title">{{ section.settings.hero_title }}</div>
+  <div class="pg-hero-sub">{{ section.settings.hero_subtitle }}</div>
+</div>
+
+<div class="policy-layout">
+  <!-- Sidebar TOC -->
+  <div class="policy-sidebar">
+    <div class="policy-toc-title">Contents</div>
+    {% for block in section.blocks %}
+      {% if block.type == 'terms_section' %}
+        <div class="policy-toc-item" onclick="document.getElementById('terms-{{ block.id }}').scrollIntoView({behavior:'smooth'})">{{ block.settings.title }}</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Body -->
+  <div class="terms-body">
+    <div class="terms-updated">{{ section.settings.updated_text }}</div>
+
+    {% for block in section.blocks %}
+      {% if block.type == 'terms_section' %}
+        <div class="terms-section" id="terms-{{ block.id }}" {{ block.shopify_attributes }}>
+          <div class="terms-section-title">{{ block.settings.title }}</div>
+          {{ block.settings.body }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PAWD — Terms & Conditions",
+  "tag": "section",
+  "class": "pawd-terms-section",
+  "settings": [
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Legal" },
+    { "type": "html", "id": "hero_title", "label": "Title (HTML)", "default": "Terms &amp; <em>Conditions</em>" },
+    { "type": "textarea", "id": "hero_subtitle", "label": "Subtitle", "default": "Please read these terms carefully before using the PAWD website or placing an order." },
+    { "type": "text", "id": "updated_text", "label": "Last Updated", "default": "Last Updated: 4 March 2026 · PAWD Australia Pty Ltd" }
+  ],
+  "blocks": [
+    {
+      "type": "terms_section",
+      "name": "Terms Section",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Section Title", "default": "Section Title" },
+        { "type": "html", "id": "body", "label": "Body (HTML)", "default": "<div class='terms-body-text'>Content here.</div>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAWD — Terms & Conditions",
+      "blocks": [
+        { "type": "terms_section", "settings": { "title": "Overview", "body": "<div class='terms-body-text'>This website is operated by PAWD Australia Pty Ltd. By visiting our site and/or purchasing from us, you agree to be bound by these terms and conditions.</div>" } },
+        { "type": "terms_section", "settings": { "title": "Use of the Site", "body": "<div class='terms-body-text'>You may not use our products for any illegal purpose. You must not transmit any worms, viruses or destructive code.</div>" } },
+        { "type": "terms_section", "settings": { "title": "Products & Services", "body": "<div class='terms-body-text'>We reserve the right to refuse service to anyone. Prices are subject to change without notice.</div>" } },
+        { "type": "terms_section", "settings": { "title": "Intellectual Property", "body": "<div class='terms-body-text'>All content on this site is the property of PAWD Australia Pty Ltd and protected by applicable copyright laws.</div>" } },
+        { "type": "terms_section", "settings": { "title": "Governing Law", "body": "<div class='terms-body-text'>These Terms are governed by the laws of New South Wales, Australia.</div>" } },
+        { "type": "terms_section", "settings": { "title": "Contact", "body": "<div class='terms-body-text'>Questions? Email <a href='mailto:hello@pawdstore.com'>hello@pawdstore.com</a></div>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
