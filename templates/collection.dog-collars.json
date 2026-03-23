@@ -25,56 +25,56 @@
           "type": "highlight",
           "settings": {
             "heading": "All (48)",
-            "url": "/collections/dogs-main"
+            "url": "/collections/all"
           }
         },
         "hl_collars": {
           "type": "highlight",
           "settings": {
             "heading": "Collars (10)",
-            "url": "/collections/dog-collars"
+            "url": "/collections/collars"
           }
         },
         "hl_harnesses": {
           "type": "highlight",
           "settings": {
             "heading": "Harnesses (6)",
-            "url": "/collections/dog-walk"
+            "url": "/collections/harnesses"
           }
         },
         "hl_leads": {
           "type": "highlight",
           "settings": {
             "heading": "Leads (8)",
-            "url": "/collections/dog-leashes"
+            "url": "/collections/leads"
           }
         },
         "hl_play": {
           "type": "highlight",
           "settings": {
             "heading": "Play (8)",
-            "url": "/collections/dog-play"
+            "url": "/collections/play"
           }
         },
         "hl_sleep": {
           "type": "highlight",
           "settings": {
             "heading": "Sleep (6)",
-            "url": "/collections/dog-sleep"
+            "url": "/collections/sleep"
           }
         },
         "hl_wear": {
           "type": "highlight",
           "settings": {
             "heading": "Wear (5)",
-            "url": "/collections/dog-wear"
+            "url": "/collections/wear"
           }
         },
         "hl_eat": {
           "type": "highlight",
           "settings": {
             "heading": "Eat (5)",
-            "url": "/collections/dog-eat"
+            "url": "/collections/eat"
           }
         }
       },
