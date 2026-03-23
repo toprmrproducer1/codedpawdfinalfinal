@@ -1,67 +1,6 @@
 {
   "sections": {
-    "main": {
-      "type": "pawd-contact",
-      "settings": {
-        "hero_eyebrow": "Get in Touch",
-        "hero_title": "We're <em>Here</em><br>to Help.",
-        "hero_subtitle": "Real answers from real people — not bots. We typically respond within 4 business hours during our operating hours Monday–Friday, 9am–5pm AEST.",
-        "response_tagline": "No chatbots. No scripts.<br>Just our team.",
-        "form_eyebrow": "Send Us a Message",
-        "form_title": "What Can We<br><em>Help With?</em>",
-        "form_intro": "Fill out the form below and one of our team will get back to you directly. For order queries, have your order number ready and include it in the message field.",
-        "form_button": "Send Message",
-        "form_note": "By submitting this form you agree to our <a href='/pages/privacy' style='color:var(--ob)'>Privacy Policy</a>. We'll use your details solely to respond to your enquiry.",
-        "info_eyebrow": "Other Ways to Reach Us",
-        "info_title": "Direct<br><em>Channels.</em>",
-        "email_address": "support@pawdstore.com",
-        "email_note": "For all general enquiries, order support, and returns. We respond within 4 business hours Mon–Fri.",
-        "instagram_handle": "@pawdpets",
-        "instagram_note": "Quick questions? Slide into our DMs. We monitor Instagram daily and respond to messages during business hours.",
-        "location": "Sydney, Australia",
-        "location_note": "We're an online-only brand — no physical storefront. Orders are dispatched from warehouses around the globe. All times listed are AEST.",
-        "hours": "Mon–Fri, 9am–5pm",
-        "hours_note": "AEST (UTC+10). We observe all NSW public holidays. Enquiries received outside these hours will be responded to on the next business day.",
-        "faq_eyebrow": "Before You Write",
-        "faq_title": "Check the <em>FAQ First</em>",
-        "faq_text": "Our FAQ covers shipping times, returns, sizing, personalisation, and more. Many questions are answered there instantly.",
-        "faq_url": "/pages/faq",
-        "faq_button": "Visit FAQ Page",
-        "press_eyebrow": "Press & Media",
-        "press_title": "Working on a <em>Story?</em>",
-        "press_text": "Press enquiries, product samples, and brand assets are available on request. Contact us at <span style='color:rgba(255,255,255,.7)'>press@pawdstore.com</span>"
-      },
-      "blocks": {
-        "resp_1": {
-          "type": "response_item",
-          "settings": {
-            "number": "4hrs",
-            "label": "Average email response<br>Mon–Fri, 9am–5pm AEST"
-          }
-        },
-        "resp_2": {
-          "type": "response_item",
-          "settings": {
-            "number": "24hrs",
-            "label": "Maximum response time<br>on business days"
-          }
-        },
-        "resp_3": {
-          "type": "response_item",
-          "settings": {
-            "number": "48hrs",
-            "label": "Weekend & public holiday<br>response time"
-          }
-        }
-      },
-      "block_order": [
-        "resp_1",
-        "resp_2",
-        "resp_3"
-      ]
-    }
+    "pawd-contact": { "type": "pawd-contact", "settings": {} }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["pawd-contact"]
 }
