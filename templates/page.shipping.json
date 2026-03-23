@@ -1,6 +1,17 @@
 {
   "sections": {
-    "pawd-shipping": { "type": "pawd-shipping", "settings": {} }
+    "pawd-shipping": {
+      "type": "pawd-shipping",
+      "settings": {},
+      "blocks": {
+        "s1": { "type": "policy_section", "settings": { "title": "Free Worldwide Shipping", "body": "<div class='policy-body-text'>PAWD offers complimentary standard shipping on all orders worldwide. No minimum spend, no promo code — every order ships free, every time.</div>" } },
+        "s2": { "type": "policy_section", "settings": { "title": "Processing Time", "body": "<div class='policy-body-text'>All orders are processed within 1–2 business days (Monday–Friday, excluding public holidays). Orders placed after 1pm AEST may not be processed until the following business day.</div><div class='policy-body-text'>During peak periods (Black Friday, Boxing Day, new launches) processing may extend to 3 business days. You'll receive a confirmation email the moment your order is dispatched.</div>" } },
+        "s3": { "type": "policy_section", "settings": { "title": "Shipping Times", "body": "<table class='policy-table'><thead><tr><th>Destination</th><th>Standard</th><th>Express</th></tr></thead><tbody><tr><td>Australia</td><td>3–7 business days</td><td>1–3 business days (+$12)</td></tr><tr><td>New Zealand</td><td>5–10 business days</td><td>3–5 business days (+$15)</td></tr><tr><td>USA &amp; Canada</td><td>7–14 business days</td><td>4–7 business days (+$20)</td></tr><tr><td>UK &amp; Europe</td><td>7–14 business days</td><td>4–7 business days (+$20)</td></tr><tr><td>Rest of World</td><td>10–21 business days</td><td>—</td></tr></tbody></table><div class='policy-body-text'>Timeframes are estimates from dispatch, not from order placement. Rural or remote areas may experience slightly longer delivery windows.</div>" } },
+        "s4": { "type": "policy_section", "settings": { "title": "Tracking Your Order", "body": "<div class='policy-body-text'>Every order includes full tracking. Once dispatched, you'll receive an email with your tracking number and a link to follow your parcel in real time.</div><div class='policy-body-text'>If your tracking hasn't updated in 5+ business days, please <a href='/pages/contact'>contact us</a> and we'll investigate immediately.</div>" } },
+        "s5": { "type": "policy_section", "settings": { "title": "Customs, Duties & Taxes", "body": "<div class='policy-body-text'>International orders may be subject to customs duties, import taxes, or brokerage fees imposed by your country's government. These charges are the responsibility of the recipient and are not included in the order total.</div><div class='policy-highlight'><strong>Tip:</strong> Most orders under your country's de minimis threshold clear customs without additional charges. Check your local customs authority for current thresholds.</div>" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5"]
+    }
   },
   "order": ["pawd-shipping"]
 }

@@ -1,6 +1,15 @@
 {
   "sections": {
-    "pawd-contact": { "type": "pawd-contact", "settings": {} }
+    "pawd-contact": {
+      "type": "pawd-contact",
+      "settings": {},
+      "blocks": {
+        "r1": { "type": "response_item", "settings": { "number": "4hrs", "label": "Average email response<br>Mon\u2013Fri, 9am\u20135pm AEST" } },
+        "r2": { "type": "response_item", "settings": { "number": "24hrs", "label": "Maximum response time<br>on business days" } },
+        "r3": { "type": "response_item", "settings": { "number": "48hrs", "label": "Weekend & public holiday<br>response time" } }
+      },
+      "block_order": ["r1", "r2", "r3"]
+    }
   },
   "order": ["pawd-contact"]
 }

@@ -1,6 +1,37 @@
 {
   "sections": {
-    "pawd-faq": { "type": "pawd-faq", "settings": {} }
+    "pawd-faq": {
+      "type": "pawd-faq",
+      "settings": {},
+      "blocks": {
+        "cat1": { "type": "faq_category", "settings": { "eyebrow": "Orders & Payment", "title": "Orders & Payment" } },
+        "q1": { "type": "faq_item", "settings": { "question": "What payment methods does PAWD accept?", "answer": "<p>We accept Visa, Mastercard, American Express, Apple Pay, Google Pay, PayPal, and Afterpay.</p>", "tag": "SEO: payment methods pet shop australia", "open_default": true } },
+        "q2": { "type": "faq_item", "settings": { "question": "Does PAWD offer buy now, pay later?", "answer": "<p>Yes \u2014 Afterpay is available on all orders over $35 AUD. Select Afterpay at checkout to split your purchase into 4 interest-free payments.</p>", "tag": "SEO: afterpay pet accessories australia" } },
+        "q3": { "type": "faq_item", "settings": { "question": "Can I change or cancel my order after placing it?", "answer": "<p>We process orders quickly \u2014 usually within 1\u20132 business hours. If you need to make changes, email <a href='mailto:support@pawdstore.com'>support@pawdstore.com</a> immediately and we'll do our best to accommodate.</p>" } },
+        "q4": { "type": "faq_item", "settings": { "question": "Do you offer gift wrapping?", "answer": "<p>All PAWD orders are beautifully packaged in our signature recycled card boxes with tissue and ribbon \u2014 ready to gift as-is. We don't currently offer a separate gift wrap option as every order is already gift-ready.</p>" } },
+        "cat2": { "type": "faq_category", "settings": { "eyebrow": "Shipping & Delivery", "title": "Shipping & Delivery" } },
+        "q5": { "type": "faq_item", "settings": { "question": "Is shipping really free?", "answer": "<p>Yes. Standard shipping is free worldwide on every order, with no minimum spend required. Express shipping is available at checkout for an additional fee.</p>" } },
+        "q6": { "type": "faq_item", "settings": { "question": "How long does delivery take?", "answer": "<p>Australia: 3\u20137 business days (standard) or 1\u20133 business days (express). New Zealand: 5\u201310 days. USA, Canada, UK, Europe: 7\u201314 days. Rest of world: 10\u201321 days. All timeframes are from dispatch.</p>" } },
+        "q7": { "type": "faq_item", "settings": { "question": "Do you ship internationally?", "answer": "<p>Yes \u2014 we ship to over 150 countries. International orders may be subject to customs duties or taxes which are the responsibility of the recipient.</p>" } },
+        "q8": { "type": "faq_item", "settings": { "question": "How do I track my order?", "answer": "<p>Once dispatched, you'll receive an email with full tracking details. You can follow your parcel in real time from our warehouse to your door.</p>" } },
+        "cat3": { "type": "faq_category", "settings": { "eyebrow": "Returns & Exchanges", "title": "Returns & Exchanges" } },
+        "q9": { "type": "faq_item", "settings": { "question": "What is your return policy?", "answer": "<p>We accept returns on non-personalised items within 30 days of delivery. Items must be unused, in original condition, with tags attached. See our full <a href='/pages/returns'>returns policy</a> for details.</p>" } },
+        "q10": { "type": "faq_item", "settings": { "question": "Can I return a personalised item?", "answer": "<p>Personalised items (engraved tags, custom embroidery) cannot be returned unless they are faulty or incorrectly made. We double-check all personalisation details before production.</p>" } },
+        "q11": { "type": "faq_item", "settings": { "question": "How do I exchange for a different size?", "answer": "<p>Email <a href='mailto:support@pawdstore.com'>support@pawdstore.com</a> with your order number and the size you need. We'll arrange the exchange once your original item is in transit back to us.</p>" } },
+        "cat4": { "type": "faq_category", "settings": { "eyebrow": "Sizing & Fit", "title": "Sizing & Fit" } },
+        "q12": { "type": "faq_item", "settings": { "question": "How do I measure my pet for a collar?", "answer": "<p>Measure around the base of your pet's neck where the collar sits (not the widest part). Add 2cm for comfort. Use a flexible tape measure or a piece of string. Check our <a href='/pages/resources'>sizing guides</a> for breed-specific recommendations.</p>" } },
+        "q13": { "type": "faq_item", "settings": { "question": "What if I order the wrong size?", "answer": "<p>No problem \u2014 we offer free exchanges on all non-personalised items. Email us within 30 days and we'll get you the right fit.</p>" } },
+        "q14": { "type": "faq_item", "settings": { "question": "How should a harness fit?", "answer": "<p>You should be able to slide two fingers between the harness and your pet's body at any point. The harness shouldn't restrict shoulder movement or ride up under the front legs.</p>" } },
+        "cat5": { "type": "faq_category", "settings": { "eyebrow": "Products & Materials", "title": "Products & Materials" } },
+        "q15": { "type": "faq_item", "settings": { "question": "What is full-grain leather?", "answer": "<p>Full-grain leather is the highest quality grade \u2014 the outermost layer of the hide with the natural grain intact. It's more durable, develops a beautiful patina over time, and improves with age rather than deteriorating.</p>" } },
+        "q16": { "type": "faq_item", "settings": { "question": "How do I care for leather products?", "answer": "<p>Wipe with a damp cloth as needed. Apply a leather conditioner every 2\u20133 months. Avoid prolonged soaking. Leather will naturally develop a patina \u2014 this is a feature, not a defect. See our care guides for detailed instructions.</p>" } },
+        "q17": { "type": "faq_item", "settings": { "question": "Are your products safe for puppies and kittens?", "answer": "<p>Yes. All PAWD products use non-toxic, OEKO-TEX certified materials where applicable. Our cat collars all feature breakaway safety buckles. For puppies, we recommend waiting until they reach their adult neck size before investing in a leather collar.</p>" } },
+        "cat6": { "type": "faq_category", "settings": { "eyebrow": "Personalisation", "title": "Personalisation" } },
+        "q18": { "type": "faq_item", "settings": { "question": "What personalisation options are available?", "answer": "<p>We offer engraving on select ID tags and embroidery on select textile products. Personalisation options are shown on individual product pages where available.</p>" } },
+        "q19": { "type": "faq_item", "settings": { "question": "How long does personalisation take?", "answer": "<p>Personalised items typically add 1\u20132 business days to processing time. You'll receive the same tracking and dispatch notifications as standard orders.</p>" } }
+      },
+      "block_order": ["cat1", "q1", "q2", "q3", "q4", "cat2", "q5", "q6", "q7", "q8", "cat3", "q9", "q10", "q11", "cat4", "q12", "q13", "q14", "cat5", "q15", "q16", "q17", "cat6", "q18", "q19"]
+    }
   },
   "order": ["pawd-faq"]
 }

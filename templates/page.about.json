@@ -1,6 +1,19 @@
 {
   "sections": {
-    "pawd-about": { "type": "pawd-about", "settings": {} }
+    "pawd-about": {
+      "type": "pawd-about",
+      "settings": {},
+      "blocks": {
+        "st1": { "type": "stat", "settings": { "number": "2021", "label": "Founded in Sydney", "sub": "A spare bedroom. One dog." } },
+        "st2": { "type": "stat", "settings": { "number": "14,000+", "label": "Happy Pets Worldwide", "sub": "Across 38 countries." } },
+        "st3": { "type": "stat", "settings": { "number": "4.9★", "label": "Average Review Score", "sub": "3,200+ verified purchases." } },
+        "st4": { "type": "stat", "settings": { "number": "92%", "label": "Return Customers", "sub": "Our best metric. Always." } },
+        "v1": { "type": "value", "settings": { "number": "01", "title": "<em>Quality</em> First. Always.", "body": "We use materials that improve with age — full-grain leathers that develop a patina, natural fibres that soften, ceramics that last decades. If something doesn't meet the standard we'd hold ourselves to as consumers, it doesn't go into the range." } },
+        "v2": { "type": "value", "settings": { "number": "02", "title": "Honest <em>Sourcing.</em>", "body": "Every material in our range is traced to its origin. We work with small-batch suppliers who share our values — no mass factories, no compromises on conditions. We can tell you exactly where every collar, bowl and toy comes from." } },
+        "v3": { "type": "value", "settings": { "number": "03", "title": "Design <em>That Lasts.</em>", "body": "We don't chase trends. Our colour palette and aesthetic are built to be timeless — because a collar that goes out of fashion in a season is one you'll replace. Our products are designed to live alongside your home for years." } }
+      },
+      "block_order": ["st1", "st2", "st3", "st4", "v1", "v2", "v3"]
+    }
   },
   "order": ["pawd-about"]
 }

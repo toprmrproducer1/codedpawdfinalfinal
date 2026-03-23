@@ -1,6 +1,18 @@
 {
   "sections": {
-    "pawd-returns": { "type": "pawd-returns", "settings": {} }
+    "pawd-returns": {
+      "type": "pawd-returns",
+      "settings": {},
+      "blocks": {
+        "s1": { "type": "policy_section", "settings": { "title": "Returns Overview", "body": "<div class='policy-body-text'>PAWD accepts returns on non-personalised items within 30 calendar days of delivery. Items must be in original, unused condition with all tags attached and in original packaging.</div><div class='policy-body-text'>Personalised items (engraved tags, custom embroidery) cannot be returned unless faulty or incorrectly made.</div>" } },
+        "s2": { "type": "policy_section", "settings": { "title": "How to Start a Return", "body": "<div class='policy-body-text'>To initiate a return:</div><ul class='policy-ul'><li>Email <a href='mailto:support@pawdstore.com'>support@pawdstore.com</a> with your order number and reason for return</li><li>Our team will respond within 4 business hours with a return authorisation and instructions</li><li>Pack the item securely in its original packaging</li><li>Ship to the address provided in your return authorisation</li></ul>" } },
+        "s3": { "type": "policy_section", "settings": { "title": "Exchanges", "body": "<div class='policy-body-text'>Need a different size or colour? We're happy to exchange. Contact us at <a href='mailto:support@pawdstore.com'>support@pawdstore.com</a> and we'll arrange the exchange once your original item is in transit back to us.</div><div class='policy-body-text'>If the new item is a different price, we'll charge or refund the difference.</div>" } },
+        "s4": { "type": "policy_section", "settings": { "title": "Return Shipping", "body": "<div class='policy-body-text'>For change-of-mind returns, the customer is responsible for return postage costs. We recommend using a tracked service as we cannot be responsible for items lost in transit.</div><div class='policy-highlight'><strong>Faulty Items:</strong> If your item is faulty or we made an error, we cover all return shipping costs. Contact us and we'll arrange a prepaid return label.</div>" } },
+        "s5": { "type": "policy_section", "settings": { "title": "Refund Processing", "body": "<div class='policy-body-text'>Once we receive and inspect your return, we'll process your refund within 2 business days. Refunds are issued to your original payment method.</div><div class='policy-body-text'>Please allow 5–10 business days for the refund to appear in your account, depending on your bank or payment provider.</div>" } },
+        "s6": { "type": "policy_section", "settings": { "title": "Damaged or Faulty Items", "body": "<div class='policy-body-text'>If your item arrives damaged or is faulty, please contact us within 48 hours of delivery with photos. We'll arrange a replacement or full refund at no cost to you — including return shipping.</div>" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5", "s6"]
+    }
   },
   "order": ["pawd-returns"]
 }

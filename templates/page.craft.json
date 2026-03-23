@@ -1,11 +1,33 @@
 {
-    "sections": {
-        "pawd-craft": {
-            "type": "pawd-craft",
-            "settings": {}
-        }
-    },
-    "order": [
-        "pawd-craft"
-    ]
+  "sections": {
+    "pawd-craft": {
+      "type": "pawd-craft",
+      "settings": {},
+      "blocks": {
+        "m1": { "type": "material", "settings": { "flag": "🇮🇹", "title": "Full-Grain Leather", "source": "Sourced · Veneto, Italy", "description": "The highest grade of leather — the outermost layer of the hide with the natural grain intact. More expensive, harder to work with, and less uniform than corrected-grain alternatives. The only leather that genuinely improves with age, developing a rich patina unique to each animal.", "used_in": "Used in: Leather Collars, Leads, Harness Sets" } },
+        "m2": { "type": "material", "settings": { "flag": "🇵🇹", "title": "Braided Rope & Cotton", "source": "Sourced · Guimarães, Portugal", "description": "Guimarães has been a centre of textile manufacturing since the 12th century. Our rope leads and woven components are made by a family-run mill operating there for four generations. OEKO-TEX certified, machine-washable, colourfast — soft enough for the most sensitive skin.", "used_in": "Used in: Rope Leads, Braided Collars, Harness Webbing" } },
+        "m3": { "type": "material", "settings": { "flag": "🇦🇺", "title": "Hand-Thrown Ceramics", "source": "Sourced · Byron Bay, Australia", "description": "Our ceramic bowls are made in small batches by an independent ceramicist in northern NSW. Each piece is thrown on the wheel, bisque-fired, hand-glazed and kiln-fired — no two are identical. Food-safe, lead-free glaze. Each colourway is capped at 200 units.", "used_in": "Used in: Ceramic Bowl Range, Double Bowl Stands" } },
+        "m4": { "type": "material", "settings": { "flag": "🇩🇪", "title": "Technical Fabrics", "source": "Sourced · Bavaria, Germany", "description": "Our harnesses, raincoats and reflective components use technical fabrics from a specialist mill in southern Germany. Tested for abrasion resistance, UV stability, moisture management and reflectivity. No compromises where safety intersects with function.", "used_in": "Used in: Mesh Harnesses, Reflective Leads, Raincoats" } },
+        "p1": { "type": "process_step", "settings": { "number": "01", "title": "Material First", "description": "We source the material before we design the product. We visit suppliers, handle samples across multiple seasons and wear conditions, and decide on material quality before a single sketch is drawn.", "gradient": "g-e", "image_hint": "Material swatches — leather, rope, fabric samples arranged on surface" } },
+        "p2": { "type": "process_step", "settings": { "number": "02", "title": "Design Around the Material", "description": "The design is built around what the material can do well — its drape, hand-feel, strength, limitations. We don't force materials into shapes they're wrong for.", "gradient": "g-f", "image_hint": "Design sketches alongside material samples" } },
+        "p3": { "type": "process_step", "settings": { "number": "03", "title": "Prototype & Test", "description": "Every product goes through a minimum of four prototype rounds before production. Each prototype is tested on real animals in real conditions.", "gradient": "g-j", "image_hint": "Dog being fitted with prototype harness" } },
+        "p4": { "type": "process_step", "settings": { "number": "04", "title": "Small-Run Production", "description": "We produce in deliberate small runs — 150–400 units per colourway. Small runs mean quality control at every stage and no excess inventory that forces discounting.", "gradient": "g-k", "image_hint": "Finished products lined up — overhead studio shot" } },
+        "pi1": { "type": "process_image", "settings": { "gradient": "g-a", "image_hint": "Leather being cut and hand-stitched — artisan hands, warm workshop light", "caption": "Cutting & Edge Finishing · Veneto" } },
+        "pi2": { "type": "process_image", "settings": { "gradient": "g-k", "image_hint": "Solid brass hardware — rings and buckles arranged on leather surface", "caption": "Solid Brass Hardware" } },
+        "pi3": { "type": "process_image", "settings": { "gradient": "g-d", "image_hint": "Final quality check — hands holding finished collar", "caption": "Final Quality Check" } },
+        "c1": { "type": "commitment", "settings": { "title": "No Split Leather, Ever", "description": "We only use full-grain or top-grain leather. Split leather — the lower layer used in budget accessories — looks similar initially but degrades quickly and flakes with wear." } },
+        "c2": { "type": "commitment", "settings": { "title": "Solid Metal Hardware Only", "description": "Every buckle, ring and clip is cast from solid brass or stainless steel — not plated zinc alloy, which corrodes with moisture and fails under sustained load." } },
+        "c3": { "type": "commitment", "settings": { "title": "OEKO-TEX Certified Textiles", "description": "Every woven, knitted or fabric component is OEKO-TEX Standard 100 certified — tested and confirmed free from harmful substances including heavy metals, formaldehyde and pesticide residues." } },
+        "c4": { "type": "commitment", "settings": { "title": "Food-Safe Ceramics, Always", "description": "All ceramic bowls use food-safe, lead-free glaze — kiln-fired at temperatures that permanently bond the glaze. We test every new colourway before release." } },
+        "c5": { "type": "commitment", "settings": { "title": "Breakaway Safety on All Cat Collars", "description": "Every cat collar uses a safety breakaway buckle that releases under sustained pressure. We will never sell a non-breakaway cat collar. This is a safety commitment, not a feature." } },
+        "c6": { "type": "commitment", "settings": { "title": "Plastic-Free Packaging", "description": "All products are packaged in recycled card, tissue and cotton ribbon. No plastic mailers, no bubble wrap. We offset carbon on every international shipment." } },
+        "ss1": { "type": "supply_stat", "settings": { "label": "Active Suppliers", "value": "9 partners" } },
+        "ss2": { "type": "supply_stat", "settings": { "label": "Countries of Origin", "value": "4 countries" } },
+        "ss3": { "type": "supply_stat", "settings": { "label": "Supplier Site Visits Per Year", "value": "2× minimum" } },
+        "ss4": { "type": "supply_stat", "settings": { "label": "Packaging Plastic Content", "value": "Zero" } }
+      },
+      "block_order": ["m1", "m2", "m3", "m4", "p1", "p2", "p3", "p4", "pi1", "pi2", "pi3", "c1", "c2", "c3", "c4", "c5", "c6", "ss1", "ss2", "ss3", "ss4"]
+    }
+  },
+  "order": ["pawd-craft"]
 }
