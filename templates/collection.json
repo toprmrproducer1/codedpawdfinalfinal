@@ -25,56 +25,56 @@
           "type": "highlight",
           "settings": {
             "heading": "All (48)",
-            "url": ""
+            "url": "/collections/dogs-main"
           }
         },
         "hl_collars": {
           "type": "highlight",
           "settings": {
             "heading": "Collars (10)",
-            "url": ""
+            "url": "/collections/dog-collars"
           }
         },
         "hl_harnesses": {
           "type": "highlight",
           "settings": {
             "heading": "Harnesses (6)",
-            "url": ""
+            "url": "/collections/dog-walk"
           }
         },
         "hl_leads": {
           "type": "highlight",
           "settings": {
             "heading": "Leads (8)",
-            "url": ""
+            "url": "/collections/dog-leashes"
           }
         },
         "hl_play": {
           "type": "highlight",
           "settings": {
             "heading": "Play (8)",
-            "url": ""
+            "url": "/collections/dog-play"
           }
         },
         "hl_sleep": {
           "type": "highlight",
           "settings": {
             "heading": "Sleep (6)",
-            "url": ""
+            "url": "/collections/dog-sleep"
           }
         },
         "hl_wear": {
           "type": "highlight",
           "settings": {
             "heading": "Wear (5)",
-            "url": ""
+            "url": "/collections/dog-wear"
           }
         },
         "hl_eat": {
           "type": "highlight",
           "settings": {
             "heading": "Eat (5)",
-            "url": ""
+            "url": "/collections/dog-eat"
           }
         }
       },
@@ -137,7 +137,7 @@
       "settings": {
         "eyebrow": "The Full Range",
         "title": "Everything They Deserve.",
-        "body": "From the morning walk to the evening wind-down — every product in the PAWD dog range is chosen against one standard: quality we'd buy for our own dog.",
+        "body": "From the morning walk to the evening wind-down \u2014 every product in the PAWD dog range is chosen against one standard: quality we'd buy for our own dog.",
         "button_text": "Explore All Dogs",
         "button_url": ""
       }
@@ -163,7 +163,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Do you ship internationally from Australia?",
-            "answer": "<p>Yes — we offer free worldwide shipping on every order. Express shipping is also available at checkout for an additional fee. Most Australian orders arrive within 3–5 business days. International orders typically arrive within 7–14 business days.</p>"
+            "answer": "<p>Yes \u2014 we offer free worldwide shipping on every order. Express shipping is also available at checkout for an additional fee. Most Australian orders arrive within 3\u20135 business days. International orders typically arrive within 7\u201314 business days.</p>"
           }
         },
         "faq_4": {
@@ -177,7 +177,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Can I buy now and pay later?",
-            "answer": "<p>Yes — we offer Afterpay on all orders. Split your purchase into 4 interest-free payments. Select Afterpay at checkout to get started.</p>"
+            "answer": "<p>Yes \u2014 we offer Afterpay on all orders. Split your purchase into 4 interest-free payments. Select Afterpay at checkout to get started.</p>"
           }
         }
       },
@@ -191,7 +191,7 @@
       "settings": {
         "eyebrow": "Help & FAQs",
         "title": "Common Questions",
-        "body": "<p>Everything you need to know before you shop the PAWD dog range. Can't find what you're looking for? <a href=\"/pages/contact\">Contact us<\/a>.</p>"
+        "body": "<p>Everything you need to know before you shop the PAWD dog range. Can't find what you're looking for? <a href=\"/pages/contact\">Contact us</a>.</p>"
       }
     }
   },
