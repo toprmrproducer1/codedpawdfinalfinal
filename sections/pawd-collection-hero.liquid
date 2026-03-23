@@ -19,7 +19,7 @@
   <div class="pawd-coll-hero-overlay"></div>
   <div class="pawd-coll-hero-content">
     {%- if eyebrow != blank -%}
-      <div class="pawd-coll-hero-eyebrow">{{ eyebrow }}</div>
+      <div class="pawd-coll-hero-eyebrow">{{ eyebrow }}{% if collection.title != blank %} · {{ collection.title }}{% endif %}</div>
     {%- endif -%}
     {%- if show_title -%}
       <h1 class="pawd-coll-hero-title">{{ collection.title }}</h1>
@@ -29,6 +29,13 @@
     {%- endif -%}
   </div>
 </div>
+
+{%- comment -%} Breadcrumb bar — HOME / Collection Title {%- endcomment -%}
+<nav class="pawd-coll-bc" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span>/</span>
+  <span class="cur">{{ collection.title }}</span>
+</nav>
 
 {%- schema -%}
 {
