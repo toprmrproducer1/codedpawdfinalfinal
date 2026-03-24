@@ -466,7 +466,12 @@
 {%- capture menu -%}
   <nav class="header__menu{% if settings.type_nav_caps %} caps{% endif %}" {{ highlight_style }}>
     {%- for link in linklists[main_menu_linklist].links -%}
-      {%- render 'nav-item', link: link, index: forloop.index, highlight_item: highlight_item -%}
+      {%- assign link_title_down = link.title | downcase | strip -%}
+      {%- if link_title_down == 'resources' -%}
+        {%- render 'pawd-nav-resources-dropdown', link: link -%}
+      {%- else -%}
+        {%- render 'nav-item', link: link, index: forloop.index, highlight_item: highlight_item -%}
+      {%- endif -%}
     {%- endfor -%}
 
     <div class="hover__bar"></div>
