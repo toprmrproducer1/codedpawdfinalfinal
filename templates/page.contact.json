@@ -2,7 +2,11 @@
   "sections": {
     "pawd-contact": {
       "type": "pawd-contact",
-      "settings": {},
+      "settings": {
+        "hero_eyebrow": "Get in Touch",
+        "hero_title": "We're <em>Here<\/em><br>to Help.",
+        "hero_subtitle": "Real answers from real people \u2014 not bots. We typically respond within 4 business hours during our operating hours Monday\u2013Friday, 9am\u20135pm AEST."
+      },
       "blocks": {
         "r1": { "type": "response_item", "settings": { "number": "4hrs", "label": "Average email response<br>Mon\u2013Fri, 9am\u20135pm AEST" } },
         "r2": { "type": "response_item", "settings": { "number": "24hrs", "label": "Maximum response time<br>on business days" } },

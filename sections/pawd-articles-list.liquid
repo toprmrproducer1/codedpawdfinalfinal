@@ -4,43 +4,15 @@
   This is a BLOG template section — it gets the `blog` object automatically
 {% endcomment %}
 
-<style>
-:root {
-  --ob: #0A0A0A;
-  --ch: #1C1C1E;
-  --gr: #3A3A3C;
-  --st: #636366;
-  --si: #AEAEB2;
-  --fo: #D1D1D6;
-  --sm: #E5E5EA;
-  --ow: #F5F5F7;
-  --wh: #FFFFFF;
-  --fd: 'Cormorant Garamond', Georgia, serif;
-  --fb: 'DM Sans', system-ui, sans-serif;
-  --ease: cubic-bezier(.25,.1,.25,1);
-}
-</style>
 {{ 'pawd-resources.css' | asset_url | stylesheet_tag }}
 
-{%- assign current_tag = '' -%}
-
-<!-- Sub-nav -->
-<div class="res-subnav">
-  <a href="{{ section.settings.resources_url | default: '/pages/resources' }}" class="res-snav-item">&#8592; All Resources</a>
-  <a href="{{ blog.url }}" class="res-snav-item{% unless current_tag != blank %} active{% endunless %}">All Articles</a>
-  {%- for block in section.blocks -%}
-    {%- if block.type == 'subnav_tag' -%}
-      {%- assign tag_handle = block.settings.tag | handleize -%}
-      <a href="{{ blog.url }}/tagged/{{ tag_handle }}" class="res-snav-item{% if current_tag == tag_handle %} active{% endif %}">{{ block.settings.tag }}</a>
-    {%- endif -%}
-  {%- endfor -%}
-</div>
+{% render 'pawd-resources-nav', active: 'articles' %}
 
 <!-- Header with intro + search -->
 <div class="articles-header">
   <div>
     <div class="pg-breadcrumb">
-      <a href="{{ section.settings.resources_url | default: '/pages/resources' }}">Resources</a><span>/</span><span>Articles</span>
+      <a href="/pages/resources">Resources</a><span>/</span><span>Articles</span>
     </div>
     <div style="font-family:var(--fd);font-size:clamp(44px,6vw,80px);font-weight:300;line-height:.95;letter-spacing:-.01em">{{ section.settings.title }}</div>
   </div>
@@ -56,11 +28,11 @@
 <!-- Category bar -->
 <div class="cat-bar">
   <span class="cat-bar-label">Filter:</span>
-  <a href="{{ blog.url }}" class="cat-bar-item{% unless current_tag != blank %} active{% endunless %}">All</a>
+  <a href="{{ blog.url }}" class="cat-bar-item{% unless current_tags %} active{% endunless %}">All</a>
   {%- for block in section.blocks -%}
     {%- if block.type == 'category_filter' -%}
       {%- assign tag_handle = block.settings.tag | handleize -%}
-      <a href="{{ blog.url }}/tagged/{{ tag_handle }}" class="cat-bar-item{% if current_tag == tag_handle %} active{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+      <a href="{{ blog.url }}/tagged/{{ tag_handle }}" class="cat-bar-item{% if current_tags contains tag_handle %} active{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
     {%- endif -%}
   {%- endfor -%}
 </div>
@@ -183,18 +155,10 @@
   "tag": "section",
   "class": "pawd-articles-list-section",
   "settings": [
-    { "type": "url", "id": "resources_url", "label": "Resources Hub URL" },
     { "type": "html", "id": "title", "label": "Title", "default": "The<br>PAWD<br><em>Journal.</em>" },
     { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Stories from our supply chain, the thinking behind our products, and honest writing about what it means to make things properly. No content marketing. Just things worth reading." }
   ],
   "blocks": [
-    {
-      "type": "subnav_tag",
-      "name": "Sub-nav Tag",
-      "settings": [
-        { "type": "text", "id": "tag", "label": "Tag", "default": "Materials & Craft" }
-      ]
-    },
     {
       "type": "category_filter",
       "name": "Category Filter",
@@ -208,10 +172,6 @@
     {
       "name": "PAWD Articles Listing",
       "blocks": [
-        { "type": "subnav_tag", "settings": { "tag": "Materials & Craft" } },
-        { "type": "subnav_tag", "settings": { "tag": "Brand Story" } },
-        { "type": "subnav_tag", "settings": { "tag": "Supply Chain" } },
-        { "type": "subnav_tag", "settings": { "tag": "Pet Lifestyle" } },
         { "type": "category_filter", "settings": { "label": "Materials", "tag": "materials" } },
         { "type": "category_filter", "settings": { "label": "Supply Chain", "tag": "supply-chain" } },
         { "type": "category_filter", "settings": { "label": "Brand Story", "tag": "brand-story" } },

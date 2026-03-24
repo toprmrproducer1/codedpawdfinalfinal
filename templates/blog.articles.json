@@ -3,85 +3,18 @@
     "articles_list": {
       "type": "pawd-articles-list",
       "settings": {
-        "resources_url": "/pages/resources",
         "title": "The<br>PAWD<br><em>Journal.</em>",
         "subtitle": "Stories from our supply chain, the thinking behind our products, and honest writing about what it means to make things properly. No content marketing. Just things worth reading."
       },
       "blocks": {
-        "sn1": {
-          "type": "subnav_tag",
-          "settings": {
-            "tag": "Materials & Craft"
-          }
-        },
-        "sn2": {
-          "type": "subnav_tag",
-          "settings": {
-            "tag": "Brand Story"
-          }
-        },
-        "sn3": {
-          "type": "subnav_tag",
-          "settings": {
-            "tag": "Supply Chain"
-          }
-        },
-        "sn4": {
-          "type": "subnav_tag",
-          "settings": {
-            "tag": "Pet Lifestyle"
-          }
-        },
-        "cf1": {
-          "type": "category_filter",
-          "settings": {
-            "label": "Materials",
-            "tag": "materials"
-          }
-        },
-        "cf2": {
-          "type": "category_filter",
-          "settings": {
-            "label": "Supply Chain",
-            "tag": "supply-chain"
-          }
-        },
-        "cf3": {
-          "type": "category_filter",
-          "settings": {
-            "label": "Brand Story",
-            "tag": "brand-story"
-          }
-        },
-        "cf4": {
-          "type": "category_filter",
-          "settings": {
-            "label": "Pet Lifestyle",
-            "tag": "pet-lifestyle"
-          }
-        },
-        "cf5": {
-          "type": "category_filter",
-          "settings": {
-            "label": "Sustainability",
-            "tag": "sustainability"
-          }
-        }
+        "cf1": { "type": "category_filter", "settings": { "label": "Materials", "tag": "materials" } },
+        "cf2": { "type": "category_filter", "settings": { "label": "Supply Chain", "tag": "supply-chain" } },
+        "cf3": { "type": "category_filter", "settings": { "label": "Brand Story", "tag": "brand-story" } },
+        "cf4": { "type": "category_filter", "settings": { "label": "Pet Lifestyle", "tag": "pet-lifestyle" } },
+        "cf5": { "type": "category_filter", "settings": { "label": "Sustainability", "tag": "sustainability" } }
       },
-      "block_order": [
-        "sn1",
-        "sn2",
-        "sn3",
-        "sn4",
-        "cf1",
-        "cf2",
-        "cf3",
-        "cf4",
-        "cf5"
-      ]
+      "block_order": ["cf1", "cf2", "cf3", "cf4", "cf5"]
     }
   },
-  "order": [
-    "articles_list"
-  ]
+  "order": ["articles_list"]
 }

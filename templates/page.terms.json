@@ -2,7 +2,12 @@
   "sections": {
     "pawd-terms": {
       "type": "pawd-terms",
-      "settings": {},
+      "settings": {
+        "hero_eyebrow": "Legal",
+        "hero_title": "Terms & <em>Conditions.</em>",
+        "hero_subtitle": "Please read these terms carefully before using the PAWD website or placing an order.",
+        "updated_text": "Last Updated: 4 March 2026 \u00b7 PAWD Australia Pty Ltd"
+      },
       "blocks": {
         "s1": { "type": "terms_section", "settings": { "title": "Overview", "body": "<div class='terms-body-text'>This website is operated by PAWD Australia Pty Ltd. By visiting our site and/or purchasing from us, you agree to be bound by these terms and conditions.</div><div class='terms-body-text'>We reserve the right to update, change or replace any part of these Terms of Service by posting updates to our website. It is your responsibility to check this page periodically for changes.</div>" } },
         "s2": { "type": "terms_section", "settings": { "title": "Use of the Site", "body": "<div class='terms-body-text'>You may not use our products for any illegal purpose. You must not transmit any worms, viruses or destructive code. A breach of any of the Terms will result in immediate termination of your right to use our services.</div>" } },

@@ -2,7 +2,11 @@
   "sections": {
     "pawd-about": {
       "type": "pawd-about",
-      "settings": {},
+      "settings": {
+        "hero_eyebrow": "Our Story",
+        "hero_title": "Made by <em>Pet Lovers.<\/em><br>For Pet Lovers.",
+        "hero_subtitle": "PAWD started in 2021 in a spare bedroom in Sydney, with a dog called Jake snoring in the corner. This is what happened next."
+      },
       "blocks": {
         "st1": { "type": "stat", "settings": { "number": "2021", "label": "Founded in Sydney", "sub": "A spare bedroom. One dog." } },
         "st2": { "type": "stat", "settings": { "number": "14,000+", "label": "Happy Pets Worldwide", "sub": "Across 38 countries." } },

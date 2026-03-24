@@ -2,7 +2,11 @@
   "sections": {
     "pawd-craft": {
       "type": "pawd-craft",
-      "settings": {},
+      "settings": {
+        "hero_eyebrow": "The Standard We Hold Ourselves To",
+        "hero_title": "Our<br><em>Craft.</em>",
+        "hero_subtitle": "The materials we choose. The people who make them. The process that turns raw goods into something your pet wears every day of their life."
+      },
       "blocks": {
         "m1": { "type": "material", "settings": { "flag": "🇮🇹", "title": "Full-Grain Leather", "source": "Sourced · Veneto, Italy", "description": "The highest grade of leather — the outermost layer of the hide with the natural grain intact. More expensive, harder to work with, and less uniform than corrected-grain alternatives. The only leather that genuinely improves with age, developing a rich patina unique to each animal.", "used_in": "Used in: Leather Collars, Leads, Harness Sets" } },
         "m2": { "type": "material", "settings": { "flag": "🇵🇹", "title": "Braided Rope & Cotton", "source": "Sourced · Guimarães, Portugal", "description": "Guimarães has been a centre of textile manufacturing since the 12th century. Our rope leads and woven components are made by a family-run mill operating there for four generations. OEKO-TEX certified, machine-washable, colourfast — soft enough for the most sensitive skin.", "used_in": "Used in: Rope Leads, Braided Collars, Harness Webbing" } },

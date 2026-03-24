@@ -2,17 +2,84 @@
   "sections": {
     "pawd-returns": {
       "type": "pawd-returns",
-      "settings": {},
-      "blocks": {
-        "s1": { "type": "policy_section", "settings": { "title": "Returns Overview", "body": "<div class='policy-body-text'>PAWD accepts returns on non-personalised items within 30 calendar days of delivery. Items must be in original, unused condition with all tags attached and in original packaging.</div><div class='policy-body-text'>Personalised items (engraved tags, custom embroidery) cannot be returned unless faulty or incorrectly made.</div>" } },
-        "s2": { "type": "policy_section", "settings": { "title": "How to Start a Return", "body": "<div class='policy-body-text'>To initiate a return:</div><ul class='policy-ul'><li>Email <a href='mailto:support@pawdstore.com'>support@pawdstore.com</a> with your order number and reason for return</li><li>Our team will respond within 4 business hours with a return authorisation and instructions</li><li>Pack the item securely in its original packaging</li><li>Ship to the address provided in your return authorisation</li></ul>" } },
-        "s3": { "type": "policy_section", "settings": { "title": "Exchanges", "body": "<div class='policy-body-text'>Need a different size or colour? We're happy to exchange. Contact us at <a href='mailto:support@pawdstore.com'>support@pawdstore.com</a> and we'll arrange the exchange once your original item is in transit back to us.</div><div class='policy-body-text'>If the new item is a different price, we'll charge or refund the difference.</div>" } },
-        "s4": { "type": "policy_section", "settings": { "title": "Return Shipping", "body": "<div class='policy-body-text'>For change-of-mind returns, the customer is responsible for return postage costs. We recommend using a tracked service as we cannot be responsible for items lost in transit.</div><div class='policy-highlight'><strong>Faulty Items:</strong> If your item is faulty or we made an error, we cover all return shipping costs. Contact us and we'll arrange a prepaid return label.</div>" } },
-        "s5": { "type": "policy_section", "settings": { "title": "Refund Processing", "body": "<div class='policy-body-text'>Once we receive and inspect your return, we'll process your refund within 2 business days. Refunds are issued to your original payment method.</div><div class='policy-body-text'>Please allow 5–10 business days for the refund to appear in your account, depending on your bank or payment provider.</div>" } },
-        "s6": { "type": "policy_section", "settings": { "title": "Damaged or Faulty Items", "body": "<div class='policy-body-text'>If your item arrives damaged or is faulty, please contact us within 48 hours of delivery with photos. We'll arrange a replacement or full refund at no cost to you — including return shipping.</div>" } }
+      "settings": {
+        "hero_eyebrow": "Returns Policy",
+        "hero_title": "<em>Returns</em><br>Policy.",
+        "hero_subtitle": "30-day hassle-free returns on all non-personalised items. Our complete returns, exchange, refund and warranty policy is detailed below.",
+        "updated_text": "Last Updated: 4 March 2026 · PAWD Australia Pty Ltd",
+        "quick_summary": "<strong>Quick Summary:</strong> 30-day returns · non-personalised items only · original condition required · customer pays return postage for change-of-mind · we cover return postage for faulty items · refunds within 2 business days of receiving return."
       },
-      "block_order": ["s1", "s2", "s3", "s4", "s5", "s6"]
+      "blocks": {
+        "s1": {
+          "type": "policy_section",
+          "settings": {
+            "title": "Returns Overview",
+            "body": "<div class='policy-body-text'>PAWD accepts returns on non-personalised items within 30 calendar days of the date your order was delivered. To be eligible for a return, items must be:</div><ul class='policy-ul'><li>In original, unworn, and unused condition</li><li>In original packaging (box, tissue, ribbon)</li><li>Accompanied by a Return Merchandise Authorisation (RMA) number issued by our team</li><li>Returned within 30 days of the delivery date shown on your tracking</li></ul><div class='policy-body-text'>Items that do not meet the above conditions may be declined and returned to the sender at their expense.</div><table class='policy-table'><thead><tr><th>Item Type</th><th>Returnable?</th><th>Conditions</th></tr></thead><tbody><tr><td>Standard products (non-personalised)</td><td>✓ Yes</td><td>Within 30 days, original condition</td></tr><tr><td>Sale items</td><td>✓ Yes</td><td>Same 30-day policy applies</td></tr><tr><td>Personalised / engraved items</td><td>✗ Final Sale</td><td>Unless faulty or damaged</td></tr><tr><td>Faulty / damaged items</td><td>✓ Yes</td><td>Full refund + prepaid return label</td></tr><tr><td>Incorrect items received</td><td>✓ Yes</td><td>Full refund or replacement + prepaid label</td></tr></tbody></table>"
+          }
+        },
+        "s2": {
+          "type": "policy_section",
+          "settings": {
+            "title": "How to Start a Return",
+            "body": "<div class='policy-body-text'>To initiate a return, please follow these steps:</div><div class='policy-sub-title'>Step 1 — Contact Us</div><div class='policy-body-text'>Email <a href='mailto:hello@pawdstore.com'>hello@pawdstore.com</a> with the subject line “Return Request — Order #[your order number]”. Include your full name, order number, which item(s) you’d like to return, and your reason for return. We’ll respond within 1 business day with your RMA number and return address.</div><div class='policy-sub-title'>Step 2 — Pack Your Return</div><div class='policy-body-text'>Pack the item securely in its original packaging where possible. Write your RMA number clearly on the outside of the parcel.</div><div class='policy-sub-title'>Step 3 — Ship It Back</div><div class='policy-body-text'>For change-of-mind returns, return shipping is at your cost. We recommend using a tracked service. For faulty or incorrect items, we’ll provide a prepaid return label via email.</div><div class='policy-sub-title'>Step 4 — Refund Processing</div><div class='policy-body-text'>Once we receive and inspect your return (typically 1–2 business days after arrival), we’ll process your refund within 2 business days and send a confirmation email.</div>"
+          }
+        },
+        "s3": {
+          "type": "policy_section",
+          "settings": {
+            "title": "Exchanges",
+            "body": "<div class='policy-body-text'>We’re happy to exchange items for a different size, colour, or style within the 30-day return window. Contact us at <a href='mailto:hello@pawdstore.com'>hello@pawdstore.com</a> with your order number, the item you’d like to return, and your preferred exchange item.</div><div class='policy-body-text'>If the exchange item is higher in value, we’ll send a secure payment link for the difference. If lower, we’ll refund the difference. Exchange orders are dispatched within 1–2 business days of receiving your return.</div>"
+          }
+        },
+        "s4": {
+          "type": "policy_section",
+          "settings": {
+            "title": "Refunds",
+            "body": "<div class='policy-body-text'>Approved refunds are issued to the original payment method only. Refund processing timeline:</div><ul class='policy-ul'><li>We receive and inspect your return: 1–2 business days after delivery</li><li>We process the refund: within 2 business days of inspection</li><li>Refund appears in your account: 3–5 business days depending on your bank or card provider</li><li>Afterpay refunds: up to 10 business days (processed via Afterpay directly)</li><li>PayPal refunds: 3–5 business days</li></ul><div class='policy-body-text'>Original shipping fees are non-refundable for change-of-mind returns.</div>"
+          }
+        },
+        "s5": {
+          "type": "policy_section",
+          "settings": {
+            "title": "Personalised Items",
+            "body": "<div class='policy-body-text'>Personalised items — including engraved collars, custom tags, and any other made-to-order products — are final sale and cannot be returned for change of mind.</div><div class='policy-body-text'>Before placing a personalised order, please:</div><ul class='policy-ul'><li>Double-check the exact spelling of the name or text as you’d like it engraved</li><li>Check capitalisation — we engrave exactly what you enter at checkout</li><li>Confirm the correct item, size and colour</li></ul><div class='policy-body-text'>If your personalised item arrives faulty, damaged, or with an engraving error made on our side, it is fully covered under our standard warranty. Contact us at <a href='mailto:hello@pawdstore.com'>hello@pawdstore.com</a> with photos within 7 days of delivery.</div>"
+          }
+        },
+        "s6": {
+          "type": "policy_section",
+          "settings": {
+            "title": "Faulty or Damaged Items",
+            "body": "<div class='policy-body-text'>If your order arrives damaged, defective, or incorrect, please contact us at <a href='mailto:hello@pawdstore.com'>hello@pawdstore.com</a> within 7 days of delivery. Include your order number and clear photos of the fault or damage.</div><div class='policy-body-text'>For faulty or incorrect items we will cover all return shipping costs and offer your choice of: (1) a full replacement dispatched within 1–2 business days, or (2) a full refund to your original payment method, including the original shipping cost.</div>"
+          }
+        },
+        "s7": {
+          "type": "policy_section",
+          "settings": {
+            "title": "Warranty",
+            "body": "<div class='policy-body-text'>All PAWD products carry a 12-month warranty against manufacturing defects from the date of purchase.</div><div class='policy-body-text'>Warranty covers: stitching failures, hardware failure (buckle, ring, clip), colour transfer defects, and structural integrity failures. Warranty does not cover: normal wear and tear, damage from chewing or scratching, damage from water immersion of leather products, accidental damage, or damage caused by misuse or neglect.</div><div class='policy-body-text'>To make a warranty claim, email <a href='mailto:hello@pawdstore.com'>hello@pawdstore.com</a> with your order number and clear photos of the issue.</div>"
+          }
+        },
+        "s8": {
+          "type": "policy_section",
+          "settings": {
+            "title": "Australian Consumer Law",
+            "body": "<div class='policy-body-text'>Our returns policy is in addition to, and does not limit, your rights under the Australian Consumer Law (ACL). Under the ACL, consumers are entitled to a remedy if goods are not of acceptable quality, not fit for purpose, or do not match their description.</div><div class='policy-body-text'>If a product has a major failure, you are entitled to your choice of refund, replacement, or repair. If a product has a minor failure, we may offer repair or replacement.</div><div class='policy-body-text'>For enquiries regarding your consumer rights, contact the ACCC at accc.gov.au or your state’s consumer protection agency.</div>"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ]
     }
   },
-  "order": ["pawd-returns"]
+  "order": [
+    "pawd-returns"
+  ]
 }

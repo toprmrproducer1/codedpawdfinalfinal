@@ -3,74 +3,18 @@
     "guides_list": {
       "type": "pawd-guides-list",
       "settings": {
-        "resources_url": "/pages/resources",
-        "color_scheme": "scheme-1",
-        "padding_top": 0,
-        "padding_bottom": 60
+        "blog_handle": "guides"
       },
       "blocks": {
-        "sn1": {
-          "type": "subnav_tag",
-          "settings": {
-            "label": "← All Resources",
-            "url": "/pages/resources"
-          }
-        },
-        "sn2": {
-          "type": "subnav_tag",
-          "settings": {
-            "label": "All Guides",
-            "tag": ""
-          }
-        },
-        "sn3": {
-          "type": "subnav_tag",
-          "settings": {
-            "label": "Sizing & Fit",
-            "tag": "sizing-fit"
-          }
-        },
-        "sn4": {
-          "type": "subnav_tag",
-          "settings": {
-            "label": "Product Care",
-            "tag": "product-care"
-          }
-        },
-        "sn5": {
-          "type": "subnav_tag",
-          "settings": {
-            "label": "Training",
-            "tag": "training"
-          }
-        },
-        "sn6": {
-          "type": "subnav_tag",
-          "settings": {
-            "label": "Cat Guides",
-            "tag": "cat-guides"
-          }
-        },
-        "sn7": {
-          "type": "subnav_tag",
-          "settings": {
-            "label": "Dog Guides",
-            "tag": "dog-guides"
-          }
-        }
+        "st1": { "type": "sidebar_topic", "settings": { "label": "All Guides (9)", "tag": "all", "dot_color": "#7a6a50" } },
+        "st2": { "type": "sidebar_topic", "settings": { "label": "Sizing & Fit (4)", "tag": "sizing-fit", "dot_color": "#3a4a7a" } },
+        "st3": { "type": "sidebar_topic", "settings": { "label": "Product Care (3)", "tag": "product-care", "dot_color": "#6a4a7a" } },
+        "st4": { "type": "sidebar_topic", "settings": { "label": "Training (2)", "tag": "training", "dot_color": "#3a6a5a" } },
+        "st5": { "type": "sidebar_topic", "settings": { "label": "Cat Guides (3)", "tag": "cat-guides", "dot_color": "#5a3a6a" } },
+        "st6": { "type": "sidebar_topic", "settings": { "label": "Dog Guides (6)", "tag": "dog-guides", "dot_color": "#4a6a3a" } }
       },
-      "block_order": [
-        "sn1",
-        "sn2",
-        "sn3",
-        "sn4",
-        "sn5",
-        "sn6",
-        "sn7"
-      ]
+      "block_order": ["st1", "st2", "st3", "st4", "st5", "st6"]
     }
   },
-  "order": [
-    "guides_list"
-  ]
+  "order": ["guides_list"]
 }

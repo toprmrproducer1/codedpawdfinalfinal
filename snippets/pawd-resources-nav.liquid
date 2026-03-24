@@ -1,0 +1,45 @@
+{%- comment -%}
+  Shared resources sub-navigation bar.
+  Renders a horizontal tab nav used on all resources pages.
+
+  Usage:
+    {% render 'pawd-resources-nav', active: 'hub' %}
+    {% render 'pawd-resources-nav', active: 'guides' %}
+    {% render 'pawd-resources-nav', active: 'articles' %}
+{%- endcomment -%}
+
+{%- liquid
+  unless active
+    assign active = 'hub'
+  endunless
+-%}
+
+<nav class="res-subnav" aria-label="Resources navigation">
+  {%- if active == 'guides' or active == 'articles' -%}
+    <a href="/pages/resources" class="res-snav-item">← All Resources</a>
+  {%- endif -%}
+
+  {%- if active == 'hub' -%}
+    <a href="/pages/resources" class="res-snav-item active" aria-current="page">All</a>
+    <a href="/blogs/guides" class="res-snav-item">Guides</a>
+    <a href="/blogs/articles" class="res-snav-item">Articles</a>
+    <a href="/blogs/guides/tagged/dog-care" class="res-snav-item">Dog Care</a>
+    <a href="/blogs/guides/tagged/cat-care" class="res-snav-item">Cat Care</a>
+    <a href="/blogs/guides/tagged/sizing-fit" class="res-snav-item">Sizing &amp; Fit</a>
+    <a href="/blogs/articles/tagged/materials" class="res-snav-item">Materials</a>
+    <a href="/blogs/articles/tagged/brand-story" class="res-snav-item">Our Brand</a>
+  {%- elsif active == 'guides' -%}
+    <a href="/blogs/guides" class="res-snav-item{% unless current_tags %} active{% endunless %}"{% unless current_tags %} aria-current="page"{% endunless %}>All Guides</a>
+    <a href="/blogs/guides/tagged/sizing-fit" class="res-snav-item{% if current_tags contains 'sizing-fit' %} active{% endif %}">Sizing &amp; Fit</a>
+    <a href="/blogs/guides/tagged/product-care" class="res-snav-item{% if current_tags contains 'product-care' %} active{% endif %}">Product Care</a>
+    <a href="/blogs/guides/tagged/training" class="res-snav-item{% if current_tags contains 'training' %} active{% endif %}">Training</a>
+    <a href="/blogs/guides/tagged/cat-guides" class="res-snav-item{% if current_tags contains 'cat-guides' %} active{% endif %}">Cat Guides</a>
+    <a href="/blogs/guides/tagged/dog-guides" class="res-snav-item{% if current_tags contains 'dog-guides' %} active{% endif %}">Dog Guides</a>
+  {%- elsif active == 'articles' -%}
+    <a href="/blogs/articles" class="res-snav-item{% unless current_tags %} active{% endunless %}"{% unless current_tags %} aria-current="page"{% endunless %}>All Articles</a>
+    <a href="/blogs/articles/tagged/materials-craft" class="res-snav-item{% if current_tags contains 'materials-craft' %} active{% endif %}">Materials &amp; Craft</a>
+    <a href="/blogs/articles/tagged/brand-story" class="res-snav-item{% if current_tags contains 'brand-story' %} active{% endif %}">Brand Story</a>
+    <a href="/blogs/articles/tagged/supply-chain" class="res-snav-item{% if current_tags contains 'supply-chain' %} active{% endif %}">Supply Chain</a>
+    <a href="/blogs/articles/tagged/pet-lifestyle" class="res-snav-item{% if current_tags contains 'pet-lifestyle' %} active{% endif %}">Pet Lifestyle</a>
+  {%- endif -%}
+</nav>
