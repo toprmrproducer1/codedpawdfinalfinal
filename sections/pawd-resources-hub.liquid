@@ -8,8 +8,8 @@
 {% render 'pawd-resources-nav', active: 'hub' %}
 
 <!-- Hero featured guide -->
-{%- assign guides_blog = blogs[section.settings.guides_blog] -%}
-{%- assign articles_blog = blogs[section.settings.articles_blog] -%}
+{%- assign guides_blog = blogs['resources'] -%}
+{%- assign articles_blog = blogs['resources'] -%}
 {%- if section.settings.hero_article != blank -%}
   {%- assign hero_article = all_products[section.settings.hero_article] -%}
 {%- endif -%}
@@ -185,8 +185,8 @@
   "class": "pawd-resources-hub-section",
   "settings": [
     { "type": "header", "content": "Blog Sources" },
-    { "type": "text", "id": "guides_blog", "label": "Guides Blog Handle", "default": "guides" },
-    { "type": "text", "id": "articles_blog", "label": "Articles Blog Handle", "default": "articles" },
+    { "type": "text", "id": "guides_blog", "label": "Guides Blog Handle", "default": "resources" },
+    { "type": "text", "id": "articles_blog", "label": "Articles Blog Handle", "default": "resources" },
 
     { "type": "header", "content": "Guides Section" },
     { "type": "text", "id": "guides_eyebrow", "label": "Eyebrow", "default": "In-Depth" },

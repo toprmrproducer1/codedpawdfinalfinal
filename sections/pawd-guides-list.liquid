@@ -6,11 +6,7 @@
 {{ 'pawd-resources.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  if blog != blank
-    assign the_blog = blog
-  else
-    assign the_blog = blogs[section.settings.blog_handle]
-  endif
+  assign the_blog = blogs['resources']
 -%}
 
 {% render 'pawd-resources-nav', active: 'guides' %}
@@ -18,7 +14,7 @@
 <!-- Page Hero -->
 <div class="pg-hero">
   <div class="pg-breadcrumb">
-    <a href="/pages/resources">Resources</a><span>/</span><span>Guides</span>
+    <a href="/blogs/resources">Resources</a><span>/</span><span>Guides</span>
   </div>
   <div class="pg-hero-eyebrow">{{ section.settings.eyebrow }}</div>
   <div class="pg-hero-title">{{ section.settings.title }}</div>
@@ -134,7 +130,7 @@
   "tag": "section",
   "class": "pawd-guides-list-section",
   "settings": [
-    { "type": "text", "id": "blog_handle", "label": "Blog Handle", "default": "guides" },
+    { "type": "text", "id": "blog_handle", "label": "Blog Handle", "default": "resources" },
     { "type": "url", "id": "resources_url", "label": "Resources Hub URL" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "In-Depth Guides" },
     { "type": "html", "id": "title", "label": "Title", "default": "Practical <em>Guides</em><br>For Pet Owners." },
